@@ -1,0 +1,17 @@
+{
+  "name": "ledgro-ai-sb",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Ledgro AI — Supabase-backed app (ArhaFoodx-SB style layout)",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w web",
+    "build": "npm run build -w web",
+    "preview": "npm run preview -w web",
+    "supabase:link": "supabase link --project-ref gvanesczememwwcqdzjf",
+    "supabase:status": "supabase projects list",
+    "supabase:types": "supabase gen types --linked --lang typescript > apps/web/src/database.types.ts"
+  }
+}

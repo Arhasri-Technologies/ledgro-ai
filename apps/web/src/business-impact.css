@@ -1,0 +1,115 @@
+.business-impact{background:#0b1e27;color:#edf5f7;padding:100px 7% 65px;border-top:1px solid #29424e}
+.business-impact .section-label,.dataserv-partner .section-label{font:11px/1.7 monospace;letter-spacing:.12em;color:#8db2c1;margin-bottom:34px}
+.impact-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:45px;margin-bottom:58px}
+.impact-heading h2,.dataserv-partner h2{font-family:'DM Sans',Arial,sans-serif;font-size:clamp(38px,4.8vw,72px);font-weight:400;letter-spacing:-.05em;line-height:1.08;margin:0}
+.impact-heading h2 em,.dataserv-partner h2 em{font-family:Georgia,serif;font-weight:400;font-style:italic;color:#91dce5}
+.impact-heading>p{max-width:340px;margin:0 0 5px;color:#9eb6c1;line-height:1.8;font-size:16px}
+.impact-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-block:1px solid #304b58;padding:38px 0}
+.impact-metrics article{padding:0 26px;border-left:1px solid #304b58}.impact-metrics article:first-child{padding-left:0;border-left:0}
+.impact-metrics strong{display:block;font-size:clamp(48px,5.4vw,80px);letter-spacing:-.055em;font-weight:400;line-height:1.1;color:#ebf6f9}.impact-metrics strong span{color:#79c3d2;font-size:.7em}
+.impact-metrics h3{font-family:'DM Sans',Arial,sans-serif;font-size:17px;letter-spacing:-.02em;font-weight:500;max-width:none;margin:20px 0 10px}
+.impact-metrics p{font-size:14px;line-height:1.7;color:#8faab8;margin:0;max-width:210px}
+.impact-industries{padding-top:32px;display:flex;align-items:baseline;gap:30px}.impact-industries>p{font-size:12px;color:#71929f;white-space:nowrap;margin:0}
+.impact-industries ul{display:flex;flex-wrap:wrap;gap:15px 25px;list-style:none;margin:0;padding:0}.impact-industries li{font-size:13px;color:#b2c8d2}
+.dataserv-partner{display:grid;grid-template-columns:1fr 1.2fr;gap:75px;padding:90px 7%;background:radial-gradient(ellipse at 0% 100%,#183f4e55,transparent 65%),#091820;border-top:1px solid #29424e}
+.partner-content>p{font-size:16px;line-height:1.9;color:#abc0ca;margin:0 0 26px}
+.partner-capabilities{list-style:none;padding:0;margin:0 0 32px;display:grid;grid-template-columns:1fr 1fr;gap:15px 25px}.partner-capabilities li{font-size:13px;color:#c3dbe3;display:flex;align-items:center;gap:10px}.partner-capabilities li:before{content:'+';color:#7dcbd9;font-size:17px}
+.partner-actions{display:flex;align-items:center;flex-wrap:wrap;gap:26px}.partner-actions .button{border-radius:5px;background:#a7e5ec;font-weight:500;padding:16px 23px;font-size:14px}.partner-actions .button:hover{background:#cbf2f5}.partner-secondary{font-size:14px;padding:10px 0;border-bottom:1px solid #61828e;color:#c3dde6}.partner-secondary:hover{color:#fff;border-color:#abdce9}.partner-content .partner-note{font-size:12px;line-height:1.8;color:#7b9aa9;margin:22px 0 0}
+@media(max-width:1000px){.impact-metrics article{padding:0 18px}.impact-metrics h3{font-size:15px}.impact-metrics p{font-size:13px}.impact-industries{display:block}.impact-industries>p{margin-bottom:17px}.dataserv-partner{gap:40px}.partner-capabilities{grid-template-columns:1fr}}
+@media(max-width:640px){.business-impact{padding:65px 6% 45px}.impact-heading{display:block;margin-bottom:32px}.impact-heading>p{margin:24px 0 0;font-size:15px}.impact-metrics{grid-template-columns:1fr 1fr;padding:0}.impact-metrics article{padding:25px 15px}.impact-metrics article:first-child{padding:25px 15px 25px 0}.impact-metrics article:nth-child(3){border-left:0;padding-left:0}.impact-metrics article:nth-child(n+3){border-top:1px solid #304b58}.impact-metrics strong{font-size:50px}.impact-metrics h3{font-size:15px;margin-top:15px}.impact-metrics p{font-size:13px}.impact-industries ul{gap:14px 20px}.impact-industries li{font-size:12px}.dataserv-partner{grid-template-columns:1fr;gap:30px;padding:65px 6%}.partner-content>p{font-size:15px}.partner-capabilities{grid-template-columns:1fr 1fr;gap:14px}.partner-capabilities li{font-size:12px}.partner-actions{gap:20px}.partner-actions .button{font-size:13px;padding:15px 19px}.partner-secondary{font-size:13px}}
+/* A bright evidence section provides contrast after the technical story. */
+.business-impact{background:#e9f0f1;color:#17333e;padding-top:90px;padding-bottom:55px;border-top:0}
+.business-impact .section-label{color:#567985;letter-spacing:.16em}
+.impact-heading{margin-bottom:48px;gap:60px}.impact-heading h2{font-size:clamp(40px,4.9vw,76px);color:#14313d}.impact-heading h2 em{color:#347589}.impact-heading>p{color:#55727e;font-size:16px;max-width:330px}
+.impact-metrics{border-color:#b7cbd2;padding:40px 0 45px}.impact-metrics article{border-color:#bfd1d6;padding-left:30px;padding-right:20px}.impact-metrics strong{color:#123848;font-size:clamp(55px,5.8vw,88px);font-weight:400;letter-spacing:-.065em}.impact-metrics strong span{color:#4b8b9c;font-size:.62em;vertical-align:8%}.impact-metrics h3{color:#214451;font-size:17px;margin-top:23px}.impact-metrics p{color:#587480;font-size:14px}.impact-industries{padding-top:30px;gap:38px}.impact-industries>p{color:#698591}.impact-industries li{color:#3a5e6c}
+.dataserv-partner{position:relative;overflow:hidden;background:radial-gradient(ellipse at 0% 0%,#16435470,transparent 58%),#081b25;padding-top:100px;padding-bottom:100px;border-top:1px solid #446d7b;gap:clamp(40px,7vw,110px)}
+.dataserv-partner:before{content:'';position:absolute;left:7%;top:0;width:100px;height:2px;background:#9bdee7}.dataserv-partner h2{font-size:clamp(46px,5.8vw,86px);line-height:1.05}.dataserv-partner h2 em{color:#a7e6ec}.dataserv-partner .section-label{color:#7cabbc}.partner-content{padding-top:9px}.partner-content>p{color:#abc2ce;font-size:16px;line-height:1.9}.partner-capabilities{padding:22px 0;border-block:1px solid #2e4956;margin:28px 0 30px;gap:18px 24px}.partner-capabilities li{font-size:13px}.partner-actions .button{border:1px solid #c2edf1;box-shadow:0 5px 20px #0002}.partner-content .partner-note{max-width:400px;color:#89a8b7}
+/* Offscreen effects do not need to continue animating. */
+.scene-out-of-view *,.scene-out-of-view:before,.scene-out-of-view:after,.scene-out-of-view *:before,.scene-out-of-view *:after{animation-play-state:paused!important}
+.dataserv-hero .intelligence-aura{filter:none;background:radial-gradient(ellipse,#29a9d615,transparent 70%)}
+.dataserv-hero .intelligence-studio .agent-labels>span{backdrop-filter:none}
+@media(max-width:640px){.business-impact{padding-top:60px;padding-bottom:42px}.impact-heading{margin-bottom:32px}.impact-metrics{padding:0}.impact-metrics article{padding:25px 14px}.impact-metrics article:nth-child(n+3){border-top-color:#bfd1d6}.impact-metrics strong{font-size:55px}.impact-metrics h3{font-size:15px;margin-top:14px}.impact-metrics p{font-size:13px}.dataserv-partner{padding-top:65px;padding-bottom:65px;gap:25px}.dataserv-partner h2{font-size:54px}.partner-content>p{font-size:15px}.partner-capabilities{gap:16px 14px}.partner-capabilities li{font-size:12px}}
+/* One-time reveal and count-up, rather than continuous decorative rendering. */
+.business-impact .impact-metrics strong{font-variant-numeric:tabular-nums}
+.business-impact.impact-waiting .impact-heading,.business-impact.impact-waiting .impact-metrics article,.business-impact.impact-waiting .impact-industries{opacity:0;transform:translateY(14px)}
+.business-impact.impact-entered .impact-heading,.business-impact.impact-entered .impact-metrics article,.business-impact.impact-entered .impact-industries{animation:impact-arrive .7s cubic-bezier(.2,.65,.3,1) both}
+.business-impact.impact-entered .impact-metrics article:nth-child(1){animation-delay:.08s}.business-impact.impact-entered .impact-metrics article:nth-child(2){animation-delay:.16s}.business-impact.impact-entered .impact-metrics article:nth-child(3){animation-delay:.24s}.business-impact.impact-entered .impact-metrics article:nth-child(4){animation-delay:.32s}.business-impact.impact-entered .impact-industries{animation-delay:.4s}
+.business-impact .impact-metrics article{position:relative}.business-impact .impact-metrics article:after{content:'';position:absolute;bottom:-45px;left:0;right:0;height:2px;background:linear-gradient(90deg,#418fa4,transparent);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+@media(hover:hover){.business-impact .impact-metrics article:hover:after{transform:scaleX(1)}}
+@keyframes impact-arrive{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:640px){.business-impact .impact-metrics article:after{bottom:0}}
+.motion-paused .business-impact .impact-heading,.motion-paused .business-impact .impact-metrics article,.motion-paused .business-impact .impact-industries{animation:none!important;opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.business-impact.impact-waiting .impact-heading,.business-impact.impact-waiting .impact-metrics article,.business-impact.impact-waiting .impact-industries{opacity:1;transform:none}.business-impact.impact-entered .impact-heading,.business-impact.impact-entered .impact-metrics article,.business-impact.impact-entered .impact-industries{animation:none}.business-impact .impact-metrics article:after{transition:none}}
+.business-impact .impact-heading{align-items:center;margin-bottom:35px;gap:45px}.impact-heading-copy{flex:1}.impact-heading-copy>p{max-width:450px;color:#55727e;font-size:16px;line-height:1.8;margin:26px 0 0}.impact-network{position:relative;width:40%;height:315px;flex-shrink:0;background:radial-gradient(ellipse,#b1d8df38,transparent 70%)}.impact-network canvas{display:block;width:100%;height:100%}.network-caption{position:absolute;bottom:13px;left:0;right:0;text-align:center;font:9px monospace;letter-spacing:.12em;color:#577f8e}#impact-motion{display:block;position:absolute;bottom:-13px;left:50%;transform:translateX(-50%);border:0;background:none;color:#477483;padding:5px;font:10px 'DM Sans',sans-serif;cursor:pointer;white-space:nowrap}#impact-motion:hover{color:#103f51}#impact-motion:focus-visible{outline:2px solid #388199;outline-offset:3px}
+@media(max-width:640px){.business-impact .impact-heading{display:flex;flex-direction:column;align-items:stretch;gap:12px;margin-bottom:38px}.impact-heading-copy>p{font-size:15px;margin-top:23px}.impact-network{width:100%;height:245px}.network-caption{font-size:8px}}
+/* Minimal results composition: the evidence is the visual centerpiece. */
+.business-impact{position:relative;overflow:hidden;background:linear-gradient(115deg,#edf3f3,#e5eef0);padding-top:88px;padding-bottom:58px}
+.business-impact .impact-heading{display:block;margin-bottom:52px}
+.business-impact .impact-heading-copy{display:grid;grid-template-columns:1.35fr 1fr;align-items:end;gap:60px}
+.business-impact .impact-heading-copy>p{justify-self:end;max-width:335px;margin:0 0 5px}
+.business-impact .impact-metrics{position:relative;padding:42px 0 46px;border-top:1px solid #aac4cd;border-bottom:1px solid #aac4cd;overflow:hidden}
+.business-impact .impact-metrics:before{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 20%,#ffffff60 48%,transparent 72%);transform:translateX(-120%);opacity:0}
+.business-impact.impact-entered .impact-metrics:before{animation:impact-light-pass 2.8s .3s ease-in-out both}
+.business-impact .impact-metrics strong{font-size:clamp(62px,6.5vw,98px);color:#143a48;letter-spacing:-.07em}
+.business-impact .impact-metrics strong span{font-size:.57em;color:#5793a3;vertical-align:12%;margin-left:2px}
+.business-impact .impact-metrics article{padding-right:22px;padding-left:32px;border-left-color:#bbd0d6}
+.business-impact .impact-metrics article:first-child{padding-left:0}
+.business-impact .impact-metrics h3{margin-top:24px;font-size:16px;font-weight:500;letter-spacing:-.015em}
+.business-impact .impact-metrics p{font-size:13px;line-height:1.8;color:#607d89}
+.business-impact .impact-metrics article:after{bottom:-46px;height:2px}
+.business-impact .impact-industries{padding-top:29px}.business-impact .impact-industries ul{gap:15px 27px}
+@keyframes impact-light-pass{0%{transform:translateX(-120%);opacity:0}20%{opacity:.65}80%{opacity:.65}100%{transform:translateX(120%);opacity:0}}
+.motion-paused .business-impact .impact-metrics:before{animation:none!important}
+@media(max-width:760px){.business-impact .impact-heading-copy{grid-template-columns:1fr;gap:22px}.business-impact .impact-heading-copy>p{justify-self:start;max-width:450px}.business-impact .impact-metrics strong{font-size:60px}.business-impact .impact-metrics article{padding-left:18px;padding-right:12px}}
+@media(max-width:640px){.business-impact{padding-top:60px;padding-bottom:42px}.business-impact .impact-heading{margin-bottom:30px}.business-impact .impact-metrics{padding:0}.business-impact .impact-metrics article,.business-impact .impact-metrics article:first-child{padding:28px 14px}.business-impact .impact-metrics article:nth-child(odd){padding-left:0}.business-impact .impact-metrics article:after{bottom:0}.business-impact .impact-metrics h3{font-size:15px;margin-top:16px}.business-impact .impact-metrics strong{font-size:58px}}
+@media(prefers-reduced-motion:reduce){.business-impact.impact-entered .impact-metrics:before{animation:none}}
+/* Small, purposeful symbols give each result its own identity. */
+.business-impact .impact-symbol{position:relative;width:64px;height:64px;display:grid;place-items:center;margin:0 0 22px;color:#397c91;border-radius:18px;background:linear-gradient(135deg,#ffffffb8,#c8e0e87d);border:1px solid #b5d0d98c;box-shadow:0 5px 15px #23566708;transition:transform .35s,box-shadow .35s,color .35s}
+.business-impact .impact-symbol svg{width:35px;height:35px;position:relative;z-index:1}
+.business-impact .impact-symbol-ring{position:absolute;inset:-5px;border:1px solid #659daf55;border-radius:22px;opacity:0;pointer-events:none}
+.business-impact .impact-result-kicker{display:block;font:9px/1.6 monospace;letter-spacing:.08em;color:#71919e;margin:0 0 15px;min-height:15px}
+.business-impact .impact-result-2 .impact-symbol{color:#496e9b;background:linear-gradient(135deg,#ffffffc2,#d1dfef)}
+.business-impact .impact-result-3 .impact-symbol{color:#367b72;background:linear-gradient(135deg,#ffffffc2,#cee5dd)}
+.business-impact .impact-result-4 .impact-symbol{color:#716d99;background:linear-gradient(135deg,#ffffffc2,#e0dfec)}
+.business-impact.impact-entered .impact-symbol svg{animation:impact-icon-intro .9s .25s ease-out both}
+.business-impact.impact-entered .impact-result-2 .impact-symbol svg{animation-delay:.35s}.business-impact.impact-entered .impact-result-3 .impact-symbol svg{animation-delay:.45s}.business-impact.impact-entered .impact-result-4 .impact-symbol svg{animation-delay:.55s}
+@media(hover:hover){.business-impact .impact-result:hover .impact-symbol{transform:translateY(-4px) rotate(-3deg);box-shadow:0 10px 24px #23566715;color:#154c62}.business-impact .impact-result:hover .impact-symbol-ring{animation:impact-symbol-pulse 1.3s ease-out}.business-impact .impact-result:hover .impact-result-kicker{color:#305b6a}}
+@keyframes impact-icon-intro{from{opacity:0;transform:scale(.8) rotate(-8deg)}to{opacity:1;transform:scale(1) rotate(0)}}
+@keyframes impact-symbol-pulse{0%{opacity:.65;transform:scale(.9)}100%{opacity:0;transform:scale(1.25)}}
+@media(max-width:640px){.business-impact .impact-symbol{width:53px;height:53px;border-radius:15px;margin-bottom:17px}.business-impact .impact-symbol svg{width:29px;height:29px}.business-impact .impact-symbol-ring{border-radius:19px}.business-impact .impact-result-kicker{font-size:8px;letter-spacing:.035em;min-height:26px;margin-bottom:8px}}
+.motion-paused .business-impact .impact-symbol svg,.motion-paused .business-impact .impact-symbol-ring{animation:none!important}
+@media(prefers-reduced-motion:reduce){.business-impact .impact-symbol{transition:none}.business-impact .impact-symbol svg,.business-impact .impact-symbol-ring{animation:none!important}}
+/* Distinct low-amplitude icon gestures, running only while visible. */
+.business-impact.impact-entered .impact-result-1 .impact-symbol svg rect{transform-box:fill-box;transform-origin:center;animation:impact-tile-breathe 4.8s ease-in-out infinite}
+.business-impact.impact-entered .impact-result-1 .impact-symbol svg rect:nth-child(2){animation-delay:.35s}.business-impact.impact-entered .impact-result-1 .impact-symbol svg rect:nth-child(3){animation-delay:.7s}
+.business-impact.impact-entered .impact-result-1 .impact-symbol svg path{transform-box:fill-box;transform-origin:center;animation:impact-plus-turn 6s ease-in-out infinite}
+.business-impact.impact-entered .impact-result-2 .impact-symbol svg path:last-child{transform-box:fill-box;transform-origin:center;animation:impact-chip-pulse 3.6s ease-in-out infinite}
+.business-impact.impact-entered .impact-result-3 .impact-symbol svg path:last-child{stroke-dasharray:28;stroke-dashoffset:0;animation:impact-check-draw 5.5s ease-in-out infinite}
+.business-impact.impact-entered .impact-result-4 .impact-clock-hands{transform-origin:20px 20px;animation:impact-clock-tick 12s linear infinite}
+@keyframes impact-tile-breathe{0%,65%,100%{transform:translateY(0);opacity:1}25%,40%{transform:translateY(-2px);opacity:.6}}
+@keyframes impact-plus-turn{0%,65%{transform:rotate(0)}85%,100%{transform:rotate(90deg)}}
+@keyframes impact-chip-pulse{0%,65%,100%{transform:scale(1);opacity:1}30%{transform:scale(.82);opacity:.45}45%{transform:scale(1.08);opacity:1}}
+@keyframes impact-check-draw{0%,12%{stroke-dashoffset:28;opacity:.35}36%,90%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:.35}}
+@keyframes impact-clock-tick{to{transform:rotate(360deg)}}
+.business-impact.scene-out-of-view .impact-symbol svg *,.motion-paused .business-impact .impact-symbol svg *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){.business-impact .impact-symbol svg *{animation:none!important}}
+/* More expressive gestures for the four result icons. */
+.business-impact.impact-entered .impact-symbol{animation:impact-icon-float 4s ease-in-out infinite}
+.business-impact.impact-entered .impact-result-2 .impact-symbol{animation-delay:.6s}.business-impact.impact-entered .impact-result-3 .impact-symbol{animation-delay:1.2s}.business-impact.impact-entered .impact-result-4 .impact-symbol{animation-delay:1.8s}
+.business-impact.impact-entered .impact-symbol-ring{animation:impact-icon-ripple 3.4s ease-out infinite}.business-impact.impact-entered .impact-result-2 .impact-symbol-ring{animation-delay:.65s}.business-impact.impact-entered .impact-result-3 .impact-symbol-ring{animation-delay:1.3s}.business-impact.impact-entered .impact-result-4 .impact-symbol-ring{animation-delay:1.95s}
+.business-impact.impact-entered .impact-result-1 .impact-symbol svg rect{animation:impact-tiles-assemble 3.2s ease-in-out infinite}.business-impact.impact-entered .impact-result-1 .impact-symbol svg rect:nth-child(2){animation-delay:.25s}.business-impact.impact-entered .impact-result-1 .impact-symbol svg rect:nth-child(3){animation-delay:.5s}
+.business-impact.impact-entered .impact-result-1 .impact-symbol svg path{animation:impact-plus-turn 3s ease-in-out infinite}
+.business-impact.impact-entered .impact-result-2 .impact-symbol svg path:last-child{animation:impact-chip-pulse 1.9s ease-in-out infinite}
+.business-impact.impact-entered .impact-result-2 .impact-symbol svg path:nth-child(2){animation:impact-circuit-flash 2.4s ease-in-out infinite}
+.business-impact.impact-entered .impact-result-3 .impact-symbol svg path:first-child{transform-box:fill-box;transform-origin:center;animation:impact-shield-beat 2.8s ease-in-out infinite}
+.business-impact.impact-entered .impact-result-3 .impact-symbol svg path:last-child{animation:impact-check-draw 3.1s ease-in-out infinite}
+.business-impact.impact-entered .impact-result-4 .impact-clock-hands{animation:impact-clock-tick 6s linear infinite}
+.business-impact.impact-entered .impact-result-4 .impact-symbol svg{transform-origin:center;animation:impact-clock-sway 3.5s ease-in-out infinite}
+@keyframes impact-icon-float{0%,100%{transform:translateY(0) rotate(0)}45%{transform:translateY(-6px) rotate(-3deg)}70%{transform:translateY(-2px) rotate(2deg)}}
+@keyframes impact-icon-ripple{0%{opacity:0;transform:scale(.94)}15%{opacity:.55}65%,100%{opacity:0;transform:scale(1.3)}}
+@keyframes impact-tiles-assemble{0%,75%,100%{transform:translateY(0) scale(1);opacity:1}30%{transform:translateY(-3px) scale(.8);opacity:.6}50%{transform:translateY(1px) scale(1.08);opacity:1}}
+@keyframes impact-circuit-flash{0%,100%{opacity:1}40%{opacity:.35}65%{opacity:.9}}
+@keyframes impact-shield-beat{0%,70%,100%{transform:scale(1)}25%{transform:scale(1.08)}45%{transform:scale(.97)}}
+@keyframes impact-clock-sway{0%,70%,100%{transform:rotate(0)}25%{transform:rotate(-7deg)}40%{transform:rotate(6deg)}55%{transform:rotate(-3deg)}}
+.business-impact.scene-out-of-view .impact-symbol,.business-impact.scene-out-of-view .impact-symbol *,.motion-paused .business-impact .impact-symbol,.motion-paused .business-impact .impact-symbol *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){.business-impact.impact-entered .impact-symbol,.business-impact.impact-entered .impact-symbol *{animation:none!important}}
