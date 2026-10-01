@@ -1,0 +1,76 @@
+/* A consistent display and reading pair across the active homepage. */
+:root{
+  --font-reading:'Inter',Arial,sans-serif;
+  --font-display:'Sora',Arial,sans-serif;
+}
+body{font-family:var(--font-reading)}
+main h1,main h2,main h3,
+main .impact-metrics h3,main .editorial-grid h3,main .webinar-detail h3{
+  font-family:var(--font-display);
+  font-weight:500;
+  letter-spacing:-.045em;
+  text-wrap:balance;
+}
+main h1 em,main h2 em,main h3 em,
+main .intro-line-em,main .expertise-framework-title>span{
+  font-family:var(--font-display);
+  font-weight:400;
+  font-style:normal;
+  letter-spacing:-.025em;
+}
+main .expertise-framework-title{font-size:clamp(38px,5.5vw,78px);line-height:1.1}
+main .expertise-method-copy h3{
+  font-family:var(--font-display);
+  font-size:clamp(34px,3.6vw,56px);
+  font-weight:400;
+  letter-spacing:-.025em;
+  line-height:1.08;
+  max-width:19ch;
+}
+main .expertise-framework-lead,main .expertise-method-tagline,
+main .expertise-method-list{font-family:var(--font-reading);line-height:1.8}
+main .expertise-method-list{font-size:13px}
+main .intro-metric-num{font-family:var(--font-reading)}
+main .connected .layer-buttons strong{
+  font-family:var(--font-display);
+  font-weight:500;
+  letter-spacing:-.025em;
+  line-height:1.35;
+}
+/* 03 / AI-DRIVEN SOFTWARE — Sora for UI copy; Inter + Georgia for titles */
+main .connected.section{
+  font-family:var(--font-display);
+}
+main .connected-heading h2,
+main .connected .layer-detail h3,
+main .connected-delivery>div>h3,
+main .connected .steps h3{
+  font-family:var(--font-reading);
+  font-weight:400;
+  text-wrap:balance;
+}
+main .connected-heading h2{
+  letter-spacing:-.05em;
+}
+main .connected .layer-detail h3{
+  letter-spacing:-.035em;
+  font-weight:400;
+}
+main .connected-delivery>div>h3{
+  letter-spacing:-.04em;
+}
+main .connected .steps h3{
+  letter-spacing:-.025em;
+}
+main .connected h2 em,
+main .connected h3 em{
+  font-family:Georgia,'Times New Roman',serif;
+  font-style:italic;
+  font-weight:400;
+  letter-spacing:-.025em;
+}
+@media(max-width:640px){
+  main .expertise-framework-title{font-size:clamp(34px,8.5vw,48px)}
+  main .expertise-method-copy h3{font-size:clamp(30px,7vw,40px)}
+  main .expertise-method-list{font-size:12px}
+}

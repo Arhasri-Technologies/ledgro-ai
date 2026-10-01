@@ -8,7 +8,7 @@ const preference = matchMedia('(prefers-reduced-motion: reduce)');
 let selected = 0;
 let localPaused = preference.matches;
 let renderSelection = () => {};
-const names = ['EXPERIENCE', 'INTELLIGENCE', 'CONNECTION', 'FOUNDATION'];
+const names = ['PRODUCT EXPERIENCE', 'AI INTELLIGENCE', 'CONNECTED SYSTEMS', 'TRUSTED FOUNDATION'];
 function syncMotion() {
   motionButton.setAttribute('aria-pressed', String(localPaused));
   motionButton.textContent = localPaused ? 'PLAY ANIMATION ▷' : 'PAUSE ANIMATION Ⅱ';

@@ -3,7 +3,7 @@ const canvas=document.querySelector('#intelligence');
 const stage=document.querySelector('.agent-scene');
 const motionPreference=matchMedia('(prefers-reduced-motion: reduce)');
 let clock=0,step=-1;
-const messages=['Your idea is the starting point.','Strategy shares the blueprint with design.','Design and engineering bring the app to life.','One voice. Many minds. Your next application.'];
+const messages=['VEL.ai vision: a new requirement or an existing project.','Specialist agents propose a plan for human review.','Approved tasks move through coordinated development.','Quality evidence and project memory support the next release.'];
 function story(next){if(next===step)return;step=next;stage.dataset.step=String(next);document.querySelector('#agent-message').textContent=messages[next];}
 const replay=document.querySelector('#replay-agents');
 replay.addEventListener('click',()=>{clock=0;step=-1;story(0)});
