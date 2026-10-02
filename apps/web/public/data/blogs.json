@@ -1,0 +1,27 @@
+{
+  "posts": [
+    {
+      "slug": "future-of-enterprise-ai-transforming-business-operations",
+      "title": "The Future of Enterprise AI: Transforming Business Operations",
+      "excerpt": "Discover how artificial intelligence is revolutionizing enterprise operations, from intelligent automation to predictive analytics. Learn the key strategies for successful AI adoption in your organization.",
+      "author": "Anil Potluri",
+      "date": "2024-12-28",
+      "minutes": 8,
+      "category": "AI & Machine Learning",
+      "featured": true,
+      "url": "/blog-article.html?slug=future-of-enterprise-ai-transforming-business-operations"
+    },
+    {
+      "slug": "building-responsible-ai-systems-ethics-best-practices",
+      "title": "Building Responsible AI Systems: Ethics and Best Practices",
+      "excerpt": "Explore the fundamental principles of responsible AI development, including transparency, fairness, and accountability. A comprehensive guide to implementing ethical AI governance frameworks.",
+      "author": "Gunda Ajay Kumar",
+      "date": "2024-12-15",
+      "minutes": 10,
+      "category": "AI Ethics",
+      "featured": false,
+      "url": "/blog-article.html?slug=building-responsible-ai-systems-ethics-best-practices"
+    }
+  ],
+  "checkedAt": "2026-10-01T11:34:06.926Z"
+}
