@@ -18,7 +18,7 @@ if (!mobile.matches) try {
 
   const wire = new THREE.Mesh(
     new THREE.IcosahedronGeometry(1.05, 2),
-    new THREE.MeshBasicMaterial({ color: 0x4a8a9a, wireframe: true, transparent: true, opacity: 0.35 }),
+    new THREE.MeshBasicMaterial({ color: 0x1a6bff, wireframe: true, transparent: true, opacity: 0.35 }),
   );
   globe.add(wire);
 
@@ -33,12 +33,8 @@ if (!mobile.matches) try {
   }
   const cloudGeo = new THREE.BufferGeometry();
   cloudGeo.setAttribute('position', new THREE.BufferAttribute(cloud, 3));
-  globe.add(
-    new THREE.Points(
-      cloudGeo,
-      new THREE.PointsMaterial({ color: 0x75dbe9, size: 0.015, transparent: true, opacity: 0.5, depthWrite: false }),
-    ),
-  );
+  const cloudMat = new THREE.PointsMaterial({ color: 0x00dfff, size: 0.015, transparent: true, opacity: 0.5, depthWrite: false });
+  globe.add(new THREE.Points(cloudGeo, cloudMat));
 
   const latLonToVec = (lat, lon, radius = 1.05) => {
     const phi = (90 - lat) * (Math.PI / 180);
@@ -62,26 +58,36 @@ if (!mobile.matches) try {
     const pos = latLonToVec(site.lat, site.lon);
     const dot = new THREE.Mesh(
       new THREE.SphereGeometry(0.04, 10, 8),
-      new THREE.MeshBasicMaterial({ color: 0x88e9ed }),
+      new THREE.MeshBasicMaterial({ color: 0x00dfff }),
     );
     dot.position.copy(pos);
     globe.add(dot);
     markers.push(dot);
   });
 
+  const arcMats = [];
   for (let i = 0; i < sites.length; i++) {
     for (let j = i + 1; j < sites.length; j++) {
       const a = latLonToVec(sites[i].lat, sites[i].lon, 1.02);
       const b = latLonToVec(sites[j].lat, sites[j].lon, 1.02);
       const mid = a.clone().add(b).normalize().multiplyScalar(1.35);
       const curve = new THREE.QuadraticBezierCurve3(a, mid, b);
-      const arc = new THREE.Line(
-        new THREE.BufferGeometry().setFromPoints(curve.getPoints(40)),
-        new THREE.LineBasicMaterial({ color: 0x5ec9d8, transparent: true, opacity: 0.45 }),
-      );
-      globe.add(arc);
+      const mat = new THREE.LineBasicMaterial({ color: 0x1a6bff, transparent: true, opacity: 0.45 });
+      arcMats.push(mat);
+      globe.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(curve.getPoints(40)), mat));
     }
   }
+
+  const paint = () => {
+    const light = document.documentElement.dataset.theme === 'light';
+    wire.material.color.set(light ? 0x1a6bff : 0x3d8cff);
+    wire.material.opacity = light ? 0.28 : 0.42;
+    cloudMat.color.set(light ? 0x1a6bff : 0x00dfff);
+    markers.forEach((m) => m.material.color.set(light ? 0x1a6bff : 0x00dfff));
+    arcMats.forEach((m) => m.color.set(light ? 0x1a6bff : 0x00dfff));
+  };
+  paint();
+  new MutationObserver(paint).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 
   let visible = false;
   let frame = 0;
