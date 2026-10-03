@@ -102,7 +102,7 @@
 .dm-reel-layout .launch-primary { display: inline-flex; width: auto; }
 
 /* Editorial refresh: media takes the lead, detailed copy is available on demand. */
-.dm-cover { position: relative; isolation: isolate; min-height: min(840px, 90svh); display: flex; align-items: center; padding: 80px max(5vw,24px) 110px; color: #fff; background: #252b28; }
+.dm-cover { position: relative; isolation: isolate; min-height: min(840px, 90svh); display: flex; align-items: center; padding: 128px max(5vw,24px) 110px; color: #fff; background: #252b28; }
 .dm-cover-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
 .dm-cover::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg,#081714c9,#08171448),linear-gradient(0deg,#0713128c,transparent 45%); z-index: -1; }
 .dm-eyebrow { font-size: 11px; letter-spacing: .18em; margin-bottom: 30px; }
@@ -157,7 +157,7 @@
 .dm-page .dm-final h2 { max-width: none; font-size: clamp(54px,8vw,100px); }
 .dm-final .launch-primary { display: inline-flex; margin-top: 32px; }
 @media(max-width:760px) {
- .dm-cover { min-height: 720px; padding-top: 70px; }
+ .dm-cover { min-height: 720px; padding-top: 112px; }
  .dm-cover h1 { font-size: clamp(54px,12vw,82px); }
  .dm-eyebrow { font-size: 9px; }
  .dm-cover-bottom { flex-wrap: wrap; font-size: 8px; }
