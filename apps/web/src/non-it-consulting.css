@@ -1,0 +1,202 @@
+.nit-page .launch-copy h1 { font-size: clamp(40px, 4.6vw, 68px); max-width: 12ch; }
+.nit-page .about-band + .about-band { border-top: 1px solid var(--about-line); }
+
+.nit-panel {
+  border: 1px solid var(--about-line);
+  border-radius: 16px;
+  background: radial-gradient(ellipse at center, #2195ff10, transparent 70%), var(--about-card);
+  padding: 8px 8px 12px;
+}
+.nit-panel ol { margin: 0; padding: 8px; list-style: none; display: grid; gap: 8px; }
+.nit-panel li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 14px 16px;
+  border: 1px solid var(--about-line);
+  border-radius: 8px;
+}
+.nit-panel span {
+  font: 11px/1 var(--font-reading, 'Inter', sans-serif);
+  letter-spacing: 0.12em;
+  color: var(--about-accent);
+}
+.nit-panel strong {
+  font-family: var(--font-display, 'Sora', sans-serif);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.03em;
+}
+
+.nit-note { margin: 16px 0 0; font-size: 13px; line-height: 1.7; color: var(--about-muted); }
+
+.nit-equation {
+  margin: 42px 0 0;
+  padding: 28px 24px;
+  text-align: center;
+  border: 1px solid var(--about-line);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--about-accent) 8%, var(--about-card));
+  font-family: var(--font-display, 'Sora', sans-serif);
+  font-size: clamp(18px, 2vw, 26px);
+  letter-spacing: -0.03em;
+  line-height: 1.45;
+}
+.nit-equation em { font-style: normal; color: var(--about-accent); }
+
+.nit-faq { margin: 36px 0 0; display: grid; gap: 10px; }
+.nit-faq details {
+  border: 1px solid var(--about-line);
+  border-radius: 8px;
+  background: var(--about-card);
+  padding: 0 22px;
+}
+.nit-faq summary {
+  cursor: pointer;
+  padding: 18px 0;
+  font-family: var(--font-display, 'Sora', sans-serif);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+.nit-faq summary:focus-visible { outline: 2px solid var(--about-accent); outline-offset: 4px; }
+.nit-faq details p { margin: 0 0 18px; color: var(--about-muted); font-size: 15px; line-height: 1.75; }
+
+@media (max-width: 760px) {
+  .nit-page .launch-copy h1 { max-width: none; }
+}
+
+/* Non-IT consulting: a human, editorial counterpart to the technology pages. */
+.nit-page { --nit-mint: #b6efd8; --nit-lilac: #c9c2ff; }
+.nit-page .launch-hero { padding-bottom: 55px; }
+.nit-page .launch-main { gap: clamp(30px, 5vw, 85px); margin-block: 65px 30px; }
+.nit-page .launch-copy h1 { font-size: clamp(44px, 5.5vw, 80px); max-width: 15ch; line-height: 1.05; }
+.nit-page .launch-copy h1 em { background: linear-gradient(100deg, #7acddd, #b6efd8); background-clip: text; -webkit-background-clip: text; animation: none; }
+.nit-page .launch-lead { font-size: 16px; max-width: 440px; margin-block: 28px 32px; }
+.nit-page .launch-primary { background: #b6efd8; color: #122b35; }
+.nit-studio { min-width: 0; }
+.nit-studio-top, .nit-studio-bottom { display: flex; align-items: center; justify-content: space-between; gap: 10px; color: var(--about-muted); font-size: 8px; letter-spacing: .12em; }
+.nit-studio-top i { display: inline-block; width: 5px; height: 5px; background: #b6efd8; border-radius: 50%; margin-right: 7px; }
+.nit-motion { font: inherit; letter-spacing: 0; padding: 9px 11px; border: 1px solid var(--about-line); border-radius: 30px; background: transparent; color: var(--about-muted); cursor: pointer; white-space: nowrap; }
+.nit-composition { position: relative; min-height: 440px; display: grid; place-items: center; isolation: isolate; }
+.nit-orbit { position: absolute; width: 330px; height: 330px; border: 1px solid #90c7e120; border-radius: 50%; z-index: -1; }
+.nit-orbit-two { width: 420px; height: 420px; border-style: dashed; animation: nit-turn 65s linear infinite; }
+.nit-core { width: 235px; padding: 28px; background: linear-gradient(140deg,#e8e6ff,#b5ace9); color: #272948; border-radius: 14px; transform: rotate(-7deg); box-shadow: 15px 25px 65px #0003, inset 1px 1px 0 #fff; }
+.nit-core>span { font-size: 7px; letter-spacing: .12em; }
+.nit-core strong { display: block; font-size: 43px; line-height: 1.03; letter-spacing: -.06em; font-weight: 500; margin: 25px 0; }
+.nit-core em { font-style: normal; color: #5147a1; }
+.nit-core-footer { display: flex; align-items: center; border-top: 1px solid #27294820; padding-top: 17px; }
+.nit-core-footer i { width: 17px; height: 17px; border-radius: 50%; background: #7264b8; margin-right: -5px; border: 2px solid #c8c0f3; }
+.nit-core-footer i:nth-child(2) { background: #a3dace; }.nit-core-footer i:nth-child(3) { background: #edd09c; }
+.nit-core-footer small { font-size: 8px; margin-left: auto; }
+.nit-float { position: absolute; background: #fbfcff; color: #223c48; padding: 17px; border-radius: 11px; box-shadow: 0 15px 40px #0002; animation: nit-float 6s ease-in-out infinite alternate; }
+.nit-float strong { display: block; font-size: 12px; font-weight: 600; letter-spacing: -.03em; }
+.nit-float span { display: block; font-size: 8px; margin-top: 6px; color: #637783; }
+.nit-float-people { left: 0; top: 42px; transform: rotate(-4deg); }
+.nit-avatars { display: flex; margin-bottom: 12px; }.nit-avatars i { display: grid; place-items: center; width: 31px; height: 31px; border-radius: 50%; background: #d0e5dd; border: 2px solid white; font-style: normal; margin-right: -6px; }.nit-avatars i:nth-child(2) { background: #e1dcf4; }.nit-avatars i:nth-child(3) { background: #f9e6cb; }
+.nit-float-process { right: -5px; top: 130px; transform: rotate(6deg); animation-delay: -2s; }.nit-float-process>span { font-size: 6px; letter-spacing: .08em; }
+.nit-mini-flow { display: flex; align-items: center; gap: 7px; margin: 14px 0; }.nit-mini-flow i { width: 21px; height: 21px; border-radius: 5px; background: #c6e7de; }.nit-mini-flow i:nth-of-type(2) { background: #c9c4ee; }.nit-mini-flow b { font-weight: 400; color: #7b8c96; }
+.nit-float-progress { bottom: 29px; right: 10%; display: flex; gap: 12px; align-items: center; animation-delay: -4s; transform: rotate(-2deg); }.nit-float .nit-progress-icon { display: grid; place-items: center; font-size: 27px; color: #247358; background: #d9f3e6; width: 40px; height: 40px; border-radius: 9px; margin: 0; }
+.nit-star { position: absolute; color: #b6efd8; line-height: 1; pointer-events: none; }.nit-star-one { font-size: 13px; right: 14%; top: 28px; animation: nit-turn 35s linear infinite; }.nit-star-two { font-size: 9px; left: 8%; bottom: 78px; color: #c9c2ff; }.nit-star-three { font-size: 8px; left: 22%; top: 16px; color: #f4d8b4; }.nit-star-four { font-size: 7px; right: 6%; bottom: 42px; opacity: .75; }
+.nit-studio-bottom { padding-top: 17px; border-top: 1px solid var(--about-line); }
+.nit-page .about-band { padding-block: 90px; }
+.nit-page .about-band h2 { font-size: clamp(36px, 4.3vw, 58px); }
+.nit-page .about-practice { border-radius: 14px; padding: 28px; }
+.nit-page #expertise .about-practices { align-items: start; }
+.nit-service-icon { display: grid; place-items: center; width: 55px; height: 55px; margin-bottom: 28px; border-radius: 15px; background: #c9c2ff; color: #363367; font-size: 29px; box-shadow: inset 2px 2px 0 #ffffff70; transform: rotate(-6deg); transition: transform .3s; }
+.nit-page .about-practice:hover .nit-service-icon { transform: rotate(5deg) translateY(-3px); }
+.nit-icon-1,.nit-icon-4 { background: #b6efd8; color: #2b6755; }.nit-icon-2,.nit-icon-5 { background: #f4d8b4; color: #856340; }
+.nit-page #expertise h3 { font-size: 24px; min-height: 58px; }
+.nit-capabilities { margin-top: 24px; padding-top: 15px; border-top: 1px solid var(--about-line); }
+.nit-capabilities summary { display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-size: 12px; color: var(--about-ink); list-style: none; }
+.nit-capabilities summary::-webkit-details-marker { display: none; }.nit-capabilities summary span { font-size: 22px; }.nit-capabilities[open] summary span { transform: rotate(45deg); }
+.nit-page summary:focus-visible,.nit-page button:focus-visible { outline: 2px solid var(--about-accent); outline-offset: 5px; }
+.nit-page #approach { background: linear-gradient(120deg,#253c5225,#8265d514); padding: 55px; width: min(1290px,calc(100% - 48px)); border-radius: 22px; border: 1px solid var(--about-line); }
+.nit-page #approach .about-steps { gap: 25px; }.nit-page #approach .about-steps>li { padding-top: 10px; }
+.nit-page #approach .about-steps span { width: 47px; height: 47px; background: #b6efd8; color: #214d40; border: 0; border-radius: 13px; font-size: 12px; }
+.nit-page #approach .about-steps li::before,.nit-page #approach .about-steps li::after { top: 33px; left: 62px; }
+.nit-page #models .about-practices { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 35px; }.nit-page #models .about-practice { background: transparent; border: 0; border-bottom: 1px solid var(--about-line); border-radius: 0; padding: 28px 0; }.nit-page #models .about-practice:hover { transform: none; }.nit-page #models h3 { font-size: 25px; }
+.nit-bridge { display: grid; grid-template-columns: 1fr 85px 1fr; align-items: center; margin-top: 40px; padding: 45px; background: #dcebe5; color: #244536; border-radius: 17px; gap: 25px; }
+.nit-bridge>div>span { font-size: 9px; letter-spacing: .12em; }.nit-bridge strong { display: block; font-size: clamp(22px,2.5vw,32px); font-weight: 500; letter-spacing: -.04em; margin: 14px 0; }.nit-bridge p { font-size: 13px; line-height: 1.7; margin: 0; color: #506c60; }.nit-bridge-symbol { display: grid; place-items: center; width: 65px; height: 65px; background: #fff9; border-radius: 50%; font-size: 35px; animation: nit-float 5s ease-in-out infinite alternate; }
+.nit-page #industries .about-practices { grid-template-columns: repeat(5,minmax(0,1fr)); gap: 12px; }.nit-page #industries .about-practice { padding: 23px 18px; border-top: 3px solid #a99fe1; }.nit-page #industries h3 { font-size: 20px; }.nit-page #industries .about-practice>span { font-size: 8px; }
+.nit-page #why { background: transparent; }.nit-page #why .about-values { grid-template-columns: repeat(3,minmax(0,1fr)); }.nit-page #why .about-value { background: transparent; border: 0; padding: 25px 15px 25px 0; }.nit-page #why .about-value::before { display: none; }.nit-page #why .about-value-index { color: #b6efd8; font-size: 24px; opacity: .8; }
+.nit-page #faq { display: grid; grid-template-columns: .8fr 1.2fr; gap: 70px; }.nit-page .nit-faq { margin: 0; }.nit-page .nit-faq details { border-radius: 0; border: 0; border-bottom: 1px solid var(--about-line); background: transparent; padding: 0; }.nit-page .nit-faq summary { font-size: 17px; padding: 24px 0; }
+.nit-page .about-close { margin-bottom: 60px; padding: 65px 35px; border: 1px solid var(--about-line); border-radius: 22px; background: radial-gradient(ellipse at bottom,#77baa820,transparent 75%); }.nit-page .about-close .launch-actions { flex-wrap: wrap; }
+.nit-motion-ready .nit-page .about-reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s, transform .6s; transition-delay: calc(var(--d,0)*45ms); }.nit-motion-ready .nit-page .about-reveal.nit-visible { opacity: 1; transform: none; }
+@keyframes nit-float { to { translate: 0 -10px; } } @keyframes nit-turn { to { rotate: 360deg; } }
+html.nit-paused .nit-page *,html.nit-paused .nit-page *::before,html.nit-paused .nit-page *::after { animation-play-state: paused !important; }html.nit-paused .nit-page .launch-copy { animation: none; opacity: 1; transform: none; }
+html[data-theme=light] .nit-page .launch-copy h1 em { background: linear-gradient(100deg,#186577,#238469); background-clip: text; -webkit-background-clip: text; }
+html[data-theme=light] .nit-star { color: #1d7a62; } html[data-theme=light] .nit-star-two, html[data-theme=light] .nit-star-three { color: #6a5bb8; }
+html[data-theme=light] .nit-page #why .about-value-index { color: #27705d; }
+@media(max-width:1100px) { .nit-page #industries .about-practices { grid-template-columns: repeat(3,minmax(0,1fr)); }.nit-page #why .about-values { grid-template-columns: repeat(2,minmax(0,1fr)); }.nit-page .launch-main { gap: 30px; }.nit-float-process { right: -8px; }.nit-core { width: 205px; padding: 25px; }.nit-core strong { font-size: 37px; }.nit-float { padding: 12px; }.nit-composition { overflow: hidden; }.nit-page #faq { gap: 30px; } }
+@media(max-width:760px) {
+ .nit-page .launch-main { margin-top: 40px; gap: 45px; }.nit-page .launch-copy h1 { font-size: clamp(42px,10vw,64px); max-width: 15ch; }.nit-page .launch-lead { font-size: 15px; }.nit-page .launch-actions { flex-wrap: wrap; gap: 18px; }.nit-page .launch-hero { padding-bottom: 35px; }
+ .nit-composition { min-height: 390px; }.nit-core { width: 205px; }.nit-float-people { left: 0; top: 25px; }.nit-float-process { right: 0; top: 160px; }.nit-float-progress { bottom: 15px; right: 5%; }.nit-float strong { font-size: 10px; }.nit-star-one { right: 8%; }.nit-orbit-two { width: 340px; height: 340px; }
+ .nit-page .about-band { padding-block: 60px; }.nit-page #approach { padding: 30px 24px; }.nit-page #approach .about-steps { gap: 28px; }.nit-page #approach .about-steps li { padding-left: 65px; }.nit-page #approach .about-steps span { position: absolute; left: 0; top: 14px; }.nit-page #approach .about-steps h3 { margin-top: 0; }
+ .nit-page #models .about-practices,.nit-page #industries .about-practices,.nit-page #why .about-values,.nit-page #faq { grid-template-columns: 1fr; }.nit-page #expertise h3 { min-height: 0; }.nit-bridge { grid-template-columns: 1fr; padding: 28px; gap: 22px; }.nit-bridge-symbol { width: 48px; height: 48px; transform: rotate(90deg); }.nit-page #industries .about-practice { border-top: 0; border-left: 3px solid #a99fe1; }.nit-page #why .about-values { gap: 0; }.nit-page .about-close { padding: 45px 22px; }.nit-page .about-close .launch-actions { flex-direction: column; }
+}
+@media(prefers-reduced-motion:reduce) { .nit-page *,.nit-page *::before,.nit-page *::after { animation: none !important; transition: none !important; }.nit-motion-ready .nit-page .about-reveal { opacity: 1; transform: none; } }
+@media (max-width: 760px) {
+  .nit-composition { min-height: 470px; }
+  .nit-float-people { top: 12px; }
+  .nit-float-process { top: auto; bottom: 38px; left: 0; right: auto; }
+  .nit-float-progress { bottom: 8px; right: 0; }
+  .nit-star-one { top: 55px; }
+}
+
+/* Sections 03–06: consistent reading widths and clearly separated content. */
+.nit-page :is(#models,#bridge,#industries,#why) .about-split { align-items: center; grid-template-columns: 1.05fr 1fr; gap: 64px; }
+.nit-page :is(#models,#bridge,#industries,#why) h2 { max-width: 19ch; line-height: 1.13; letter-spacing: -.045em; }
+.nit-page :is(#models,#bridge,#industries,#why) h3 { max-width: none; width: auto; text-wrap: initial; word-break: normal; overflow-wrap: normal; hyphens: none; line-height: 1.35; letter-spacing: -.025em; }
+.nit-page :is(#models,#bridge,#industries,#why) .about-prose p { margin-bottom: 12px; }
+.nit-page #models .about-practices { gap: 18px; }
+.nit-page #models .about-practice { position: relative; padding: 30px; border: 1px solid var(--about-line); border-radius: 14px; background: var(--about-card); display: flex; flex-direction: column; align-items: flex-start; transition: border-color .25s, background .25s; }
+.nit-page #models .about-practice:hover { border-color: var(--about-accent); background: color-mix(in srgb,var(--about-accent) 4%,var(--about-card)); }
+.nit-page #models .about-practice>span { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 8px; background: color-mix(in srgb,var(--about-accent) 10%,transparent); letter-spacing: .04em; }
+.nit-page #models h3 { font-size: 24px; margin: 19px 0 10px; }
+.nit-page #models .nit-model-fit { font-size: 11px; line-height: 1.5; padding: 6px 10px; border-radius: 4px; color: var(--about-accent); background: color-mix(in srgb,var(--about-accent) 7%,transparent); margin: 0 0 18px; }
+.nit-page #models .about-practice>p:last-child { font-size: 14px; line-height: 1.8; }
+.nit-page #bridge .about-split { align-items: start; }
+.nit-page #bridge .nit-bridge { background: var(--about-card); color: var(--about-ink); padding: 0; gap: 0; border: 1px solid var(--about-line); overflow: hidden; grid-template-columns: 1fr 70px 1fr; }
+.nit-page #bridge .nit-bridge>div { padding: 40px; }
+.nit-page #bridge .nit-bridge>div>span { color: var(--about-accent); }
+.nit-page #bridge .nit-bridge strong { font-size: 27px; line-height: 1.3; }
+.nit-page #bridge .nit-bridge p { color: var(--about-muted); line-height: 1.8; font-size: 14px; }
+.nit-page #bridge .nit-bridge-symbol { width: 54px; height: 54px; background: #c9c2ff; color: #3f3868; font-size: 28px; }
+.nit-page #industries .about-practices { grid-template-columns: repeat(6,minmax(0,1fr)); gap: 18px; }
+.nit-page #industries .about-practice { grid-column: span 2; border: 1px solid var(--about-line); padding: 28px; display: flex; flex-direction: column; align-items: flex-start; }
+.nit-page #industries .about-practice:nth-last-child(-n+2) { grid-column: span 3; }
+.nit-industry-symbol { width: 44px; height: 44px; display: grid; place-items: center; background: #dcebe5; color: #386353; border-radius: 11px; font-size: 23px; margin-bottom: 22px; }
+.nit-page #industries .about-practice:nth-child(2n) .nit-industry-symbol { background: #e2ddfa; color: #625584; }
+.nit-page #industries .about-practice>span { font-size: 9px; }
+.nit-page #industries h3 { font-size: 22px; margin: 10px 0 13px; }
+.nit-page #industries .about-practice p { font-size: 14px; line-height: 1.8; }
+.nit-page #why { overflow: visible; isolation: auto; }
+.nit-page #why .about-values-glow { display: none; }
+.nit-page #why .about-values { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; }
+.nit-page #why .about-value { display: grid; grid-template-columns: 46px minmax(0,1fr); align-content: start; column-gap: 20px; padding: 30px; border: 1px solid var(--about-line); border-radius: 14px; background: var(--about-card); transition: border-color .25s; }
+.nit-page #why .about-value:hover { transform: none; border-color: var(--about-accent); }
+.nit-page #why .about-value-index { grid-row: span 2; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: color-mix(in srgb,var(--about-accent) 9%,transparent); color: var(--about-accent); font-size: 12px; letter-spacing: .03em; opacity: 1; }
+.nit-page #why h3 { font-size: 22px; margin: 6px 0 12px; }
+.nit-page #why .about-value p { grid-column: 2; font-size: 14px; line-height: 1.8; }
+@media(max-width:1050px) {
+ .nit-page :is(#models,#bridge,#industries,#why) .about-split { gap: 32px; }
+ .nit-page #industries .about-practices { grid-template-columns: repeat(2,minmax(0,1fr)); }
+ .nit-page #industries .about-practice,.nit-page #industries .about-practice:nth-last-child(-n+2) { grid-column: auto; }
+ .nit-page #industries .about-practice:last-child { grid-column: 1 / -1; }
+ .nit-page #why .about-value { padding: 24px; column-gap: 14px; }
+ .nit-page #bridge .nit-bridge>div { padding: 28px; }
+}
+@media(max-width:760px) {
+ .nit-page :is(#models,#bridge,#industries,#why) .about-split { grid-template-columns: 1fr; gap: 24px; }
+ .nit-page :is(#models,#bridge,#industries,#why) h2 { font-size: clamp(32px,8.5vw,44px); }
+ .nit-page #models .about-practices,.nit-page #industries .about-practices,.nit-page #why .about-values { grid-template-columns: 1fr; gap: 14px; }
+ .nit-page #models .about-practice,.nit-page #industries .about-practice { padding: 24px; }
+ .nit-page #why .about-value { grid-template-columns: 36px minmax(0,1fr); padding: 24px 20px; gap: 0 14px; }
+ .nit-page #why .about-value-index { width: 34px; height: 34px; }
+ .nit-page #why h3 { font-size: 20px; margin-top: 3px; }
+ .nit-page #why .about-value p { grid-column: 1 / -1; margin-top: 4px; }
+ .nit-page #bridge .nit-bridge { grid-template-columns: 1fr; }
+ .nit-page #bridge .nit-bridge-symbol { margin-left: 28px; width: 44px; height: 44px; }
+}

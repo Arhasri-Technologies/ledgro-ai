@@ -14,6 +14,8 @@ export default defineConfig({
         blogs: resolve(import.meta.dirname, 'blogs.html'),
         blogArticle: resolve(import.meta.dirname, 'blog-article.html'),
         about: resolve(import.meta.dirname, 'about.html'),
+        nonItConsulting: resolve(import.meta.dirname, 'non-it-consulting.html'),
+        digitalMarketing: resolve(import.meta.dirname, 'digital-marketing.html'),
       },
     },
   },
