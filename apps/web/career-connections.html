@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#0a0908" />
+    <meta name="description" content="DataServ Career Connections: IT staffing, professional placement, career counseling, and alumni networking." />
+    <title>Career Connections | DataServ Inc.</title>
+    <script>
+      (function () {
+        var k = 'ledgro-theme';
+        var t = localStorage.getItem(k);
+        if (!t) t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.dataset.theme = t;
+      })();
+    </script>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/src/typography.css" />
+    <link rel="stylesheet" href="/src/theme.css" />
+    <link rel="stylesheet" href="/src/site-header.css" />
+    <link rel="stylesheet" href="/src/career-center.css" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="career-page home-page">
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="dataserv-header site-header">
+      <div class="header-shell">
+        <a class="brand" href="/" aria-label="DataServ Inc. home"><img src="/assets/logo.png" alt="DataServ Inc." width="170" height="40" /></a>
+        <button type="button" class="nav-menu-toggle" aria-expanded="false" aria-controls="site-primary-nav" aria-label="Open menu"><span aria-hidden="true"></span></button>
+        <nav class="header-nav header-nav--main" id="site-primary-nav" aria-label="Main navigation">
+          <a class="nav-link" href="/about.html">About</a>
+          <div class="nav-item nav-item--dropdown">
+            <button type="button" class="nav-trigger" aria-expanded="false" aria-controls="nav-services-menu" aria-haspopup="true">Services <span class="nav-chevron" aria-hidden="true"></span></button>
+            <div class="nav-dropdown nav-mega nav-mega--services" id="nav-services-menu">
+              <div class="nav-mega-head">
+                <p class="nav-mega-kicker">Services vertical</p>
+                <h3 class="nav-mega-title">Build, market &amp; advise</h3>
+                <p class="nav-mega-desc">Four practices — from rapid app delivery to digital marketing and IT &amp; non-IT consulting, with Vela AI where it helps.</p>
+              </div>
+              <div class="nav-mega-grid">
+                <a class="nav-mega-card" role="menuitem" href="/app-development.html"><span class="nav-mega-icon" aria-hidden="true">01</span><span class="nav-mega-card-body"><strong class="nav-mega-card-title">App development</strong><span class="nav-mega-card-desc">Custom web, mobile &amp; enterprise software — 10-day delivery or fully managed builds.</span></span><span class="nav-mega-arrow" aria-hidden="true">↗</span></a>
+                <a class="nav-mega-card" role="menuitem" href="/digital-marketing.html"><span class="nav-mega-icon" aria-hidden="true">02</span><span class="nav-mega-card-body"><strong class="nav-mega-card-title">Digital marketing</strong><span class="nav-mega-card-desc">AI-driven content, social, storytelling &amp; ad campaigns that stay on-brand.</span></span><span class="nav-mega-arrow" aria-hidden="true">↗</span></a>
+                <a class="nav-mega-card" role="menuitem" href="/it-consulting.html"><span class="nav-mega-icon" aria-hidden="true">03</span><span class="nav-mega-card-body"><strong class="nav-mega-card-title">IT consulting</strong><span class="nav-mega-card-desc">Cloud, integration, ERP, architecture &amp; AI readiness — from roadmap to rollout.</span></span><span class="nav-mega-arrow" aria-hidden="true">↗</span></a>
+                <a class="nav-mega-card" role="menuitem" href="/non-it-consulting.html"><span class="nav-mega-icon" aria-hidden="true">04</span><span class="nav-mega-card-body"><strong class="nav-mega-card-title">Non-IT consulting</strong><span class="nav-mega-card-desc">HR, recruitment, operations &amp; process advisory aligned with your tech stack.</span></span><span class="nav-mega-arrow" aria-hidden="true">↗</span></a>
+              </div>
+              <div class="nav-mega-foot"><a href="/#services">Explore all services <span aria-hidden="true">→</span></a></div>
+            </div>
+          </div>
+          <div class="nav-item nav-item--dropdown">
+            <button type="button" class="nav-trigger" aria-expanded="false" aria-controls="nav-products-menu" aria-haspopup="true">Products <span class="nav-chevron" aria-hidden="true"></span></button>
+            <div class="nav-dropdown nav-mega nav-mega--products" id="nav-products-menu">
+              <div class="nav-mega-head">
+                <p class="nav-mega-kicker">Products vertical</p>
+                <h3 class="nav-mega-title">Powered by vel.ai</h3>
+                <p class="nav-mega-desc">Run the business on Ledgro SaaS or orchestrate software delivery with the Vela AI agent platform.</p>
+              </div>
+              <div class="nav-mega-grid nav-mega-grid--duo">
+                <a class="nav-mega-card nav-mega-card--product" role="menuitem" href="/ledgro.html"><span class="nav-mega-badge" aria-hidden="true">L</span><span class="nav-mega-card-body"><strong class="nav-mega-card-title">Ledgro</strong><span class="nav-mega-card-desc">Global SaaS — multi-region ERP, gate-to-gate automation, web, mobile, admin &amp; desktop.</span></span><span class="nav-mega-arrow" aria-hidden="true">↗</span></a>
+                <a class="nav-mega-card nav-mega-card--product nav-mega-card--vel" role="menuitem" href="/vela.html"><span class="nav-mega-badge" aria-hidden="true">V</span><span class="nav-mega-card-body"><strong class="nav-mega-card-title">vel.ai</strong><span class="nav-mega-card-desc">Agent orchestration for planning, engineering, validation &amp; continuous software evolution.</span></span><span class="nav-mega-arrow" aria-hidden="true">↗</span></a>
+              </div>
+              <div class="nav-mega-foot"><a href="/contact.html?demo=ledgro">Request Ledgro demo <span aria-hidden="true">→</span></a></div>
+            </div>
+          </div>
+          <a class="nav-link" href="/blogs.html">Blogs</a>
+          <div class="nav-item nav-item--dropdown">
+            <button type="button" class="nav-trigger" aria-expanded="false" aria-controls="nav-careers-menu" aria-haspopup="true" aria-current="page">Careers <span class="nav-chevron" aria-hidden="true"></span></button>
+            <div class="nav-dropdown nav-mega nav-mega--services" id="nav-careers-menu">
+              <div class="nav-mega-head">
+                <p class="nav-mega-kicker">Careers</p>
+                <h3 class="nav-mega-title">Connect &amp; grow</h3>
+                <p class="nav-mega-desc">Placement, counseling, and openings across the DataServ career network.</p>
+              </div>
+              <div class="nav-mega-grid">
+                <a class="nav-mega-card" role="menuitem" href="/career-center.html"><span class="nav-mega-icon" aria-hidden="true">01</span><span class="nav-mega-card-body"><strong class="nav-mega-card-title">Career Center</strong><span class="nav-mega-card-desc">Growth &amp; learning resources</span></span><span class="nav-mega-arrow" aria-hidden="true">↗</span></a>
+                <a class="nav-mega-card" role="menuitem" href="/hr.html"><span class="nav-mega-icon" aria-hidden="true">02</span><span class="nav-mega-card-body"><strong class="nav-mega-card-title">HR</strong><span class="nav-mega-card-desc">People &amp; culture</span></span><span class="nav-mega-arrow" aria-hidden="true">↗</span></a>
+                <a class="nav-mega-card" role="menuitem" href="/join-our-team.html"><span class="nav-mega-icon" aria-hidden="true">03</span><span class="nav-mega-card-body"><strong class="nav-mega-card-title">Join Our Team</strong><span class="nav-mega-card-desc">Why work with us</span></span><span class="nav-mega-arrow" aria-hidden="true">↗</span></a>
+                <a class="nav-mega-card" role="menuitem" href="/interview-process.html"><span class="nav-mega-icon" aria-hidden="true">04</span><span class="nav-mega-card-body"><strong class="nav-mega-card-title">Interview Process</strong><span class="nav-mega-card-desc">Tips &amp; expectations</span></span><span class="nav-mega-arrow" aria-hidden="true">↗</span></a>
+                <a class="nav-mega-card" role="menuitem" href="/career-connections.html" aria-current="page"><span class="nav-mega-icon" aria-hidden="true">05</span><span class="nav-mega-card-body"><strong class="nav-mega-card-title">Career Connections</strong><span class="nav-mega-card-desc">Networking &amp; placement</span></span><span class="nav-mega-arrow" aria-hidden="true">↗</span></a>
+                <a class="nav-mega-card" role="menuitem" href="/current-openings.html"><span class="nav-mega-icon" aria-hidden="true">06</span><span class="nav-mega-card-body"><strong class="nav-mega-card-title">Current Openings</strong><span class="nav-mega-card-desc">Open positions</span></span><span class="nav-mega-arrow" aria-hidden="true">↗</span></a>
+              </div>
+              <div class="nav-mega-foot"><a href="/career-center.html">Explore careers <span aria-hidden="true">→</span></a></div>
+            </div>
+          </div>
+          <a class="nav-link" href="/contact.html">Talk to Us</a>
+        </nav>
+        <div class="header-utilities">
+          <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="Activate light mode"><span class="theme-toggle-icon" aria-hidden="true">☀</span></button>
+          <a class="header-cta header-cta--primary" href="/contact.html?intent=vel"><span>Start Building</span><i aria-hidden="true">→</i></a>
+        </div>
+      </div>
+    </header>
+    <main id="main">
+      <section class="cc-hero" aria-labelledby="cc-title">
+        <div id="career-shader" class="cc-shader"></div>
+        <div class="cc-scrim" aria-hidden="true"></div>
+        <div class="cc-hero-copy">
+          <p class="cc-kicker">Professional Network</p>
+          <h1 id="cc-title">Career Connections</h1>
+          <p>Connect with opportunities, build your network, and advance your career through our professional placement and networking services.</p>
+          <div class="cc-actions">
+            <a class="cc-primary" href="/contact.html">Get Connected <span aria-hidden="true">↗</span></a>
+            <a class="cc-secondary" href="/current-openings.html">View Open Positions <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+
+      <nav class="cc-jump" aria-label="Career Connections sections">
+        <a href="#services"><span>01</span> Services</a>
+        <a href="#industries"><span>02</span> Industries</a>
+        <a href="#path"><span>03</span> Path</a>
+        <a href="#alumni"><span>04</span> Alumni</a>
+      </nav>
+
+      <section class="cc-section" id="services" aria-labelledby="services-title">
+        <p class="cc-kicker">Our Services</p>
+        <div class="cc-head">
+          <h2 id="services-title">Professional Career Services</h2>
+          <p>From IT staffing to career counseling, we provide comprehensive services to help you succeed in the AI-driven job market.</p>
+        </div>
+        <div class="cc-grid">
+          <article class="cc-card">
+            <span class="cc-index">01</span>
+            <h3>IT Staffing</h3>
+            <p>Connect with top technology talent for your organization's needs.</p>
+            <ul class="cc-tags"><li>Contract &amp; permanent placements</li><li>Technical skill assessments</li><li>Fast turnaround times</li></ul>
+          </article>
+          <article class="cc-card">
+            <span class="cc-index">02</span>
+            <h3>Professional Placement</h3>
+            <p>Find your next career opportunity with personalized placement services.</p>
+            <ul class="cc-tags"><li>AI &amp; ML roles</li><li>Cloud architecture</li><li>Full-stack development</li></ul>
+          </article>
+          <article class="cc-card">
+            <span class="cc-index">03</span>
+            <h3>Career Counseling</h3>
+            <p>One-on-one guidance to navigate your technology career path.</p>
+            <ul class="cc-tags"><li>Career path planning</li><li>Skill gap analysis</li><li>Industry insights</li></ul>
+          </article>
+          <article class="cc-card">
+            <span class="cc-index">04</span>
+            <h3>Industry Networking</h3>
+            <p>Connect with professionals and companies in your field.</p>
+            <ul class="cc-tags"><li>Tech meetups</li><li>Executive introductions</li><li>Industry events</li></ul>
+          </article>
+          <article class="cc-card">
+            <span class="cc-index">05</span>
+            <h3>Resume &amp; Profile</h3>
+            <p>Optimize your professional presence for the AI era.</p>
+            <ul class="cc-tags"><li>AI-optimized resumes</li><li>LinkedIn optimization</li><li>Portfolio review</li></ul>
+          </article>
+          <article class="cc-card">
+            <span class="cc-index">06</span>
+            <h3>Upskilling Programs</h3>
+            <p>Stay competitive with training in emerging technologies.</p>
+            <ul class="cc-tags"><li>AI/ML bootcamps</li><li>Cloud certifications</li><li>Leadership training</li></ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="proof" aria-label="Placement results">
+        <div class="cc-stats">
+          <div><strong>5,000+</strong><span>Professionals Placed</span></div>
+          <div><strong>200+</strong><span>Partner Companies</span></div>
+          <div><strong>95%</strong><span>Placement Success Rate</span></div>
+          <div><strong>48hrs</strong><span>Average Response Time</span></div>
+        </div>
+      </section>
+
+      <section class="cc-section" id="industries" aria-labelledby="industries-title">
+        <p class="cc-kicker">Industries We Serve</p>
+        <div class="cc-head">
+          <h2 id="industries-title">Connecting Talent Across Sectors</h2>
+          <p>We place professionals in leading organizations across diverse industries.</p>
+        </div>
+        <div class="cc-grid">
+          <article class="cc-card"><span class="cc-index">01</span><h3>Healthcare &amp; Life Sciences</h3></article>
+          <article class="cc-card"><span class="cc-index">02</span><h3>Financial Services</h3></article>
+          <article class="cc-card"><span class="cc-index">03</span><h3>Technology &amp; SaaS</h3></article>
+          <article class="cc-card"><span class="cc-index">04</span><h3>Retail &amp; E-Commerce</h3></article>
+          <article class="cc-card"><span class="cc-index">05</span><h3>Manufacturing</h3></article>
+          <article class="cc-card"><span class="cc-index">06</span><h3>Logistics &amp; Supply Chain</h3></article>
+          <article class="cc-card"><span class="cc-index">07</span><h3>Government</h3></article>
+          <article class="cc-card"><span class="cc-index">08</span><h3>Education</h3></article>
+          <article class="cc-card"><span class="cc-index">09</span><h3>Energy &amp; Utilities</h3></article>
+          <article class="cc-card"><span class="cc-index">10</span><h3>Media &amp; Entertainment</h3></article>
+        </div>
+      </section>
+
+      <section class="cc-section" id="path" aria-labelledby="path-title">
+        <p class="cc-kicker">How It Works</p>
+        <div class="cc-head">
+          <h2 id="path-title">Your Path to Success</h2>
+          <p>Submit your profile, meet an advisor, get matched, and start the role.</p>
+        </div>
+        <div class="cc-grid cc-grid--quad">
+          <article class="cc-card"><span class="cc-index">01</span><h3>Submit Profile</h3><p>Share your resume and career goals with us.</p></article>
+          <article class="cc-card"><span class="cc-index">02</span><h3>Consultation</h3><p>Meet with a career advisor for personalized guidance.</p></article>
+          <article class="cc-card"><span class="cc-index">03</span><h3>Matching</h3><p>We identify opportunities aligned with your skills.</p></article>
+          <article class="cc-card"><span class="cc-index">04</span><h3>Placement</h3><p>Interview, onboard, and start your new role.</p></article>
+        </div>
+      </section>
+
+      <section class="cc-section" id="alumni" aria-labelledby="alumni-title">
+        <p class="cc-kicker">Alumni Network</p>
+        <div class="cc-head">
+          <h2 id="alumni-title">Stay Connected After You Leave</h2>
+          <p>Our alumni network keeps you connected to DataServ even after you move on. Access exclusive opportunities, events, and a community of professionals who share your experience.</p>
+        </div>
+        <div class="cc-grid cc-grid--quad">
+          <article class="cc-card"><span class="cc-index">01</span><h3>Job board</h3><p>Exclusive alumni job board and referral program.</p></article>
+          <article class="cc-card"><span class="cc-index">02</span><h3>Meetups</h3><p>Annual alumni meetups and tech conferences.</p></article>
+          <article class="cc-card"><span class="cc-index">03</span><h3>Community</h3><p>Private Slack community with 1000+ members.</p></article>
+          <article class="cc-card"><span class="cc-index">04</span><h3>Mentorship</h3><p>Mentorship opportunities for current employees.</p></article>
+        </div>
+      </section>
+
+      <section aria-label="Alumni network">
+        <div class="cc-stats cc-stats--3">
+          <div><strong>1,200+</strong><span>Alumni Members</span></div>
+          <div><strong>45+</strong><span>Countries</span></div>
+          <div><strong>250+</strong><span>Companies</span></div>
+        </div>
+      </section>
+
+      <section class="cc-section cc-close" id="start" aria-labelledby="start-title">
+        <div id="start-arc" class="cc-arc" aria-hidden="true"></div>
+        <p class="cc-kicker">Next</p>
+        <h2 id="start-title">Ready to Connect?</h2>
+        <p class="cc-lead">Whether you're seeking new opportunities or looking for top talent, let's start a conversation about how we can help.</p>
+        <div class="cc-actions">
+          <a class="cc-primary" href="/contact.html">Contact Us <span aria-hidden="true">↗</span></a>
+          <a class="cc-secondary" href="/current-openings.html">View Open Positions <span aria-hidden="true">↗</span></a>
+        </div>
+        <nav class="cc-related" aria-label="More career pages">
+          <a href="/career-center.html">Career Center</a>
+          <a href="/hr.html">HR</a>
+          <a href="/join-our-team.html">Join Our Team</a>
+          <a href="/interview-process.html">Interview Process</a>
+          <a href="/current-openings.html">Current Openings</a>
+        </nav>
+      </section>
+    </main>
+    <footer class="cc-footer">
+      <a class="brand" href="/" aria-label="DataServ home"><img src="/assets/logo.png" alt="DataServ Inc." width="145" height="34" /></a>
+      <p>New Hampshire, USA · Software, people, and delivery.</p>
+      <nav aria-label="Footer">
+        <a href="/">Home</a>
+        <a href="/career-connections.html">Career Connections</a>
+        <a href="/career-center.html">Career Center</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/blogs.html">Blogs</a>
+      </nav>
+      <small>© 2026 DataServ Inc.</small>
+    </footer>
+    <script type="module" src="/src/career-center.jsx"></script>
+    <script type="module" src="/src/theme.js"></script>
+    <script type="module" src="/src/header-nav.js"></script>
+  </body>
+</html>

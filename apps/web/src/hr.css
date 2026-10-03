@@ -1,0 +1,104 @@
+.hr-page .cc-hero--wall,
+html[data-theme='light'] .hr-page .cc-hero--wall {
+  background: #061018;
+  color: #f4f7fb;
+}
+.hr-page .cc-hero--wall .cc-scrim,
+html[data-theme='light'] .hr-page .cc-hero--wall .cc-scrim {
+  background: linear-gradient(90deg, #061018f2 0%, #061018c4 36%, #06101866 58%, transparent 78%);
+}
+.hr-page .cc-hero--wall .cc-kicker { color: #8ecbff; }
+.hr-page .cc-hero--wall .cc-secondary { color: #f4f7fb; border-color: #ffffff55; }
+
+.hr-scene {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 48% 42%, #1a3d6e 0%, #0b1c33 46%, #04080f 100%);
+}
+.hr-wires {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: #16365c;
+  stroke-width: 1.4;
+  opacity: 0.85;
+}
+.hr-set { position: absolute; inset: 0; }
+.hr-tv {
+  position: absolute;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #1a1c22, #07080b);
+  box-shadow: 0 22px 40px #000a, inset 0 0 0 1px #ffffff18;
+  transform: rotate(var(--r, 0deg));
+}
+.hr-tv::after {
+  content: "";
+  position: absolute;
+  right: 12%;
+  bottom: 6%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff5a2a;
+  box-shadow: 0 0 8px #ff5a2a;
+}
+.hr-screen {
+  position: absolute;
+  inset: 8% 8% 16%;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #05070c;
+  box-shadow: inset 0 0 24px #000c, 0 0 18px #7eb6ff22;
+}
+.hr-screen canvas,
+.hr-crt,
+.hr-crt .threeui-background,
+.hr-crt canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.hr-screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(#0000 0 2px, #00000055 2px 3px);
+  pointer-events: none;
+}
+
+.hr-points {
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.hr-points li {
+  position: relative;
+  padding-left: 14px;
+  color: var(--cc-muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+.hr-points li + li { margin-top: 6px; }
+.hr-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--cc-accent);
+}
+
+@media (max-width: 640px) {
+  .hr-page .cc-hero--wall .cc-scrim,
+  html[data-theme='light'] .hr-page .cc-hero--wall .cc-scrim {
+    background: linear-gradient(#06101800 0%, #061018e8 42%, #061018 100%);
+  }
+  .hr-tv:nth-child(n + 7) { display: none; }
+}
