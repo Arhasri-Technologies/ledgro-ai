@@ -27,13 +27,7 @@ document.addEventListener('visibilitychange', () => {
   hero.classList.toggle('atmosphere-hidden', document.hidden);
 });
 
-const routeColors = { vel: 0x1a6bff, team: 0x00dfff, ledgro: 0x1a6bff };
-let activeColor = routeColors.vel;
-hero.querySelectorAll('.launch-route').forEach(link => {
-  const highlight = () => { activeColor = routeColors[link.dataset.route]; };
-  link.addEventListener('pointerenter', highlight);
-  link.addEventListener('focus', highlight);
-});
+const activeColor = 0x1a6bff;
 let paused = reduced.matches;
 const motion = document.getElementById('launch-motion');
 function updateMotion() {

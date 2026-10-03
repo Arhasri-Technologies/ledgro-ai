@@ -85,3 +85,216 @@ html[data-theme='light'] .blogs-page .about-footer p,
 html[data-theme='light'] .blogs-page .about-footer small,
 html[data-theme='light'] .blogs-page .about-footer nav a { color: var(--site-muted); }
 html[data-theme='light'] .blogs-page .about-footer nav a:hover { color: var(--site-text); }
+
+/* Layout the About redesign removed, still used here. Logo navy / blue / cyan. */
+.blogs-page .about-wrap {
+  width: min(1180px, calc(100% - clamp(48px, 10vw, 176px)));
+  margin-inline: auto;
+  padding: clamp(56px, 8vh, 96px) 0;
+  scroll-margin-top: 110px;
+}
+.blogs-page .blog-hero { display: block; min-height: 0; }
+.blogs-page:has(#blog-signal) { background: transparent; }
+.blogs-page .blog-signal,
+.blogs-page > .expertise-drift {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.blogs-page .blog-signal { opacity: 0.92; }
+.blogs-page > .expertise-drift { opacity: 0.85; }
+.blogs-page main,
+.blogs-page .about-footer { position: relative; z-index: 1; }
+.blogs-page .blog-hero-copy {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: start;
+  gap: 55px;
+}
+html[data-theme='light'] .blogs-page .blog-signal { opacity: 0.62; }
+.blogs-page .blog-hero h1 { font-size: clamp(42px, 4.6vw, 72px); text-wrap: balance; }
+.blogs-page .about-eyebrow {
+  margin: 0 0 18px;
+  font: 600 11px/1.6 var(--font-reading, Inter, sans-serif);
+  letter-spacing: 0.16em;
+  color: var(--brand-logo-cyan);
+}
+.blogs-page .about-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 22px;
+  border-radius: 6px;
+  background: linear-gradient(125deg, var(--brand-logo-blue), var(--brand-logo-cyan));
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+}
+.blogs-page .about-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--brand-logo-blue) 55%, transparent);
+  color: var(--brand-logo-cyan);
+  font-size: 14px;
+  text-decoration: none;
+}
+.blogs-page .blog-hero h1 em {
+  background: linear-gradient(110deg, var(--brand-logo-blue) 8%, var(--brand-logo-cyan) 62%, #fff 92%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+html[data-theme='dark'] .blogs-page {
+  --j-ink: color-mix(in srgb, #fff 94%, var(--brand-logo-cyan));
+  --j-muted: color-mix(in srgb, var(--brand-logo-blue) 24%, #9eb4c8);
+  --j-line: color-mix(in srgb, var(--brand-logo-blue) 36%, transparent);
+  --j-card: color-mix(in srgb, var(--brand-logo-navy) 78%, #0a2048);
+  --j-node: color-mix(in srgb, var(--brand-logo-blue) 42%, var(--brand-logo-navy));
+  --j-shield: color-mix(in srgb, var(--brand-logo-cyan) 16%, #eef6ff);
+  background: var(--brand-logo-navy);
+  color: var(--j-ink);
+}
+html[data-theme='dark'] .blogs-page :is(
+  .blog-intro, .editors-label, .editor small, .editor em, .editors-note,
+  .journal-search, .author-select, #feed-status, #empty, .article-excerpt,
+  .article-meta, .article-category, .reading-paths article > span,
+  .reading-paths p, .journal-end > span
+) { color: var(--j-muted); }
+html[data-theme='dark'] .blogs-page :is(.journal-editors, .editor, .journal-paths, .article-meta) { border-color: var(--j-line); }
+html[data-theme='dark'] .blogs-page .editor { color: var(--j-ink); }
+html[data-theme='dark'] .blogs-page .editor b,
+html[data-theme='dark'] .blogs-page .editor:hover strong { color: var(--brand-logo-cyan); }
+html[data-theme='dark'] .blogs-page :is(.editor img, .article-author img) { border-color: var(--j-line); }
+html[data-theme='dark'] .blogs-page :is(.journal-search input, .author-select select) {
+  background: color-mix(in srgb, var(--brand-logo-navy) 72%, #020814);
+  border-color: var(--j-line);
+  color: var(--j-ink);
+}
+html[data-theme='dark'] .blogs-page .journal-search input::placeholder { color: var(--j-muted); }
+html[data-theme='dark'] .blogs-page .journal-controls button {
+  border-color: var(--j-line);
+  background: transparent;
+  color: var(--j-ink);
+}
+html[data-theme='dark'] .blogs-page .journal-controls button[aria-pressed='true'] {
+  background: var(--brand-logo-cyan);
+  border-color: var(--brand-logo-cyan);
+  color: var(--brand-logo-navy);
+}
+html[data-theme='dark'] .blogs-page .journal-card {
+  background: var(--j-card);
+  border-color: var(--j-line);
+  color: var(--j-ink);
+}
+html[data-theme='dark'] .blogs-page .journal-featured {
+  background: color-mix(in srgb, var(--brand-logo-cyan) 14%, #eef5ff);
+  border-color: color-mix(in srgb, var(--brand-logo-blue) 24%, #fff);
+  color: var(--brand-logo-navy);
+}
+html[data-theme='dark'] .blogs-page .journal-featured :is(.article-excerpt, .article-meta, .article-category) {
+  color: color-mix(in srgb, var(--brand-logo-navy) 55%, var(--brand-logo-blue));
+}
+html[data-theme='dark'] .blogs-page .journal-featured .about-text-link {
+  color: var(--brand-logo-blue);
+  border-bottom-color: var(--brand-logo-blue);
+}
+html[data-theme='dark'] .blogs-page .article-art {
+  background: color-mix(in srgb, var(--brand-logo-blue) 26%, var(--brand-logo-navy));
+  color: color-mix(in srgb, #fff 82%, var(--brand-logo-cyan));
+}
+html[data-theme='dark'] .blogs-page .art-ethics {
+  background: color-mix(in srgb, var(--brand-logo-cyan) 16%, var(--brand-logo-navy));
+  color: color-mix(in srgb, #fff 88%, var(--brand-logo-cyan));
+}
+html[data-theme='dark'] .blogs-page .reading-paths article { border-left-color: var(--j-line); }
+html[data-theme='dark'] .blogs-page .about-footer { border-top-color: var(--j-line); }
+html[data-theme='dark'] .blogs-page .about-footer :is(p, small, nav a) { color: var(--j-muted); }
+html[data-theme='dark'] .blogs-page .about-footer nav a:hover { color: var(--brand-logo-cyan); }
+
+html[data-theme='light'] .blogs-page {
+  --j-node: color-mix(in srgb, var(--brand-logo-blue) 16%, #fff);
+  --j-shield: #fff;
+  background: #f4f8ff;
+  color: var(--brand-logo-navy);
+}
+html[data-theme='light'] .blogs-page .about-eyebrow,
+html[data-theme='light'] .blogs-page .about-text-link { color: var(--brand-logo-blue); }
+html[data-theme='light'] .blogs-page .about-text-link { border-bottom-color: color-mix(in srgb, var(--brand-logo-blue) 45%, transparent); }
+html[data-theme='light'] .blogs-page .blog-hero h1 em {
+  background: linear-gradient(110deg, var(--brand-logo-navy), var(--brand-logo-blue) 48%, var(--brand-logo-cyan));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+html[data-theme='light'] .blogs-page :is(
+  .blog-intro, .editors-label, .editor small, .editor em, .editors-note,
+  .journal-search, .author-select, #feed-status, #empty, .article-excerpt,
+  .article-meta, .reading-paths article > span, .reading-paths p, .journal-end > span,
+  .about-footer p, .about-footer small, .about-footer nav a
+) { color: color-mix(in srgb, var(--brand-logo-navy) 48%, #6b8494); }
+html[data-theme='light'] .blogs-page .about-footer nav a:hover,
+html[data-theme='light'] .blogs-page .editor,
+html[data-theme='light'] .blogs-page .journal-card { color: var(--brand-logo-navy); }
+html[data-theme='light'] .blogs-page :is(.journal-editors, .editor, .journal-paths, .article-meta, .editor img, .article-author img) {
+  border-color: color-mix(in srgb, var(--brand-logo-blue) 18%, #c5d4e8);
+}
+html[data-theme='light'] .blogs-page .editor b,
+html[data-theme='light'] .blogs-page .editor:hover strong,
+html[data-theme='light'] .blogs-page .article-category { color: var(--brand-logo-blue); }
+html[data-theme='light'] .blogs-page :is(.journal-search input, .author-select select, .journal-card) {
+  background: #fff;
+  border-color: color-mix(in srgb, var(--brand-logo-blue) 18%, #c5d4e8);
+  color: var(--brand-logo-navy);
+}
+html[data-theme='light'] .blogs-page .journal-controls button {
+  border-color: color-mix(in srgb, var(--brand-logo-blue) 22%, #c5d4e8);
+  background: #fff;
+  color: var(--brand-logo-navy);
+}
+html[data-theme='light'] .blogs-page .journal-controls button[aria-pressed='true'] {
+  background: var(--brand-logo-blue);
+  border-color: var(--brand-logo-blue);
+  color: #fff;
+}
+html[data-theme='light'] .blogs-page .journal-featured {
+  background: color-mix(in srgb, var(--brand-logo-cyan) 16%, #fff);
+  border-color: color-mix(in srgb, var(--brand-logo-blue) 28%, #fff);
+  color: var(--brand-logo-navy);
+}
+html[data-theme='light'] .blogs-page .article-art {
+  background: color-mix(in srgb, var(--brand-logo-blue) 8%, #f4f8ff);
+  color: var(--brand-logo-navy);
+}
+html[data-theme='light'] .blogs-page .art-ethics {
+  background: color-mix(in srgb, var(--brand-logo-cyan) 14%, #fff);
+  color: var(--brand-logo-navy);
+}
+html[data-theme='light'] .blogs-page .reading-paths article { border-left-color: color-mix(in srgb, var(--brand-logo-blue) 28%, #d5e4f5); }
+html[data-theme='light'] .blogs-page .about-footer {
+  background: color-mix(in srgb, var(--brand-logo-blue) 5%, #f4f8ff);
+  border-top-color: color-mix(in srgb, var(--brand-logo-blue) 16%, #d5e4f5);
+}
+html[data-theme] .blogs-page:has(#blog-signal) { background: transparent; }
+html[data-theme='dark'] .blogs-page:has(#blog-signal) :is(.journal-card, .article-art, .art-ethics) {
+  background-color: color-mix(in srgb, var(--brand-logo-navy) 62%, transparent);
+}
+html[data-theme='dark'] .blogs-page:has(#blog-signal) .journal-featured {
+  background-color: color-mix(in srgb, #eef6ff 86%, transparent);
+}
+html[data-theme='light'] .blogs-page:has(#blog-signal) :is(.journal-card, .article-art, .art-ethics, .about-footer) {
+  background-color: color-mix(in srgb, #f4f8ff 78%, transparent);
+}
+html[data-theme='light'] .blogs-page:has(#blog-signal) :is(.journal-search input, .author-select select) {
+  background-color: color-mix(in srgb, #fff 88%, transparent);
+}
+@media (max-width: 760px) {
+  .blogs-page .about-wrap { width: min(1180px, calc(100% - 40px)); padding: 48px 0; }
+  .blogs-page .blog-hero-copy { grid-template-columns: 1fr; gap: 20px; }
+}

@@ -1,0 +1,120 @@
+/* Keep the opening two sections consistent without changing other pages. */
+#home.reach,
+#vision.signal-hero {
+  --font-display: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
+}
+#home.reach :is(h1, p, a, span, button),
+#vision.signal-hero :is(h2, p, a, span, button) {
+  font-family: inherit;
+}
+#home.reach h1,
+#vision.signal-hero h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(40px, 5.3vw, 80px);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+#home.reach h1 em,
+#vision.signal-hero h2 em {
+  display: inline;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  letter-spacing: inherit;
+  line-height: inherit;
+}
+#home .reach-lead,
+#vision .signal-description {
+  font-size: clamp(14px, 1.15vw, 17px);
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0;
+  max-width: 44ch;
+  margin: 26px 0 32px;
+}
+#home .reach-kicker,
+#vision .signal-eyebrow {
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.14em;
+}
+#home .reach-actions a,
+#vision .signal-actions a { font-size: 13px; font-weight: 500; }
+#home .reach-caption { font-family: 'Poppins', sans-serif; }
+@media (max-width: 760px) {
+  #home.reach h1,
+  #vision.signal-hero h2 { font-size: clamp(36px, 8.5vw, 58px); }
+}
+
+/* Center the opening message over the globe with a balanced contrast layer. */
+#home.reach { text-align: center; }
+#home .reach-copy { width: 100%; max-width: 1040px; margin-inline: auto; min-width: 0; }
+#home .reach-kicker,
+#home .reach-actions { justify-content: center; }
+#home.reach h1 { font-size: clamp(38px, 5.5vw, 82px); font-weight: 600; line-height: 1.13; }
+#home.reach h1 em {
+  background-image: linear-gradient(100deg, #d5e5ff 0%, #86b4ff 40%, #48d9ff 100%);
+  filter: drop-shadow(0 3px 22px #268bff40);
+}
+#home .reach-lead { margin-inline: auto; max-width: 54ch; color: #c2cee1; }
+#home .reach-caption { left: 24px; right: 24px; text-align: center; }
+#home.reach::before {
+  background: radial-gradient(ellipse at 50% 48%, #040c1bbd 0%, #040c1b66 48%, #040c1b26 75%),
+    linear-gradient(0deg, #060d1d 0%, transparent 25%, transparent 80%, #060d1d66);
+}
+@media (max-width: 760px) {
+  #home.reach h1 { font-size: clamp(36px, 8vw, 58px); }
+  #home .reach-actions { gap: 18px 24px; }
+}
+
+/* A quiet dark header continues the globe's backdrop in either page theme. */
+.home-page .site-header.dataserv-header,
+html[data-theme='light'] .home-page .site-header.dataserv-header {
+  --header-h: 78px;
+  --header-glass: #060d1de8;
+  background: #060d1de8;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+.home-page .site-header.dataserv-header::after { opacity: .25; }
+.home-page .site-header .header-nav--main > .nav-link,
+.home-page .site-header .header-nav--main > .nav-item > .nav-trigger,
+.home-page .site-header .nav-trigger { color: #b9c8dc; }
+.home-page .site-header .nav-link:hover,
+.home-page .site-header .nav-trigger:hover { color: #fff; }
+.home-page .site-header .brand img { filter: brightness(0) invert(1); width: 112px; }
+.home-page .site-header .header-cta {
+  background: #1a4dff;
+  box-shadow: none;
+  color: #fff;
+}
+.home-page .site-header .theme-toggle,
+.home-page .site-header .header-menu-toggle { color: #dce8ff; background: #12213a; }
+@media (max-width: 760px) {
+  .home-page .site-header.dataserv-header { --header-h: 72px; }
+}
+
+/* Let the opening globe show through; keep the original logo legible. */
+.home-page .site-header.dataserv-header:not(.is-scrolled),
+html[data-theme='light'] .home-page .site-header.dataserv-header:not(.is-scrolled) {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+.home-page .site-header.dataserv-header:not(.is-scrolled)::after { display: none; }
+.home-page .site-header .brand {
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #fff;
+}
+.home-page .site-header .brand img { filter: none; }
+.home-page .site-header.dataserv-header { margin-bottom: calc(-1 * var(--header-h)) !important; }

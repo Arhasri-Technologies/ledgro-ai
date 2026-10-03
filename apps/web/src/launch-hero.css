@@ -11,7 +11,7 @@ html[data-theme=light] .launch-hero{--launch-ink:#142c50;--launch-muted:#536781;
 .launch-hero .route-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(22px,1.8vw,26px);font-weight:600;letter-spacing:-.035em}
 .launch-hero .route-name b{font-weight:700}
 .launch-hero .route-badge{font-family:var(--font-reading,'Inter',sans-serif);font-weight:500}
-@media(max-width:480px){.home-page .site-header .header-shell{grid-template-columns:1fr auto auto;gap:12px;padding-left:24px;padding-right:24px}.home-page .site-header .brand img{width:130px}.home-page .site-header .header-utilities{grid-column:3;grid-row:1}.home-page .site-header .nav-menu-toggle{grid-column:2;grid-row:1}.home-page .site-header .header-cta{display:none}.home-page .site-header .header-nav--main{grid-column:1/-1;width:100%;min-width:0}.launch-assurance{gap:9px}.launch-assurance span+span:before{margin-right:9px}}
+@media(max-width:480px){.home-page .site-header .header-shell{grid-template-columns:1fr auto auto;gap:12px;padding-left:24px;padding-right:24px}.home-page .site-header .brand img{width:104px}.home-page .site-header .header-utilities{grid-column:3;grid-row:1}.home-page .site-header .nav-menu-toggle{grid-column:2;grid-row:1}.home-page .site-header .header-cta{display:none}.home-page .site-header .header-nav--main{grid-column:1/-1;width:100%;min-width:0}.launch-assurance{gap:9px}.launch-assurance span+span:before{margin-right:9px}}
 /* A living product story in the blue and cyan of the DataServ mark. */
 .launch-hero{--story-surface:#0d1e3a;--story-soft:#183054;--story-shadow:#0005;background:radial-gradient(ellipse at 85% 18%,#123b772e,transparent 50%),#070e20}
 .launch-grid{animation:blueprint-drift 24s linear infinite;opacity:.8}

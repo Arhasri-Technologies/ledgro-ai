@@ -1,6 +1,7 @@
 // Lower-page WebGL scenes are initialized only as they approach the viewport.
 const loaders = new Map([
-  [document.querySelector('.intro-animated'), () => import('./intro-scene.js')],
+  [document.querySelector('.intro-animated'), () => Promise.all([import('./intro-scene.js'), import('./intro-particles.jsx')])],
+  [document.querySelector('.reach'), () => import('./reach-globe.js')],
   [document.querySelector('.connected'), () => import('./connected.js')],
 ]);
 const lazy = new IntersectionObserver(entries => {
@@ -14,7 +15,7 @@ for (const element of loaders.keys()) if (element) lazy.observe(element);
 const motion = new IntersectionObserver(entries => {
   for (const entry of entries) entry.target.classList.toggle('scene-out-of-view', !entry.isIntersecting);
 });
-for (const element of document.querySelectorAll('.dataserv-hero,.intro-animated,.expertise-animated,.ticker,.hero-marquee,.dataserv-partner')) motion.observe(element);
+for (const element of document.querySelectorAll('.dataserv-hero,.intro-animated,.reach,.expertise-animated,.ticker,.hero-marquee,.dataserv-partner')) motion.observe(element);
 
 const partner = document.querySelector('#partner');
 if (partner) {

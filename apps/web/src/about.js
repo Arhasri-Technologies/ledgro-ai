@@ -59,3 +59,9 @@ const sectionObserver = new IntersectionObserver((entries) => {
   })
 }, { rootMargin: '-20% 0px -55% 0px', threshold: 0 })
 jumpLinks.forEach((link) => { const section = document.querySelector(link.hash); if (section) sectionObserver.observe(section) })
+
+// Keep navigation readable after leaving the transparent opening position.
+const aboutHeader = document.querySelector('.about-page .dataserv-header');
+const syncAboutHeader = () => aboutHeader?.classList.toggle('is-scrolled', window.scrollY > 20);
+window.addEventListener('scroll', syncAboutHeader, { passive: true });
+syncAboutHeader();

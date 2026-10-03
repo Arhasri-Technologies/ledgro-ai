@@ -418,3 +418,43 @@ html[data-theme='light'] .home-page .launch-starfield {
   fill: var(--brand-logo-navy);
 }
 
+.services-set {
+  width: min(1180px, calc(100% - clamp(32px, 8vw, 120px)));
+  max-width: calc(100vw - 32px);
+  margin: 0 auto 72px;
+  display: grid;
+  gap: 14px;
+  box-sizing: border-box;
+}
+.services-set-label {
+  font: 11px/1.4 var(--font-reading, Inter, sans-serif);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--site-muted, #9badc6);
+}
+.services-set div { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; min-width: 0; }
+.services-set a {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  min-height: 72px;
+  padding: 16px 18px;
+  border: 1px solid var(--site-border, #ffffff22);
+  border-radius: 8px;
+  color: inherit;
+  font-size: 15px;
+  line-height: 1.3;
+  text-decoration: none;
+}
+.services-set a span { font-size: 11px; letter-spacing: 0.08em; color: var(--site-accent, #39bdff); }
+.services-set a[aria-current='page'] { border-color: var(--site-accent, #39bdff); }
+.services-set a:hover { border-color: var(--site-accent, #39bdff); }
+.about-footer nav { flex-wrap: wrap; row-gap: 8px; }
+@media (max-width: 800px) {
+  .services-set div { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 520px) {
+  .services-set div { grid-template-columns: 1fr; }
+}
+

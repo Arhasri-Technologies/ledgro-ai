@@ -2,6 +2,7 @@ const header = document.querySelector('.site-header')
 if (!header) {
   /* no shared header on this page */
 } else {
+  addEventListener('scroll', () => header.classList.toggle('is-scrolled', scrollY > 20), { passive: true })
   const menuToggle = header.querySelector('.nav-menu-toggle')
   const dropdownItems = [...header.querySelectorAll('.nav-item--dropdown')]
 

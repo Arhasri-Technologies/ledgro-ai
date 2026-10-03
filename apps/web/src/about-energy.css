@@ -1,0 +1,27 @@
+/* Layout surrounds the exact ThreeUI canvas without recoloring it. */
+.about-page #about-energy-background {
+  position: absolute; inset: 0; z-index: 0; overflow: hidden;
+  pointer-events: none; background: #030303;
+}
+.about-page #about-energy-background > .predictive-arc { width: 100%; height: 100%; }
+.about-page #about-energy-background::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(90deg, #030303d9, #03030366 48%, transparent);
+}
+.about-page .blueprint-sphere { display: none; }
+/* This authored dark scene remains dark even when the rest of About is light. */
+html[data-theme] .about-page .launch-hero {
+  --launch-ink: #eff6ff; --launch-muted: #bec6dc;
+  --launch-accent: #c5adff; --launch-line: #c5adff40;
+  --about-ink: #eff6ff; --about-muted: #bec6dc;
+  --about-accent: #c5adff; --about-line: #c5adff40; --about-card: #100e22c9;
+  background: #030303; color: #eff6ff;
+}
+html[data-theme] .about-page .launch-hero h1 { color: #eff6ff; }
+html[data-theme] .about-page .launch-hero h1 em {
+  background: linear-gradient(100deg, #e1d5ff, #b494ff);
+  background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+html[data-theme] .about-page .launch-hero .about-blueprint { background: #100e2270; border-color: #c5adff40; }
+html[data-theme] .about-page .launch-secondary { color: #dfd3ff; }
+html[data-theme] .about-page .launch-primary { background: #b494ff; color: #160e2b; }

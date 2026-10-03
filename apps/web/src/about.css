@@ -489,3 +489,45 @@ html.about-paused .delivery-scene { animation: none !important; }
   .build-block { width: 210px; }.block-three { transform: translateX(-10px) rotate(3deg); }
   .quality-card { width: 225px; padding: 22px; }.quality-card strong { font-size: 22px; }
 }
+
+/* Light surfaces need their own hero palette, not the dark launch defaults. */
+html[data-theme='light'] .about-page .launch-hero {
+  --launch-ink: #142c50;
+  --launch-muted: #4d627e;
+  --launch-line: #24548a2e;
+  --launch-accent: #165dce;
+  background: #f4f8ff;
+  color: var(--launch-ink);
+}
+.about-page .launch-topline,
+.about-page .launch-main { position: relative; z-index: 1; }
+.about-page .launch-hero h1 em {
+  display: inline;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  margin: 0;
+}
+html[data-theme='light'] .about-page .launch-hero h1 { color: #142c50; }
+html[data-theme='light'] .about-page .launch-hero h1 em {
+  color: #165dce;
+  background: linear-gradient(110deg, #194abb, #08799f);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+html[data-theme='light'] .about-page .launch-primary { background: #165dce; color: #fff; }
+html[data-theme='light'] .about-page .launch-secondary { color: #174f9b; border-color: #9eb9dc; }
+html[data-theme='light'] .about-page .about-blueprint {
+  background: #ffffffd9;
+  border-color: #c9d9ee;
+  box-shadow: 0 16px 48px #244b7910;
+}
+html[data-theme='light'] .about-page :is(.about-practice, .about-path li, .about-value, .delivery-workbench) {
+  background: #fff;
+  border-color: #d3dfef;
+  box-shadow: 0 8px 28px #244b7908;
+}
+html[data-theme='light'] .about-page :is(.about-band h2, .about-practice h3, .about-value h3, .about-path h3) { color: #142c50; }
+html[data-theme='light'] .about-page .about-footer { background: #eaf1fb; border-top: 1px solid #c9d9ee; }

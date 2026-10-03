@@ -601,7 +601,7 @@ html[data-theme='light'] .site-header .header-cta {
   }
 
   .site-header.mobile-nav-open .header-nav--main {
-    max-height: 1200px;
+    max-height: 1800px;
     opacity: 1;
     padding-bottom: 12px;
   }
@@ -672,3 +672,6 @@ html[data-theme='light'] .site-header .header-cta {
     transition: none;
   }
 }
+
+.it-page .launch-hero,
+.nit-page .launch-hero { padding-top: 112px; }
