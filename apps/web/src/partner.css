@@ -1,4 +1,5 @@
 /* Closing invitation: product, connection, and practical understanding. */
+.dataserv-partner[hidden]{display:none!important}
 .dataserv-partner{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:0 32px;align-items:center;isolation:isolate;padding:100px 7% 65px;background:radial-gradient(ellipse at 100% 0%,#20545070,transparent 60%),#081b23;border-top:1px solid #34565d}
 .dataserv-partner:before{width:150px;background:linear-gradient(90deg,#b5ebd8,transparent)}
 .dataserv-partner .partner-intro{position:relative;grid-column:1;grid-row:1;min-width:0;max-width:850px}

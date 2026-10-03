@@ -7,11 +7,11 @@ function initIntroScene() {
   if (!canvas || !stage || !disk || !section || typeof THREE === 'undefined') return;
 
   const COL = {
-    shell: 0x206272,
+    shell: 0x0a2048,
     land: 0xffffff,
-    arc: 0x9fdde4,
+    arc: 0x00dfff,
     pulse: 0xffffff,
-    live: 0xd45d7a,
+    live: 0x1a6bff,
   };
 
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -19,7 +19,6 @@ function initIntroScene() {
   let hoverX = 0;
   let hoverY = 0;
   let time = 0;
-  let scrollShift = 0;
   let drag = false;
   let px = 0;
   let py = 0;
@@ -137,9 +136,9 @@ function initIntroScene() {
     const rim = new THREE.Mesh(
       new THREE.SphereGeometry(R * 1.03, 48, 48),
       new THREE.MeshBasicMaterial({
-        color: 0x88e9ed,
+        color: 0x1a6bff,
         transparent: true,
-        opacity: 0.12,
+        opacity: 0.06,
         side: THREE.BackSide,
       }),
     );
@@ -167,8 +166,8 @@ function initIntroScene() {
   }
 
   function updateCamera() {
-    camera.position.set(scrollShift * 0.12, scrollShift * 0.22, zoom - scrollShift * 0.08);
-    camera.lookAt(scrollShift * 0.08, scrollShift * 0.14, 0);
+    camera.position.set(0, 0, zoom);
+    camera.lookAt(0, 0, 0);
   }
   updateCamera();
 
@@ -186,14 +185,6 @@ function initIntroScene() {
   new IntersectionObserver((e) => {
     active = e[0].isIntersecting;
   }, { threshold: 0.02 }).observe(section);
-
-  function onScroll() {
-    const rect = section.getBoundingClientRect();
-    const vh = window.innerHeight;
-    scrollShift = Math.max(-1, Math.min(1, (vh * 0.45 - rect.top) / vh));
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
 
   stage.addEventListener('pointerdown', (e) => {
     drag = true;
@@ -227,16 +218,6 @@ function initIntroScene() {
       hoverY *= 0.6;
     }
   });
-  stage.addEventListener(
-    'wheel',
-    (e) => {
-      e.preventDefault();
-      zoom = Math.max(2.85, Math.min(4.2, zoom + e.deltaY * 0.002));
-      updateCamera();
-    },
-    { passive: false },
-  );
-
   function tick(t) {
     requestAnimationFrame(tick);
     if (!active || document.hidden) { tick.last=t; return; }
@@ -248,7 +229,6 @@ function initIntroScene() {
     if (!paused && !reduced && !drag) {
       time += dt;
       rotY += dt * 0.05;
-      rotY += scrollShift * dt * 0.22;
       if (hot) hot.scale.setScalar(1 + Math.sin(time * 3.2) * 0.12);
 
       travelers.forEach((tr) => {

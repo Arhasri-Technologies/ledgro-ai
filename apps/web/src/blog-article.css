@@ -525,3 +525,67 @@
   .article-hero-art .article-art-label {letter-spacing:.08em}
   .blog-article-page .article-end>a {display:inline-flex;margin:10px 6px}
 }
+
+html[data-theme='light'] .blog-article-page .article-read-progress { background: #d5e3ea; }
+html[data-theme='light'] .blog-article-page .article-read-progress span { background: linear-gradient(90deg, #0e8f62, #1a6bff); }
+html[data-theme='light'] .blog-article-page .blog-article-status,
+html[data-theme='light'] .blog-article-page .article-dek,
+html[data-theme='light'] .blog-article-page .article-hero-byline,
+html[data-theme='light'] .blog-article-page .article-hero-byline .author-role,
+html[data-theme='light'] .blog-article-page .article-hero-byline .byline-stats,
+html[data-theme='light'] .blog-article-page .toc-label,
+html[data-theme='light'] .blog-article-page .article-toc li:before,
+html[data-theme='light'] .blog-article-page .source-kicker,
+html[data-theme='light'] .blog-article-page .article-source-footer p,
+html[data-theme='light'] .blog-article-page .rail-author:before,
+html[data-theme='light'] .blog-article-page .rail-author span,
+html[data-theme='light'] .blog-article-page .rail-author p,
+html[data-theme='light'] .blog-article-page .rail-facts dt,
+html[data-theme='light'] .blog-article-page .article-end > span { color: var(--site-muted); }
+html[data-theme='light'] .blog-article-page .blog-article-back { color: #0e6b4a; }
+html[data-theme='light'] .blog-article-page .blog-article-back:hover { color: #0a4a34; }
+html[data-theme='light'] .blog-article-page .article-hero,
+html[data-theme='light'] .blog-article-page .article-hero-byline,
+html[data-theme='light'] .blog-article-page .article-source-footer,
+html[data-theme='light'] .blog-article-page .article-end,
+html[data-theme='light'] .blog-article-page .article-toc li,
+html[data-theme='light'] .blog-article-page .rail-facts div + div { border-color: var(--site-border); }
+html[data-theme='light'] .blog-article-page #article-title,
+html[data-theme='light'] .blog-article-page .article-hero-byline strong,
+html[data-theme='light'] .blog-article-page .blog-article-body h2,
+html[data-theme='light'] .blog-article-page .blog-article-body h3,
+html[data-theme='light'] .blog-article-page .rail-author strong,
+html[data-theme='light'] .blog-article-page .rail-facts dd { color: var(--site-text); }
+html[data-theme='light'] .blog-article-page .article-hero-byline img,
+html[data-theme='light'] .blog-article-page .article-hero-art,
+html[data-theme='light'] .blog-article-page .rail-author img { border-color: var(--site-border); }
+html[data-theme='light'] .blog-article-page .article-hero-art { box-shadow: 0 18px 40px #1c466014; }
+html[data-theme='light'] .blog-article-page .article-category {
+  border-color: #b7d4c4;
+  color: #1f6b4e;
+}
+html[data-theme='light'] .blog-article-page .article-toc,
+html[data-theme='light'] .blog-article-page .rail-card {
+  background: var(--site-surface);
+  border-color: var(--site-border);
+}
+html[data-theme='light'] .blog-article-page .article-toc a { color: #1a3d32; }
+html[data-theme='light'] .blog-article-page .article-toc a:hover { color: #0c7a52; border-bottom-color: #8fbfa8; }
+html[data-theme='light'] .blog-article-page .blog-article-body { color: #243c34; }
+html[data-theme='light'] .blog-article-page .blog-article-body > p:first-of-type { color: #163028; }
+html[data-theme='light'] .blog-article-page .blog-article-body li::marker,
+html[data-theme='light'] .blog-article-page .blog-article-body a { color: #0e6b4a; }
+html[data-theme='light'] .blog-article-page .blog-article-body a:hover { color: #0a4a34; }
+html[data-theme='light'] .blog-article-page .blog-article-body blockquote {
+  border-left-color: #0e8f62;
+  background: #e7f5ee;
+  color: #1a3d30;
+}
+html[data-theme='light'] .blog-article-page .blog-article-body pre {
+  background: #f3f6f8;
+  border-color: var(--site-border);
+  color: var(--site-text);
+}
+html[data-theme='light'] .blog-article-page :is(.article-toc a, .blog-article-back, .about-text-link, .about-button):focus-visible {
+  outline-color: #0e6b4a;
+}

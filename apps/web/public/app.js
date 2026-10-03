@@ -1,7 +1,9 @@
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 let paused=reduced;
-const motion=document.querySelector('#motion');function updateMotion(){motion.textContent=paused?'PLAY MOTION':'PAUSE MOTION';motion.setAttribute('aria-pressed',String(paused));document.body.classList.toggle('motion-paused',paused)}motion.addEventListener('click',()=>{paused=!paused;updateMotion()});updateMotion();
-const film=document.querySelector('#film'),dialog=document.querySelector('#film-dialog');document.querySelector('#watch').addEventListener('click',()=>{dialog.showModal();film.play().catch(()=>{})});document.querySelector('#close-film').addEventListener('click',()=>dialog.close());dialog.addEventListener('close',()=>film.pause());dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
+const motion=document.querySelector('#motion');
+if(motion){function updateMotion(){motion.textContent=paused?'PLAY MOTION':'PAUSE MOTION';motion.setAttribute('aria-pressed',String(paused));document.body.classList.toggle('motion-paused',paused)}motion.addEventListener('click',()=>{paused=!paused;updateMotion()});updateMotion();}
+const film=document.querySelector('#film'),dialog=document.querySelector('#film-dialog'),watch=document.querySelector('#watch');
+if(watch&&dialog&&film){watch.addEventListener('click',()=>{dialog.showModal();film.play().catch(()=>{})});document.querySelector('#close-film')?.addEventListener('click',()=>dialog.close());dialog.addEventListener('close',()=>film.pause());dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});}
 document.querySelectorAll('.solutions .solution').forEach(button=>button.addEventListener('click',()=>{const open=button.classList.contains('active');document.querySelectorAll('.solutions .solution').forEach(item=>{item.classList.remove('active');item.setAttribute('aria-expanded','false');item.querySelector('.plus').textContent='+'});if(!open){button.classList.add('active');button.setAttribute('aria-expanded','true');button.querySelector('.plus').textContent='−'}}));
 const layers=[["Make complex work feel simple.", "Give people a clear way to work through web, mobile, and voice. Ledgro offers modular business applications; VEL.ai is designed for voice-first software lifecycle orchestration.", "PRODUCT EXPERIENCES", "PEOPLE & IDEAS"], ["Turn context into useful action.", "Bring models, agents, and business context into the workflow. Help people find answers, create content, and automate defined tasks with human oversight.", "ASSISTED ACTION", "BUSINESS CONTEXT"], ["Keep work moving across systems.", "Connect product modules, business tools, and approved data through APIs. Move information between systems so each action supports the next step.", "CONNECTED WORKFLOWS", "TOOLS & DATA"], ["Give intelligence a reliable base.", "Organize data, manage access, and support delivery with cloud infrastructure and monitoring. Build the foundation for dependable software as the product evolves.", "RELIABLE OPERATIONS", "DATA & INFRASTRUCTURE"]];document.querySelectorAll('[data-layer]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-layer]').forEach(x=>{x.classList.remove('chosen');x.setAttribute('aria-pressed','false')});b.classList.add('chosen');b.setAttribute('aria-pressed','true');const i=Number(b.dataset.layer),d=layers[i];document.querySelector('#layer-num').textContent='LAYER / 0'+(i+1);document.querySelector('#layer-title').textContent=d[0];document.querySelector('#layer-copy').textContent=d[1];document.querySelector('#layer-output').textContent=d[2];document.querySelector('#layer-input').textContent=d[3]}));
 if(!reduced){
@@ -25,12 +27,12 @@ if(!reduced){
     const pills=document.querySelectorAll('[data-expertise-pill]');
     const panels=[...methodTrack.querySelectorAll('.expertise-method-panel')];
     methodPin.style.setProperty('--panels',String(panels.length));
-    // phase palettes: dark teal → deep teal → mint → near-white, mirroring the scroll journey
+    // phase palettes: logo navy → cobalt → light blue → near-white
     const phases=[
-      {bg:'#071318',line:'rgba(136,233,237,.22)',title:'#e8f6f4',body:'#9fbac5',accent:'#88e9ed',muted:'#6a909c',wm:'rgba(136,233,237,.1)',stars:1,trail:.9,ink:0},
-      {bg:'#0b2a33',line:'rgba(136,233,237,.28)',title:'#ddf6f2',body:'#a9c8d0',accent:'#8ff0e8',muted:'#7ba6b0',wm:'rgba(136,233,237,.12)',stars:.8,trail:.85,ink:.1,cut:true},
-      {bg:'#cfe3e0',line:'rgba(18,48,56,.34)',title:'#123038',body:'#3f636d',accent:'#1a6b7c',muted:'#5c808a',wm:'rgba(18,48,56,.09)',stars:.14,trail:.85,ink:.85},
-      {bg:'#f1f7f5',line:'rgba(18,48,56,.3)',title:'#0d2329',body:'#425c63',accent:'#0f5866',muted:'#6b858c',wm:'rgba(18,48,56,.08)',stars:0,trail:.95,ink:1},
+      {bg:'#001233',line:'rgba(26,107,255,.22)',title:'#eaf6ff',body:'#8fa8c4',accent:'#00dfff',muted:'#5a7a9e',wm:'rgba(0,223,255,.08)',stars:1,trail:.9,ink:0},
+      {bg:'#001a4d',line:'rgba(26,107,255,.28)',title:'#e0f4ff',body:'#9bb4d0',accent:'#1a6bff',muted:'#6a8ab0',wm:'rgba(26,107,255,.1)',stars:.8,trail:.85,ink:.1,cut:true},
+      {bg:'#e8f4ff',line:'rgba(0,18,51,.2)',title:'#001233',body:'#3d5a7a',accent:'#1a6bff',muted:'#5c7290',wm:'rgba(26,107,255,.08)',stars:.14,trail:.85,ink:.85},
+      {bg:'#f4f8ff',line:'rgba(0,18,51,.18)',title:'#001233',body:'#425c7a',accent:'#00dfff',muted:'#6b849c',wm:'rgba(0,18,51,.06)',stars:0,trail:.95,ink:1},
     ];
     const hex=c=>{const m=c.match(/[\d.]+/g);if(c[0]!=='#')return m.map(Number);const h=c.slice(1);return [0,2,4].map(i=>parseInt(h.slice(i,i+2),16))};
     const mix=(a,b,t)=>{const A=hex(a),B=hex(b);const has=a.startsWith('rgba')||b.startsWith('rgba');const al=has?(Number((a.match(/[\d.]+/g)||[])[3]??1)*(1-t)+Number((b.match(/[\d.]+/g)||[])[3]??1)*t):1;const v=[0,1,2].map(i=>Math.round(A[i]+(B[i]-A[i])*t));return has?`rgba(${v.join(',')},${al.toFixed(3)})`:`rgb(${v.join(',')})`};
@@ -45,18 +47,27 @@ if(!reduced){
       s.setProperty('--phase-stars',(a.stars+(b.stars-a.stars)*t).toFixed(3));
       s.setProperty('--phase-trail',(a.trail+(b.trail-a.trail)*t).toFixed(3));
       s.setProperty('--phase-ink',(a.ink+(b.ink-a.ink)*t).toFixed(3));
-      const active=Math.round(p*(panels.length-1));pills.forEach(pill=>pill.classList.toggle('is-active',Number(pill.dataset.expertisePill)===active));
+      const active=place(p).active;pills.forEach(pill=>pill.classList.toggle('is-active',Number(pill.dataset.expertisePill)===active));
       panels.forEach((panel,i2)=>{panel.classList.toggle('is-current',i2===active);
         panel.querySelector('.expertise-method-watermark')?.style.setProperty('--wm-shift',String((p*220)-(i2*40)));});
     };
     const pinned=()=>matchMedia('(min-width:960px)').matches;
+    // Hold the active panel in the left inset so its heading and description stay intact,
+    // then slide to the next one. A continuous translate clips the first letters off-screen.
+    const place=p=>{
+      const span=panels.length-1;
+      if(span<=0)return {x:0,active:0};
+      const step=panels[1].offsetLeft-panels[0].offsetLeft;
+      const f=p*span,i=Math.min(span-1,Math.floor(f)),r=f-i;
+      const slide=r<.7?0:(r-.7)/.3;
+      return {x:(i+slide)*step,active:Math.min(span,i+(r>=.85?1:0))};
+    };
     let pinRaf=0;
     const updatePin=()=>{pinRaf=0;
       if(!pinned()){methodTrack.style.transform='';applyPhase(Math.min(1,Math.max(0,methodTrack.scrollLeft/Math.max(1,methodTrack.scrollWidth-methodTrack.clientWidth))));return}
       const total=methodPin.offsetHeight-window.innerHeight;
       const p=Math.min(1,Math.max(0,-methodPin.getBoundingClientRect().top/Math.max(1,total)));
-      const maxX=Math.max(0,methodTrack.scrollWidth-window.innerWidth*0.92);
-      methodTrack.style.transform=`translate3d(${(-p*maxX).toFixed(1)}px,0,0)`;
+      methodTrack.style.transform=`translate3d(${(-place(p).x).toFixed(1)}px,0,0)`;
       applyPhase(p);
     };
     window.addEventListener('scroll',()=>{if(!pinRaf)pinRaf=requestAnimationFrame(updatePin)},{passive:true});

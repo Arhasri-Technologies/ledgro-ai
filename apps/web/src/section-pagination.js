@@ -3,7 +3,7 @@ const links = [...navigation.querySelectorAll('.pagination-link')];
 const sections = links.map(link => document.getElementById(link.hash.slice(1)));
 const header = document.querySelector('.dataserv-header');
 const headerNavLinks = header ? [...header.querySelectorAll('.nav-link[href^="#"]')] : [];
-const headerNavForSection = { expertise: 'products' };
+const headerNavForSection = { expertise: 'products', about: 'about' };
 let scheduled = false;
 let active = -1;
 function update() {
@@ -18,7 +18,7 @@ function update() {
     else link.removeAttribute('aria-current');
   });
   navigation.querySelector('.pagination-position').textContent = `${String(index + 1).padStart(2, '0')} / ${String(links.length).padStart(2, '0')}`;
-  navigation.classList.toggle('pagination-on-light', sections[index]?.id === 'about');
+  navigation.classList.remove('pagination-on-light');
   if (header) {
     const sectionId = sections[index]?.id;
     const navId = headerNavForSection[sectionId] ?? sectionId;
@@ -34,6 +34,10 @@ function updateHeaderShell() {
 }
 window.addEventListener('scroll', () => { queueUpdate(); updateHeaderShell(); }, { passive: true });
 window.addEventListener('resize', queueUpdate, { passive: true });
+new MutationObserver(queueUpdate).observe(document.documentElement, {
+  attributes: true,
+  attributeFilter: ['data-theme'],
+});
 links.forEach((link, index) => {
   link.addEventListener('click', event => {
     event.preventDefault();

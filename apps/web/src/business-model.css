@@ -1,0 +1,1059 @@
+/* What we sell today: revenue lines behind the hero, labelled by stage. */
+.business-model {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  padding: clamp(72px, 9vw, 128px) clamp(24px, 4.6vw, 88px);
+  border-top: 1px solid var(--site-border);
+  background: var(--site-bg);
+  color: var(--site-text);
+}
+
+/* Logo hues via --brand-ui-* / --brand-fx-* (see theme.css), scoped to this section. */
+.home-page .business-model {
+  --site-accent: var(--brand-ui-accent);
+  --site-accent-deep: var(--brand-ui-deep);
+  --business-haze: var(--brand-ui-deep);
+  --business-star-color: var(--brand-fx-star);
+  --business-star-glow: var(--brand-logo-glow);
+  --business-wire-color: var(--brand-fx-wire);
+}
+
+html[data-theme='dark'] .home-page .business-model {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--brand-logo-navy) 38%, var(--site-bg)) 0%,
+    var(--site-bg) 44%,
+    var(--site-bg) 100%
+  );
+}
+
+html[data-theme='light'] .home-page .business-model {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--brand-logo-blue) 6%, var(--site-bg)) 0%,
+    var(--site-bg) 38%,
+    var(--site-bg) 100%
+  );
+}
+
+/* Accent hairline that fades across the top edge. */
+.business-model::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--brand-ui-accent) 55%, transparent) 22%,
+    color-mix(in srgb, var(--brand-ui-deep) 28%, transparent) 55%,
+    transparent
+  );
+}
+
+.business-aurora {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.business-aurora i {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.42;
+  animation: business-drift 22s ease-in-out infinite;
+}
+
+.business-aurora i:nth-child(1) {
+  top: 4%;
+  left: 2%;
+  width: 38vw;
+  height: 30vw;
+  background: radial-gradient(circle, color-mix(in srgb, var(--brand-fx-star) 22%, transparent), transparent 70%);
+}
+
+.business-aurora i:nth-child(2) {
+  top: 0;
+  right: 4%;
+  width: 32vw;
+  height: 26vw;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--brand-ui-deep) 24%, transparent),
+    transparent 70%
+  );
+  animation-delay: -7s;
+}
+
+.business-aurora i:nth-child(3) {
+  bottom: 6%;
+  left: 38%;
+  width: 34vw;
+  height: 22vw;
+  background: radial-gradient(circle, color-mix(in srgb, var(--brand-logo-navy) 28%, transparent), transparent 72%);
+  animation-delay: -14s;
+}
+
+@keyframes business-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(3%, 4%, 0) scale(1.12);
+  }
+}
+
+.business-ambient {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.26;
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--brand-fx-wire) 55%, var(--site-border)) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--brand-fx-wire) 55%, var(--site-border)) 1px, transparent 1px);
+  background-size: 76px 76px;
+  mask-image: linear-gradient(180deg, #000 0%, #000 72%, transparent 100%);
+}
+
+.business-grid {
+  position: relative;
+  z-index: 1;
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  gap: clamp(30px, 4.2vw, 52px);
+}
+
+/* ---------- Header ---------- */
+
+.business-head {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  align-items: end;
+  gap: clamp(28px, 4vw, 56px);
+}
+
+.business-model > .business-head-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  color: color-mix(in srgb, var(--business-wire-color) 72%, transparent);
+  -webkit-mask-image:
+    radial-gradient(ellipse 58% 48% at 22% 36%, #000 0%, transparent 72%),
+    linear-gradient(180deg, #000 0%, #000 46%, transparent 88%);
+  mask-image:
+    radial-gradient(ellipse 58% 48% at 22% 36%, #000 0%, transparent 72%),
+    linear-gradient(180deg, #000 0%, #000 46%, transparent 88%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+
+.business-head-main,
+.business-lead-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+/* Starfield (populated by business-model.js) */
+.business-head-starfield {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  overflow: hidden;
+  contain: strict;
+}
+
+.business-head-star {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--size);
+  height: var(--size);
+  animation: business-head-star-drift var(--duration) linear var(--delay) infinite;
+}
+
+.business-head-star::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--business-star-color);
+  box-shadow: 0 0 8px var(--business-star-glow);
+  animation: business-head-star-twinkle var(--twinkle) ease-in-out var(--delay) infinite;
+}
+
+.business-head-star--spark {
+  width: 10px;
+  height: 10px;
+}
+
+.business-head-star--spark::after {
+  border-radius: 0;
+  clip-path: polygon(50% 0, 60% 39%, 100% 50%, 60% 61%, 50% 100%, 40% 61%, 0 50%, 40% 39%);
+  filter: drop-shadow(0 0 5px var(--business-star-glow));
+}
+
+.business-head-meteor {
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  width: 96px;
+  height: 1px;
+  opacity: 0;
+  background: linear-gradient(90deg, transparent, var(--business-star-color));
+  transform: rotate(28deg);
+  animation: business-head-meteor var(--duration) linear var(--delay) infinite;
+}
+
+.business-head-meteor::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -1px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--business-star-color);
+  box-shadow: 0 0 10px 2px var(--business-star-glow);
+}
+
+/* Floating ambient sparks + star bursts */
+.business-head-ambient-sparks {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.business-head-ambient-sparks i {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--business-star-color);
+  box-shadow: 0 0 12px var(--business-star-glow);
+  opacity: 0;
+  animation: business-head-ambient-spark var(--duration) ease-in-out infinite;
+  animation-delay: var(--delay);
+}
+
+.business-head-ambient-sparks i:nth-child(3n) {
+  width: 9px;
+  height: 9px;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.business-head-ambient-sparks i:nth-child(3n)::before,
+.business-head-ambient-sparks i:nth-child(3n)::after {
+  content: '';
+  position: absolute;
+  inset: 3px 0;
+  border-radius: 2px;
+  background: var(--business-star-color);
+  filter: drop-shadow(0 0 4px var(--business-star-glow));
+}
+
+.business-head-ambient-sparks i:nth-child(3n)::after {
+  transform: rotate(90deg);
+}
+
+.business-head-ambient-sparks i:nth-child(4n) {
+  animation-name: business-head-ambient-spark, business-head-star-twinkle;
+  animation-duration: var(--duration), 4.5s;
+}
+
+.business-head-wire-stage {
+  position: absolute;
+  z-index: 1;
+  left: clamp(-2%, 0vw, 4%);
+  top: 2%;
+  width: min(520px, 52vw);
+  aspect-ratio: 480 / 360;
+  pointer-events: none;
+}
+
+.business-head-wireframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.business-head-wire-globe {
+  opacity: 0.38;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: business-head-globe-breathe 18s ease-in-out infinite;
+}
+
+.business-head-shimmer {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  background: linear-gradient(
+    108deg,
+    transparent 36%,
+    color-mix(in srgb, var(--brand-ui-accent) 12%, transparent) 50%,
+    transparent 64%
+  );
+  background-size: 240% 100%;
+  animation: business-head-shimmer 13s ease-in-out infinite;
+  mix-blend-mode: soft-light;
+}
+
+.business-head-atmosphere-hidden .business-head-star::after,
+.business-head-atmosphere-hidden .business-head-meteor,
+.business-head-atmosphere-hidden .business-head-ambient-sparks i,
+.business-head-atmosphere-hidden .business-head-shimmer,
+.business-head-atmosphere-hidden .business-head-wire-globe {
+  opacity: 0;
+}
+
+@keyframes business-head-star-drift {
+  0% {
+    transform: translate3d(-12px, 28px, 0);
+  }
+  100% {
+    transform: translate3d(36px, -92px, 0);
+  }
+}
+
+@keyframes business-head-star-twinkle {
+  0%,
+  100% {
+    opacity: 0.12;
+    transform: scale(0.6);
+  }
+  50% {
+    opacity: 0.72;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes business-head-meteor {
+  0%,
+  76% {
+    opacity: 0;
+    transform: translate3d(-120px, -72px, 0) rotate(28deg);
+  }
+  79% {
+    opacity: 0.75;
+  }
+  88% {
+    opacity: 0;
+    transform: translate3d(240px, 148px, 0) rotate(28deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(240px, 148px, 0) rotate(28deg);
+  }
+}
+
+@keyframes business-head-ambient-spark {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.5);
+  }
+  32%,
+  62% {
+    opacity: 0.58;
+  }
+  82% {
+    opacity: 0;
+    transform: translateY(-22px) scale(1.05);
+  }
+}
+
+@keyframes business-head-globe-breathe {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 0.42;
+    transform: scale(1);
+  }
+}
+
+@keyframes business-head-shimmer {
+  0%,
+  100% {
+    background-position: 130% 0;
+  }
+  50% {
+    background-position: -130% 0;
+  }
+}
+
+.business-topline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 24px;
+  margin-bottom: clamp(20px, 2.6vw, 30px);
+}
+
+.business-head .section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  color: var(--site-accent);
+  font: 11px/1.5 monospace;
+  letter-spacing: 0.14em;
+}
+
+.business-head .section-label span {
+  width: clamp(24px, 4vw, 52px);
+  height: 1px;
+  background: linear-gradient(90deg, var(--site-accent), transparent);
+}
+
+.business-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 14px 7px 10px;
+  border: 1px solid color-mix(in srgb, var(--site-accent) 32%, var(--site-border));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--site-surface) 70%, transparent);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--site-accent) 5%, transparent);
+  color: var(--site-muted);
+  font: 9px/1.4 monospace;
+  letter-spacing: 0.14em;
+  white-space: nowrap;
+}
+
+.business-kicker i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--site-accent);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--site-accent) 75%, transparent);
+  animation: business-pulse 2.6s ease-in-out infinite;
+}
+
+.business-head h2 {
+  margin: 0;
+  font-size: clamp(38px, 5vw, 72px);
+  line-height: 1.04;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  text-wrap: balance;
+}
+
+.business-head h2 em {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.03em;
+  background: linear-gradient(
+    100deg,
+    color-mix(in srgb, var(--brand-logo-navy) 70%, var(--site-text)) 0%,
+    var(--brand-ui-deep) 54%,
+    var(--brand-ui-accent) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+html[data-theme='dark'] .home-page .business-head h2 em {
+  background: linear-gradient(100deg, var(--brand-ui-deep) 12%, var(--brand-ui-accent) 92%);
+}
+
+.business-lead-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 6px;
+}
+
+.business-lead {
+  position: relative;
+  margin: 0;
+  max-width: 27rem;
+  padding-left: 20px;
+  border-left: 1px solid color-mix(in srgb, var(--site-accent) 40%, var(--site-border));
+  color: var(--site-muted);
+  font-size: clamp(15px, 1.35vw, 17px);
+  line-height: 1.8;
+  text-wrap: pretty;
+}
+
+.business-maturity {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.business-maturity li {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 14px;
+  border: 1px solid var(--site-border);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--site-surface) 82%, transparent);
+  backdrop-filter: blur(8px);
+  font-size: 11px;
+  line-height: 1.3;
+  color: var(--site-muted);
+}
+
+.business-maturity strong {
+  font-weight: 600;
+  color: var(--site-text);
+  letter-spacing: 0.01em;
+}
+
+.business-maturity span:last-child {
+  font-family: ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.business-maturity-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--site-muted) 65%, transparent);
+}
+
+.business-maturity li.is-live {
+  border-color: color-mix(in srgb, var(--site-accent) 45%, var(--site-border));
+  background: color-mix(in srgb, var(--site-accent) 10%, var(--site-surface));
+}
+
+.business-maturity li.is-live .business-maturity-dot {
+  background: var(--site-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--site-accent) 22%, transparent);
+}
+
+/* ---------- Revenue engine strip ---------- */
+
+.business-flow {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: clamp(14px, 2vw, 28px);
+  padding: clamp(14px, 1.6vw, 18px) clamp(16px, 2vw, 24px);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background:
+    linear-gradient(color-mix(in srgb, var(--site-surface) 72%, transparent), color-mix(in srgb, var(--site-surface) 55%, transparent))
+      padding-box,
+    linear-gradient(
+        100deg,
+        color-mix(in srgb, var(--site-accent) 55%, transparent),
+        color-mix(in srgb, var(--site-border) 90%, transparent) 45%,
+        color-mix(in srgb, var(--site-accent) 30%, transparent)
+      )
+      border-box;
+  backdrop-filter: blur(12px);
+}
+
+.business-flow-caption {
+  font: 9px/1.4 monospace;
+  letter-spacing: 0.2em;
+  color: var(--site-accent);
+  white-space: nowrap;
+}
+
+.business-flow-track {
+  display: grid;
+  grid-template-columns: auto 1fr auto 1fr auto;
+  align-items: center;
+  gap: 0 clamp(10px, 1.6vw, 18px);
+}
+
+.business-flow-node {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  font: 10px/1.4 monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--site-muted);
+  white-space: nowrap;
+}
+
+.business-flow-node b {
+  font-size: 9px;
+  font-weight: 500;
+  color: color-mix(in srgb, var(--site-accent) 70%, var(--site-muted));
+}
+
+.business-flow-node.is-active {
+  color: var(--site-text);
+}
+
+.business-flow-node.is-active b {
+  color: var(--site-accent);
+}
+
+.business-flow-line {
+  position: relative;
+  height: 1px;
+  min-width: 28px;
+  overflow: hidden;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--site-border) 80%, transparent),
+    color-mix(in srgb, var(--site-accent) 45%, var(--site-border))
+  );
+}
+
+/* Travelling pulse that reads as revenue moving through the engine. */
+.business-flow-line i {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 34%;
+  background: linear-gradient(90deg, transparent, var(--site-accent), transparent);
+  animation: business-travel 3.2s linear infinite;
+}
+
+.business-flow-line:nth-of-type(4) i {
+  animation-delay: 1.1s;
+}
+
+@keyframes business-travel {
+  from {
+    transform: translateX(-120%);
+  }
+  to {
+    transform: translateX(400%);
+  }
+}
+
+/* ---------- Cards ---------- */
+
+.business-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 1.8vw, 22px);
+  align-items: stretch;
+}
+
+.business-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 100%;
+  padding: clamp(24px, 2.4vw, 32px) clamp(22px, 2.2vw, 28px) 0;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background:
+    linear-gradient(
+        168deg,
+        color-mix(in srgb, var(--site-surface) 94%, var(--site-accent) 6%) 0%,
+        var(--site-surface) 46%
+      )
+      padding-box,
+    linear-gradient(
+        160deg,
+        color-mix(in srgb, var(--site-accent) 42%, transparent) 0%,
+        color-mix(in srgb, var(--site-border) 95%, transparent) 38%,
+        color-mix(in srgb, var(--site-border) 70%, transparent) 100%
+      )
+      border-box;
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--site-text) 5%, transparent) inset;
+}
+
+/* Soft top-corner glow that lifts on hover. */
+.business-card::before {
+  content: '';
+  position: absolute;
+  inset: -40% -20% auto;
+  height: 70%;
+  z-index: -1;
+  background: radial-gradient(ellipse at 50% 100%, color-mix(in srgb, var(--site-accent) 22%, transparent), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+/* Diagonal sheen sweep. */
+.business-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    115deg,
+    transparent 35%,
+    color-mix(in srgb, var(--site-accent) 12%, transparent) 50%,
+    transparent 65%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.business-card--featured {
+  background:
+    linear-gradient(
+        168deg,
+        color-mix(in srgb, var(--site-accent) 13%, var(--site-surface)) 0%,
+        var(--site-surface) 52%
+      )
+      padding-box,
+    linear-gradient(
+        160deg,
+        color-mix(in srgb, var(--site-accent) 75%, transparent) 0%,
+        color-mix(in srgb, var(--site-accent) 25%, var(--site-border)) 45%,
+        color-mix(in srgb, var(--site-border) 80%, transparent) 100%
+      )
+      border-box;
+  box-shadow:
+    0 1px 0 color-mix(in srgb, var(--site-text) 5%, transparent) inset,
+    0 20px 48px color-mix(in srgb, var(--site-accent) 10%, transparent);
+}
+
+.business-card--featured::before {
+  opacity: 0.6;
+}
+
+.business-card-index {
+  position: absolute;
+  top: 6px;
+  right: 16px;
+  z-index: -1;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(66px, 6.2vw, 92px);
+  font-style: italic;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--site-accent) 30%, transparent), transparent 85%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  pointer-events: none;
+  user-select: none;
+}
+
+.business-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: clamp(24px, 2.6vw, 32px);
+  padding-right: 2.5rem;
+  font: 10px/1.4 monospace;
+  letter-spacing: 0.14em;
+}
+
+.business-card-tag {
+  color: var(--site-accent);
+}
+
+.business-stage {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border: 1px solid var(--site-border);
+  border-radius: 999px;
+  color: var(--site-muted);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.business-stage--live {
+  border-color: color-mix(in srgb, var(--site-accent) 55%, transparent);
+  background: color-mix(in srgb, var(--site-accent) 12%, transparent);
+  color: var(--site-accent);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--site-accent) 18%, transparent);
+}
+
+.business-stage--live i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: business-pulse 2.4s ease-in-out infinite;
+}
+
+.business-stage--build {
+  border-style: dashed;
+  border-color: color-mix(in srgb, var(--site-border) 85%, var(--site-text));
+  background: color-mix(in srgb, var(--site-bg) 45%, var(--site-surface));
+}
+
+@keyframes business-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.82);
+  }
+}
+
+.business-card h3 {
+  margin: 0 0 14px;
+  padding-right: 1rem;
+  font-size: clamp(20px, 1.75vw, 25px);
+  font-weight: 500;
+  line-height: 1.26;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.business-card > p {
+  margin: 0 0 24px;
+  color: var(--site-muted);
+  font-size: 14px;
+  line-height: 1.78;
+}
+
+.business-facts {
+  margin: 0 0 24px;
+  display: grid;
+  gap: 10px;
+}
+
+.business-facts > div {
+  position: relative;
+  padding: 13px 15px 13px 17px;
+  border: 1px solid color-mix(in srgb, var(--site-border) 65%, transparent);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--site-bg) 40%, transparent);
+  overflow: hidden;
+}
+
+.business-facts > div::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--site-accent), transparent);
+  opacity: 0.55;
+}
+
+.business-facts dt {
+  color: var(--site-accent);
+  font: 9px/1.5 monospace;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.business-facts dd {
+  margin: 6px 0 0;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.business-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding: 18px 0;
+  border-top: 1px solid var(--site-border);
+  text-decoration: none;
+  color: var(--site-text);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease;
+}
+
+/* Accent underline that wipes in on hover. */
+.business-link::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 1px;
+  background: var(--site-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.business-card .business-link span {
+  color: var(--site-accent);
+  font-size: 19px;
+  transition: transform 0.25s ease;
+}
+
+.business-model a:focus-visible {
+  outline: 2px solid var(--site-accent);
+  outline-offset: 5px;
+}
+
+.motion-paused .business-aurora i,
+.motion-paused .business-flow-line i,
+.motion-paused .business-stage--live i,
+.motion-paused .business-kicker i,
+.motion-paused .business-head-star,
+.motion-paused .business-head-star::after,
+.motion-paused .business-head-meteor,
+.motion-paused .business-head-ambient-sparks i,
+.motion-paused .business-head-shimmer,
+.motion-paused .business-head-wire-globe {
+  animation-play-state: paused;
+}
+
+/* ---------- Interaction ---------- */
+
+@media (hover: hover) {
+  .business-card {
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
+  }
+
+  .business-cards .business-card:hover,
+  .business-cards .business-card:focus-within {
+    transform: translateY(-6px);
+    box-shadow:
+      0 24px 56px color-mix(in srgb, var(--site-bg) 60%, transparent),
+      0 0 0 1px color-mix(in srgb, var(--site-accent) 22%, transparent);
+  }
+
+  .business-card:hover::before,
+  .business-card:focus-within::before {
+    opacity: 1;
+  }
+
+  .business-card:hover::after,
+  .business-card:focus-within::after {
+    transform: translateX(120%);
+  }
+
+  .business-link:hover {
+    color: var(--site-accent);
+  }
+
+  .business-link:hover::after {
+    transform: scaleX(1);
+  }
+
+  .business-link:hover span {
+    transform: translate(3px, -3px);
+  }
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1180px) {
+  .business-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .business-flow {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .business-flow-track {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    justify-items: start;
+  }
+
+  .business-flow-line {
+    width: 1px;
+    min-width: 0;
+    height: 20px;
+    margin-left: 14px;
+    background: linear-gradient(180deg, color-mix(in srgb, var(--site-accent) 45%, var(--site-border)), transparent);
+  }
+
+  .business-flow-line i {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .business-head {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .business-topline {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .business-kicker {
+    white-space: normal;
+  }
+
+  .business-head-ambient-sparks i:nth-child(n + 9) {
+    display: none;
+  }
+
+  .business-head-wire-stage {
+    width: min(88vw, 400px);
+    left: -4%;
+    top: 0;
+  }
+
+  .business-head-meteor {
+    width: 64px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .business-aurora i,
+  .business-flow-line i,
+  .business-stage--live i,
+  .business-kicker i,
+  .business-head-star,
+  .business-head-star::after,
+  .business-head-meteor,
+  .business-head-ambient-sparks i,
+  .business-head-shimmer,
+  .business-head-wire-globe {
+    animation: none;
+    opacity: 0.34;
+  }
+
+  .business-head-starfield,
+  .business-head-meteor,
+  .business-head-ambient-sparks {
+    display: none;
+  }
+
+  .business-head-star::after {
+    opacity: 0.35;
+  }
+
+  .business-card,
+  .business-card::after {
+    transition: none;
+  }
+
+  .business-cards .business-card:hover,
+  .business-cards .business-card:focus-within {
+    transform: none;
+  }
+}

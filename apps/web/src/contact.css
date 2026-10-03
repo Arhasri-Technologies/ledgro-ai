@@ -523,3 +523,4 @@
   .contact-hub-inquiry-wrap,.contact-hub-pill,.contact-hub-core,.contact-hub-routed,.contact-hub-node{opacity:1}
   .contact-intent-card,.contact-hero-cta,.contact-submit,.contact-channel,.contact-direct-primary,.contact-final-cta{transition:none}
 }
+.contact-form.is-draft .contact-form-status{display:block;margin-top:24px}.contact-draft-actions{display:flex;align-items:center;flex-wrap:wrap;gap:16px;margin-top:20px}.contact-draft-actions .contact-submit{margin:0;width:auto}.contact-draft-actions button{padding:12px 18px;border:1px solid currentColor;border-radius:6px;background:transparent;color:inherit;cursor:pointer}

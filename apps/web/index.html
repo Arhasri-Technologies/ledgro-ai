@@ -3,95 +3,186 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="theme-color" content="#050b12" />
+    <meta name="theme-color" content="#001233" />
     <meta
       name="description"
-      content="Dataserv Inc. is a US-based AI software company developing AI-driven products, business automation, and integrated software systems."
+      content="Launch custom business applications with AI and an expert product team. Build it yourself with vel.ai in 10 working days, have our team build it in 7, or run your operations on Ledgro."
     />
-    <title>Dataserv Inc. | AI-Driven Software</title>
+    <title>Dataserv Inc. | Vela AI &amp; Ledgro Enterprise SaaS</title>
+    <script>
+      (function () {
+        var k = 'ledgro-theme';
+        var t = localStorage.getItem(k);
+        if (!t) t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.dataset.theme = t;
+      })();
+    </script>
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="/connected.css" />
     <link rel="stylesheet" href="/src/hero-refresh.css" />
+    <link rel="stylesheet" href="/src/launch-hero.css" />
     <link rel="stylesheet" href="/src/section-pagination.css" />
     <link rel="stylesheet" href="/src/typography.css" />
     <link rel="stylesheet" href="/src/partner.css" />
-    <link rel="stylesheet" href="/src/products.css" />
+    <link rel="stylesheet" href="/src/services-pillar.css" />
+    <link rel="stylesheet" href="/src/business-model.css" />
+    <link rel="stylesheet" href="/src/site-header.css" />
+    <link rel="stylesheet" href="/src/intro-layout.css" />
+    <link rel="stylesheet" href="/src/intro-company-spotlight.css" />
+    <link rel="stylesheet" href="/src/theme.css" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
-  <body>
+  <body class="home-page">
     <a class="skip" href="#main">Skip to content</a>
-    <header class="dataserv-header">
+    <header class="dataserv-header site-header">
       <div class="header-shell">
-        <a class="brand" href="https://www.dataservinc.com/" aria-label="DataServ Inc. home"><img src="/assets/logo.png" alt="DataServ Inc." width="170" height="40" /></a>
-        <div class="header-end">
-          <nav class="header-nav" aria-label="Main navigation">
-            <a class="nav-link" href="/about.html">About</a>
-            <a class="nav-link" href="#products">Products</a>
-            <a class="nav-link" href="/blogs.html">Blogs</a><a class="nav-link" href="#approach">Approach</a>
-          </nav>
-          <a class="header-cta" href="/contact.html"><span>Let's talk</span><i aria-hidden="true">↗</i></a>
+        <a class="brand" href="/" aria-label="DataServ Inc. home"><img src="/assets/logo.png" alt="DataServ Inc." width="170" height="40" /></a>
+        <button type="button" class="nav-menu-toggle" aria-expanded="false" aria-controls="site-primary-nav" aria-label="Open menu">
+          <span aria-hidden="true"></span>
+        </button>
+        <nav class="header-nav header-nav--main" id="site-primary-nav" aria-label="Main navigation">
+          <a class="nav-link" href="#about">About</a>
+          <div class="nav-item nav-item--dropdown">
+            <button type="button" class="nav-trigger" aria-expanded="false" aria-controls="nav-services-menu" aria-haspopup="true">
+              Services <span class="nav-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="nav-dropdown nav-mega nav-mega--services" id="nav-services-menu">
+              <div class="nav-mega-head">
+                <p class="nav-mega-kicker">Services vertical</p>
+                <h3 class="nav-mega-title">Build, market &amp; advise</h3>
+                <p class="nav-mega-desc">Four practices — from rapid app delivery to digital marketing and IT &amp; non-IT consulting, with Vela AI where it helps.</p>
+              </div>
+              <div class="nav-mega-grid">
+                <a class="nav-mega-card" role="menuitem" href="#service-app-development">
+                  <span class="nav-mega-icon" aria-hidden="true">01</span>
+                  <span class="nav-mega-card-body">
+                    <strong class="nav-mega-card-title">App development</strong>
+                    <span class="nav-mega-card-desc">Custom web, mobile &amp; enterprise software — 10-day delivery or fully managed builds.</span>
+                  </span>
+                  <span class="nav-mega-arrow" aria-hidden="true">↗</span>
+                </a>
+                <a class="nav-mega-card" role="menuitem" href="#service-digital-marketing">
+                  <span class="nav-mega-icon" aria-hidden="true">02</span>
+                  <span class="nav-mega-card-body">
+                    <strong class="nav-mega-card-title">Digital marketing</strong>
+                    <span class="nav-mega-card-desc">AI-driven content, social, storytelling &amp; ad campaigns that stay on-brand.</span>
+                  </span>
+                  <span class="nav-mega-arrow" aria-hidden="true">↗</span>
+                </a>
+                <a class="nav-mega-card" role="menuitem" href="#service-it-consulting">
+                  <span class="nav-mega-icon" aria-hidden="true">03</span>
+                  <span class="nav-mega-card-body">
+                    <strong class="nav-mega-card-title">IT consulting</strong>
+                    <span class="nav-mega-card-desc">Cloud, integration, ERP, architecture &amp; AI readiness — from roadmap to rollout.</span>
+                  </span>
+                  <span class="nav-mega-arrow" aria-hidden="true">↗</span>
+                </a>
+                <a class="nav-mega-card" role="menuitem" href="#service-non-it-consulting">
+                  <span class="nav-mega-icon" aria-hidden="true">04</span>
+                  <span class="nav-mega-card-body">
+                    <strong class="nav-mega-card-title">Non-IT consulting</strong>
+                    <span class="nav-mega-card-desc">HR, recruitment, operations &amp; process advisory aligned with your tech stack.</span>
+                  </span>
+                  <span class="nav-mega-arrow" aria-hidden="true">↗</span>
+                </a>
+              </div>
+              <div class="nav-mega-foot">
+                <a href="#services">Explore all services <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="nav-item nav-item--dropdown">
+            <button type="button" class="nav-trigger" aria-expanded="false" aria-controls="nav-products-menu" aria-haspopup="true">
+              Products <span class="nav-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="nav-dropdown nav-mega nav-mega--products" id="nav-products-menu">
+              <div class="nav-mega-head">
+                <p class="nav-mega-kicker">Products vertical</p>
+                <h3 class="nav-mega-title">Powered by Vela AI</h3>
+                <p class="nav-mega-desc">Run the business on Ledgro SaaS or orchestrate software delivery with the Vela AI agent platform.</p>
+              </div>
+              <div class="nav-mega-grid nav-mega-grid--duo">
+                <a class="nav-mega-card nav-mega-card--product" role="menuitem" href="/contact.html?demo=ledgro">
+                  <span class="nav-mega-badge" aria-hidden="true">L</span>
+                  <span class="nav-mega-card-body">
+                    <strong class="nav-mega-card-title">Ledgro</strong>
+                    <span class="nav-mega-card-desc">Global SaaS — multi-region ERP, gate-to-gate automation, web, mobile, admin &amp; desktop.</span>
+                  </span>
+                  <span class="nav-mega-arrow" aria-hidden="true">↗</span>
+                </a>
+                <a class="nav-mega-card nav-mega-card--product nav-mega-card--vel" role="menuitem" href="/contact.html?intent=vel">
+                  <span class="nav-mega-badge" aria-hidden="true">V</span>
+                  <span class="nav-mega-card-body">
+                    <strong class="nav-mega-card-title">Vela AI</strong>
+                    <span class="nav-mega-card-desc">Agent orchestration for planning, engineering, validation &amp; continuous software evolution.</span>
+                  </span>
+                  <span class="nav-mega-arrow" aria-hidden="true">↗</span>
+                </a>
+              </div>
+              <div class="nav-mega-foot">
+                <a href="/contact.html?demo=ledgro">Request Ledgro demo <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="nav-link" href="/blogs.html">Blogs</a>
+          <a class="nav-link" href="/contact.html">Talk to Us</a>
+        </nav>
+        <div class="header-utilities">
+          <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="Activate light mode">
+            <span class="theme-toggle-icon" aria-hidden="true">☀</span>
+          </button>
+          <a class="header-cta header-cta--primary" href="/contact.html?intent=vel"><span>Start Building</span><i aria-hidden="true">→</i></a>
         </div>
       </div>
     </header>
     <main id="main">
-      <section id="home" class="hero dataserv-hero" aria-labelledby="hero-title">
-  <div class="hero-atmosphere" aria-hidden="true"><div class="atmosphere-glow"></div><div class="atmosphere-dust atmosphere-dust-near"></div><div class="atmosphere-dust atmosphere-dust-far"></div></div>
-  <div class="hero-top mono"><span>DATASERV INC.<br/>AI-DRIVEN SOFTWARE.</span><span>AI PRODUCTS &amp; SOFTWARE ENGINEERING<br/>BASED IN THE UNITED STATES</span></div>
-  <div class="hero-copy hero-copy-editorial"><p class="eyebrow"><i></i> AI BUILT AROUND YOUR BUSINESS.</p><h1 id="hero-title"><span class="headline-line">AI at the core.</span><span class="headline-line">Software for</span><em class="headline-line">real work.</em></h1></div>
-  <div class="hero-art agent-scene intelligence-studio" data-step="0"><div class="intelligence-aura" aria-hidden="true"></div><div class="orbit-guide" aria-hidden="true"><span>+</span><span>+</span><span>+</span><span>+</span></div><canvas id="intelligence" aria-label="A concept animation of VEL.ai coordinating planning, engineering, and validation. Drag or use arrow keys to explore." tabindex="0"></canvas><img class="art-fallback" src="/assets/dataserv-original.png" alt=""/>
-<div class="voice-request"><div class="voice-heading"><span class="voice-icon" aria-hidden="true">⌁</span><span>START WITH A BUSINESS NEED.</span><div class="voice-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
-<div class="agent-labels"><span class="agent-planner"><i>01</i> STRATEGY<small>Intent → blueprint</small></span><span class="agent-designer"><i>02</i> DESIGN<small>Blueprint → experience</small></span><span class="agent-developer"><i>03</i> ENGINEERING<small>Experience → prototype</small></span></div>
-<div class="agent-conversation"><span aria-hidden="true">✦</span><span id="agent-message">A concept for coordinated AI agents.</span></div>
-<div class="build-timeline" aria-label="Illustrated workflow stages"><span>01 Requirements</span><i></i><span>02 Plan</span><i></i><span>03 Execute</span><i></i><span>04 Validate</span></div><div class="agent-scene-footer"><span>PLAN → EXECUTE → VALIDATE → EVOLVE</span><button id="replay-agents" type="button">Replay ↻</button></div><span class="workflow-note">VEL.AI PRODUCT VISION · CONCEPT ANIMATION</span></div>
-  <div class="hero-bottom"><div><p>US-based company. AI-driven software.<br class="desktop"/> Modular business apps with Ledgro.<br/>Software lifecycle orchestration with VEL.ai.</p><a class="text-link" href="#products">Explore our products <span>↘</span></a></div><button class="film-trigger" id="watch"><span class="play">▷</span><span>THE DATASERV FILM<small>OUR VISION, IN 15 SECONDS</small></span><span class="film-time">00:15</span></button></div>
-  <div class="hero-foot mono"><a href="#about">SCROLL TO DISCOVER <span>↓</span></a><span>IDEAS → INTELLIGENCE → IMPACT</span><button id="motion" aria-pressed="false">Ⅱ PAUSE MOTION</button></div>
-</section>
-      <div class="ticker" aria-hidden="true">
-        <div>
-          IDEAS INTO IMPACT <span>✳</span> SOFTWARE WITH INTELLIGENCE <span>✳</span> BUILT TO EVOLVE <span>✳</span> IDEAS
-          INTO IMPACT <span>✳</span> SOFTWARE WITH INTELLIGENCE <span>✳</span>
+      <section id="home" class="launch-hero" aria-labelledby="hero-title" data-route="vel">
+        <div class="launch-grid" aria-hidden="true"></div>
+        <div class="launch-topline"><span><i></i> YOUR AMBITION. OUR ENGINEERING.</span><span>BUILD / LAUNCH / SCALE</span></div>
+        <div class="launch-main">
+          <div class="launch-copy">
+            <p class="launch-eyebrow">PRODUCT DEVELOPMENT &amp; CONSULTING</p>
+            <h1 id="hero-title">Big idea.<br>Real product.<br><em>Days away.</em></h1>
+            <p class="launch-lead">Launch custom business applications with AI and an expert product team. Build it yourself with vel.ai, hand the build to our team, or run your everyday operations on Ledgro.</p>
+            <div class="launch-actions"><a class="launch-primary" href="/contact.html?intent=idea">Discuss your project <span aria-hidden="true">↗</span></a><a class="launch-secondary" href="/about.html#clients">See our client work <span aria-hidden="true">↓</span></a></div>
+          </div>
+          <div class="launch-studio" aria-label="Interactive illustration of your idea becoming a production-ready product">
+            <div class="studio-heading"><span><i></i> A BOOKING APP, FROM IDEA TO INTERFACE</span><button type="button" id="launch-motion" aria-pressed="false" aria-label="Pause hero animation">Ⅱ</button></div>
+            <div class="studio-orbit" aria-hidden="true"><canvas id="launch-canvas"></canvas><div class="studio-fallback"><span></span><span></span><span></span></div><div class="orbit-word">your idea<span>made real.</span></div>
+              <div class="build-prompt"><span class="prompt-icon">✳</span><span>“Build a booking app for my business.”</span><i></i></div>
+              <div class="build-window"><div class="build-window-bar"><span><i></i><i></i><i></i></span><span>your-booking-app.example</span><span>↗</span></div><div class="build-window-body"><div class="build-sidebar"><b>✳</b><i></i><i></i><i></i></div><div class="build-dashboard"><div class="build-dashboard-title"><span>Your booking workspace</span><b>PREVIEW</b></div><div class="build-metrics"><div><small>APPOINTMENTS</small><strong>Organized.</strong></div><div><small>CUSTOMERS</small><strong>Connected.</strong></div></div><div class="build-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="build-rows"><span></span><span></span></div></div></div></div>
+              <div class="build-notification"><span>✓</span><div>Bookings. Customers. One place.<small>Illustrative application · not a live product demo</small></div></div><span class="orbit-tag orbit-tag--one">&lt;/&gt; ENGINEERING</span><span class="orbit-tag orbit-tag--two">✳ INTELLIGENCE</span><span class="orbit-tag orbit-tag--three">↗ POSSIBILITY</span></div>
+
+          </div>
         </div>
-      </div>
-      <section class="intro section intro-animated" id="about">
-        <div class="intro-drift" aria-hidden="true">
-          <span></span><span></span><span></span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span><span></span><span></span>
+        <div class="launch-routes" id="launch-routes" aria-label="Choose your launch path">
+          <a class="launch-route" data-route="vel" href="/contact.html?intent=vel#contact-brief"><span class="route-top"><span>01 / YOU DRIVE THE BUILD</span><span aria-hidden="true">↗</span></span><span class="route-name">Build with <b>vel.ai</b><span class="route-badge">10 working days</span></span><span class="route-copy">For teams that already have written requirements. You hold every decision and vel.ai does the building, so the schedule moves at your review pace. Day 1 is the first working day after your requirements and workspace are approved.</span><span class="route-bottom">BUILD WITH VEL.AI<i aria-hidden="true">→</i></span></a>
+          <a class="launch-route" data-route="team" href="/contact.html?intent=idea#contact-brief"><span class="route-top"><span>02 / WE DRIVE THE BUILD</span><span aria-hidden="true">↗</span></span><span class="route-name">Build with <b>our team</b><span class="route-badge">7 working days</span></span><span class="route-copy">For an idea that is not a specification yet. Our consultants write the scope with you first, then a dedicated product team builds it full-time. Day 1 is the first working day after you sign off that scope.</span><span class="route-bottom">DISCUSS MY IDEA<i aria-hidden="true">→</i></span></a>
+          <a class="launch-route" data-route="ledgro" href="/contact.html?demo=ledgro#contact-brief"><span class="route-top"><span>03 / RUN YOUR OPERATIONS</span><span aria-hidden="true">↗</span></span><span class="route-name">Scale with <b>Ledgro</b><span class="route-badge">Monthly subscription</span></span><span class="route-copy">For businesses that need working software now, not a custom build. Subscribe to the modules you run on — customers, orders, invoicing, inventory — on web and mobile. We confirm which modules are live for your industry.</span><span class="route-bottom">BOOK A LEDGRO DEMO<i aria-hidden="true">→</i></span></a>
         </div>
-        <div class="intro-shimmer" aria-hidden="true"></div>
-        <div class="intro-grid">
-          <div class="intro-content">
-            <div class="section-label intro-reveal" data-delay="0">01 / OUR POINT OF VIEW</div>
-            <h2 class="intro-headline">
-              <span class="intro-line intro-reveal" data-delay="1">Great software</span>
-              <span class="intro-line intro-reveal" data-delay="2">does more than work.</span>
-              <span class="intro-line intro-line-em intro-reveal" data-delay="3">It moves you forward.</span>
-            </h2>
-            <div class="intro-bottom">
-              <span class="asterisk intro-reveal" data-delay="4" aria-hidden="true">✳</span>
-              <p class="large-copy intro-reveal" data-delay="5">
-                Dataserv Inc. is a US-based AI software company. We develop products that bring AI into everyday business
-                workflows, from finding information to handling repetitive tasks. Our focus is on software with a clear
-                purpose: useful capabilities, reviewable outputs, and a practical path from prototype to everyday use.
-              </p>
+        <div class="launch-bottom"><a href="#about">COMPANY · ABOUT US <span aria-hidden="true">↓</span></a></div>
+      </section>
+      <div class="hero-marquee" aria-hidden="true">
+        <div class="hero-marquee__viewport">
+          <div class="hero-marquee__track">
+            <div class="hero-marquee__group">
+              <span>IDEAS INTO IMPACT</span><i></i>
+              <span>SOFTWARE WITH INTELLIGENCE</span><i></i>
+              <span>BUILT TO EVOLVE</span><i></i>
             </div>
-            <div class="intro-metrics intro-reveal" data-delay="6">
-              <div class="intro-metric"><span class="intro-metric-num">Purpose-built</span><span>AI products</span></div>
-              <div class="intro-metric"><span class="intro-metric-num">Build</span><span>AI-driven software</span></div>
-              <div class="intro-metric"><span class="intro-metric-num">Evaluate</span><span>Quality &amp; business value</span></div>
+            <div class="hero-marquee__group" aria-hidden="true">
+              <span>IDEAS INTO IMPACT</span><i></i>
+              <span>SOFTWARE WITH INTELLIGENCE</span><i></i>
+              <span>BUILT TO EVOLVE</span><i></i>
             </div>
           </div>
-          <aside class="intro-stage intro-reveal" data-delay="2" aria-hidden="true">
-            <div class="intro-stage-disk intro-stage-disk--globe">
-              <div class="intro-globe-grid" aria-hidden="true"></div>
-              <canvas id="intro-visual" class="intro-canvas"></canvas>
-            </div>
-            <span class="intro-stage-hint">DRAG · SCROLL TO EXPLORE</span>
-            <span class="intro-stage-tag">AI SOFTWARE · HUMAN OVERSIGHT</span>
-          </aside>
         </div>
-      </section>
-      <section class="section expertise expertise-animated" id="expertise">
+      </div>
+      <section
+        class="intro section intro-animated intro--company-spotlight"
+        id="about"
+        aria-labelledby="about-spotlight-title"
+      >
         <div class="expertise-drift" aria-hidden="true">
           <span></span><span></span><span></span><span></span><span></span><span></span>
           <span></span><span></span><span></span><span></span><span></span><span></span>
@@ -100,62 +191,124 @@
         <div class="expertise-stream" aria-hidden="true">
           <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
         </div>
-        <div class="product-showcase" id="products" aria-labelledby="products-title">
-          <div class="product-showcase-heading"><p class="section-label">02 / OUR PRODUCTS</p><h2 id="products-title">Two products.<br /><em>Two clear purposes.</em></h2><p>One for the business you run. One for the software you imagine.</p><nav class="product-choice" aria-label="Explore our products"><a href="#ledgro-title"><span class="choice-icon" aria-hidden="true">L</span><span><small>RUN YOUR BUSINESS</small><strong>Ledgro</strong></span><span aria-hidden="true">↓</span></a><a href="#vel-title"><span class="choice-icon" aria-hidden="true">V</span><span><small>BUILD YOUR SOFTWARE</small><strong>VEL.ai <i>Product vision</i></strong></span><span aria-hidden="true">↓</span></a></nav></div>
-          <article class="product-story ledgro-story" aria-labelledby="ledgro-title">
-            <header class="product-story-header"><div><div class="product-eyebrow"><span>01 / BUSINESS, CONNECTED</span><span>MODULAR BY DESIGN</span></div><div class="product-name">Ledgro <span>BUSINESS SOFTWARE</span></div><h3 id="ledgro-title">Your business.<br /><em>Everything in its place.</em></h3></div><div><p>Start with what you need today. Make space for what comes next.</p><ul class="product-benefits"><li>Choose modules for your business</li><li>Activate with a monthly subscription</li><li>Work across web and mobile; add more as you grow</li></ul><a class="product-link" href="/contact.html">Explore Ledgro with us <span aria-hidden="true">↗</span></a></div></header>
-            <div class="ledgro-map" aria-label="How Ledgro works">
-              <div class="product-diagram-top"><span>HOW LEDGRO WORKS</span><span>EXPLORE A BUSINESS TYPE BELOW</span></div>
-              <div class="ledgro-journey">
-                <div class="ledgro-business-picker"><span class="diagram-step">01 / YOUR BUSINESS</span><div class="business-options" role="group" aria-label="Business type examples"><button type="button" data-business="rice" aria-pressed="true"><span aria-hidden="true">♧</span><span>Rice industry<small>Software for your operations</small></span><b aria-hidden="true">↗</b></button><button type="button" data-business="ecommerce" aria-pressed="false"><span aria-hidden="true">▦</span><span>Ecommerce<small>Your online business</small></span><b aria-hidden="true">↗</b></button><button type="button" data-business="dairy" aria-pressed="false"><span aria-hidden="true">◉</span><span>Dairy business<small>Software for dairy operations</small></span><b aria-hidden="true">↗</b></button></div></div>
-                <span class="diagram-arrow" aria-hidden="true">→</span>
-                <div class="ledgro-workspace"><span class="diagram-step">02 / CHOOSE &amp; ACTIVATE</span><div class="workspace-window"><div class="workspace-top"><span class="workspace-logo">L</span><strong>Ledgro</strong><span>YOUR WORKSPACE</span></div><div class="workspace-content" aria-live="polite" aria-atomic="true"><p id="business-caption">Rice industry workspace</p><h4>Your modules.<br />One place.</h4><div class="module-tiles"><span class="module-tile selected"><span aria-hidden="true">▦</span><small id="module-one">Inventory</small></span><span class="module-tile selected"><span aria-hidden="true">◇</span><small id="module-two">Purchases</small></span><span class="module-tile"><span aria-hidden="true">+</span><small>Add more</small></span></div><p class="module-example">Illustrative modules · tailored to your business</p><div class="module-subscription"><span>Monthly subscription</span><strong>Pay → Activate <span aria-hidden="true">✓</span></strong></div></div></div></div>
-                <span class="diagram-arrow" aria-hidden="true">→</span>
-                <div class="ledgro-devices"><span class="diagram-step">03 / START WORKING</span><div class="device-pair" aria-hidden="true"><div class="device-desktop"><div class="device-toolbar"><i></i><i></i><i></i></div><div class="device-screen"><aside></aside><div><b></b><span></span><span></span><span></span></div></div></div><div class="device-mobile"><i></i><b></b><span></span><span></span><span></span></div></div><h4>Web + mobile.</h4><p>Your activated modules,<br />ready for everyday work.</p><ul class="device-outcomes"><li>One connected workspace</li><li>Room to grow</li></ul></div>
-              </div>
-              <div class="business-scenario" aria-live="polite" aria-atomic="true"><span>A DAY IN YOUR BUSINESS</span><div><strong id="business-flow-start">Receive stock</strong><span aria-hidden="true">→</span><strong id="business-flow-middle">Organize inventory</strong><span aria-hidden="true">→</span><strong id="business-flow-end">Plan the next purchase</strong></div><small>Illustrative workflow</small></div><div class="diagram-bottom"><p>Different business types. One modular platform.</p><span>PRODUCT ILLUSTRATION</span></div>
+        <div class="intro-spotlight-pin">
+        <div class="intro-spotlight-bg" aria-hidden="true"></div>
+        <div class="intro-spotlight-stage">
+          <div class="intro-spotlight-orb"></div>
+          <div class="intro-spotlight-glow"></div>
+          <div class="intro-spotlight-rings">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <aside class="intro-stage intro-reveal" data-delay="2">
+            <div class="intro-stage-disk intro-stage-disk--globe">
+              <div class="intro-globe-grid" aria-hidden="true"></div>
+              <canvas id="intro-visual" class="intro-canvas"></canvas>
             </div>
-          </article>
-          <div class="product-chapter"><span>RUN THE EVERYDAY</span><i aria-hidden="true"></i><span>CREATE WHAT’S NEXT</span></div><article class="product-story vel-story" aria-labelledby="vel-title">
-            <header class="product-story-header"><div><div class="product-eyebrow"><span>02 / IDEAS, IN MOTION</span><span>BUILT AROUND YOU</span></div><div class="product-name">VEL.ai <span>PRODUCT VISION</span></div><h3 id="vel-title">An idea is only<br /><em>the beginning.</em></h3></div><div><p>From your next idea to your next release—with you in control.</p><ul class="product-benefits"><li>Describe a new project or an existing one’s next change</li><li>Coordinate specialist AI agents with your approvals</li><li>Carry decisions and evidence into every new cycle</li></ul><a class="product-link" href="/contact.html">Explore the VEL.ai vision <span aria-hidden="true">↗</span></a></div></header>
-            <div class="vel-map" aria-label="Planned VEL.ai software lifecycle">
-              <div class="product-diagram-top"><span>HOW VEL.ai IS DESIGNED TO WORK</span><span>SELECT A STAGE TO EXPLORE</span></div>
-              <div class="vel-context"><span><i aria-hidden="true"></i> YOUR PROJECT</span><p>New or existing repository</p><span class="vel-oversight">Human oversight at every stage</span></div>
-              <div class="vel-system" aria-label="Concept: your request connects to specialist agents through VEL.ai, with your review and approval">
-                <div class="vel-request"><span class="system-label">YOUR DIRECTION</span><div class="voice-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p>“Build a customer portal<br />for my business.”</p><small>Speak it. Type it. Start here.</small></div>
-                <span class="system-connector" aria-hidden="true">→</span>
-                <div class="vel-core"><span class="core-orbit" aria-hidden="true"></span><span class="core-kicker">ONE COORDINATED WORKFORCE</span><strong>VEL<span>.ai</span></strong><span class="core-caption">Context → coordination → continuity</span><span class="core-approval">You review. You approve.</span></div>
-                <span class="system-connector" aria-hidden="true">→</span>
-                <div class="vel-specialists"><span class="system-label">SPECIALIST ROLES</span><ul><li><span>01</span> Architecture &amp; planning</li><li><span>02</span> Design &amp; experience</li><li><span>03</span> Engineering &amp; data</li><li><span>04</span> Quality &amp; validation</li></ul></div>
-              </div>
-              <div class="lifecycle-label"><span>THE PATH FROM IDEA TO IMPROVEMENT</span><span>Explore each step ↓</span></div>
-              <div class="vel-stage-buttons" role="group" aria-label="Software lifecycle stages">
-                <button type="button" data-vel-stage="0" aria-pressed="true"><span class="vel-stage-number">01</span><span class="vel-stage-icon" aria-hidden="true">⌁</span><strong>Describe</strong><small>Voice or text</small></button>
-                <button type="button" data-vel-stage="1" aria-pressed="false"><span class="vel-stage-number">02</span><span class="vel-stage-icon" aria-hidden="true">⋈</span><strong>Plan &amp; approve</strong><small>Specialist agents + you</small></button>
-                <button type="button" data-vel-stage="2" aria-pressed="false"><span class="vel-stage-number">03</span><span class="vel-stage-icon" aria-hidden="true">⌘</span><strong>Build</strong><small>Coordinated execution</small></button>
-                <button type="button" data-vel-stage="3" aria-pressed="false"><span class="vel-stage-number">04</span><span class="vel-stage-icon" aria-hidden="true">✓</span><strong>Validate</strong><small>Evidence before release</small></button>
-                <button type="button" data-vel-stage="4" aria-pressed="false"><span class="vel-stage-number">05</span><span class="vel-stage-icon" aria-hidden="true">↗</span><strong>Release &amp; evolve</strong><small>Review, operate, improve</small></button>
-              </div>
-<div class="vel-stage-detail" aria-live="polite" aria-atomic="true"><span id="vel-detail-label">01 / DESCRIBE</span><h4 id="vel-detail-title">Your requirements start the work.</h4><p id="vel-detail-copy">Speak or type what you need. Choose your application targets and connect a new or existing project. Workspace permissions define which capabilities are available.</p><div class="stage-deliverable"><span>STAGE OUTPUT</span><strong id="vel-detail-output">A clear project brief</strong></div></div>
-              <div class="vel-continuity"><span aria-hidden="true">↻</span><div><strong>Project memory brings every change forward.</strong><p>Decisions, approved work, and validation evidence stay with the project for its next cycle.</p></div><span class="vel-continuity-return" aria-hidden="true">BACK TO THE NEXT IDEA ↑</span></div>
-              <div class="diagram-bottom"><p>Web · Admin · Mobile · Desktop · Websites · Media</p><span>PLANNED PRODUCT WORKFLOW</span></div>
+            <span class="intro-stage-hint">DRAG TO ROTATE</span>
+            <span class="intro-stage-tag">AI SOFTWARE · HUMAN OVERSIGHT</span>
+          </aside>
+        </div>
+        </div>
+        <div class="intro-spotlight-shell">
+          <div class="intro-spotlight-left">
+            <p class="intro-spotlight-kicker intro-reveal" data-delay="0">
+              <i aria-hidden="true"></i> Company · About us
+            </p>
+            <h2 class="intro-spotlight-title intro-reveal" data-delay="1" id="about-spotlight-title">
+              From New Hampshire,<br />
+              people and software<br />
+              <em>built to move you forward.</em>
+            </h2>
+            <div class="intro-spotlight-actions intro-reveal" data-delay="2">
+              <a class="launch-primary" href="/about.html">About DataServ <span aria-hidden="true">↗</span></a>
+              <a class="launch-secondary" href="/about.html#clients">See our client work <span aria-hidden="true">↗</span></a>
             </div>
-          </article>
-          <details class="vel-principles"><summary>Inside the VEL.ai architecture <span>PLANNED CAPABILITIES</span></summary><div class="vel-principles-grid"><article><h4>Continuity by design</h4><p>Persist project state across refreshes, restarts, and provider interruptions. Inspect and preserve existing architecture. Reuse blueprints and version agents, skills, and policies for each run.</p></article><article><h4>Permissions before execution</h4><p>Workspace entitlements define available capabilities. A saved configuration does not grant execution rights. Human and agent permissions are checked separately; server policy resolves credentials and resource access.</p></article><article><h4>Evidence before completion</h4><p>Plan, validate, approve, execute, persist, verify, and audit. Generated code enters quality checks. Keep structured results, approved summaries, and evidence—not raw model reasoning.</p></article><article><h4>Controlled local execution</h4><p>VEL Electron is intended to support approved work with project files, Git, Nx, builds, browsers, and selected desktop tools through scoped permissions.</p></article><article><h4>Connected development</h4><p>Coordinate task dependencies, Cursor execution, and GitHub branches, commits, and pull requests. Carry build, test, security, and visual evidence into preview and release decisions.</p></article><article><h4>Governed growth</h4><p>Manage provider accounts, quotas, health, usage, and workspace bindings. Improve reusable skills through controlled, versioned changes.</p></article></div></details>
+          </div>
+          <div class="intro-spotlight-right">
+            <p class="intro-spotlight-lead intro-reveal" data-delay="3">
+              Headquartered in New Hampshire, DataServ brings enterprise software and integration into today’s AI work.
+              We build the product, staff the people who run it, and stay through delivery.
+            </p>
+            <ul class="intro-spotlight-list">
+              <li class="intro-reveal" data-delay="4">
+                <svg class="intro-spotlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <path d="M3 9h18M9 3v18" />
+                </svg>
+                <div>
+                  <h3>Services that ship the work</h3>
+                  <p>Application delivery, digital marketing, and IT and operations consulting — from a clear brief to software people use.</p>
+                </div>
+              </li>
+              <li class="intro-reveal" data-delay="5">
+                <svg class="intro-spotlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+                  <path d="M12 2l8 3v6c0 5-8 11-8 11S4 16 4 11V5z" />
+                  <circle cx="12" cy="11" r="2.5" />
+                </svg>
+                <div>
+                  <h3>Products teams run every day</h3>
+                  <p>VEL.AI for agent-led software delivery, and Ledgro for modular operations on web and mobile.</p>
+                </div>
+              </li>
+              <li class="intro-reveal" data-delay="6">
+                <svg class="intro-spotlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20" />
+                </svg>
+                <div>
+                  <h3>Consulting from idea to handover</h3>
+                  <p>Strategy, design, and integration, with a team that stays until the system is running in the business.</p>
+                </div>
+              </li>
+              <li class="intro-reveal" data-delay="7">
+                <svg class="intro-spotlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+                  <circle cx="9" cy="8" r="3" />
+                  <path d="M3 19c1-3 3.2-4.5 6-4.5S14 16 15 19" />
+                  <circle cx="17" cy="9" r="2.2" />
+                  <path d="M16 14.5c2.2.3 3.8 1.6 4.8 4.5" />
+                </svg>
+                <div>
+                  <h3>Technologists who stay with the work</h3>
+                  <p>Founded by people from e-business, enterprise integration, business intelligence, and ERP. The practice still develops talent and shares knowledge across domains.</p>
+                </div>
+              </li>
+              <li class="intro-reveal" data-delay="8">
+                <svg class="intro-spotlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+                  <path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z" />
+                  <circle cx="12" cy="10" r="2.2" />
+                </svg>
+                <div>
+                  <h3>One company for systems and people</h3>
+                  <p>Software development, global outsourcing, and professional staffing — the technology and the people who put it to work.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="section expertise expertise-animated" id="expertise" aria-labelledby="expertise-framework-title">
+        <div class="expertise-drift" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="expertise-glow" aria-hidden="true"></div>
+        <div class="expertise-stream" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
         </div>
         <div class="expertise-framework expertise-reveal">
           <p class="expertise-framework-label">OUR ENGINEERING EXPERTISE</p>
-          <h2 class="expertise-framework-title">Intelligence, applied.<br /><span>Possibilities, engineered.</span></h2>
+          <h2 class="expertise-framework-title" id="expertise-framework-title">Intelligence, applied.<br /><span>Possibilities, engineered.</span></h2>
           <p class="expertise-framework-lead">
-            From choosing the right AI use case to building complete software, our work connects four concepts:
-            consulting, modular business SaaS, software lifecycle orchestration, and workflow automation. Each starts with a real
-            business need and a clear role for AI.
+            From choosing the right AI use case to building complete software, our work connects four practices:
+            app development, digital marketing, IT consulting, and operations advisory. Each starts with a real business need
+            and a clear role for AI.
           </p>
           <p class="expertise-framework-pills" aria-hidden="true">
-            <span class="is-active" data-expertise-pill="0">Consulting</span> · <span data-expertise-pill="1">SaaS</span> ·
-            <span data-expertise-pill="2">Voice AI</span> · <span data-expertise-pill="3">Automation</span>
+            <span class="is-active" data-expertise-pill="0">Build</span> · <span data-expertise-pill="1">Grow</span> ·
+            <span data-expertise-pill="2">Connect</span> · <span data-expertise-pill="3">Operate</span>
           </p>
         </div>
+        <span id="services" class="expertise-service-anchor" aria-hidden="true"></span>
         <div class="expertise-pin" id="expertise-pin">
           <div class="expertise-pin-inner">
           <div class="expertise-ink" aria-hidden="true">
@@ -165,66 +318,74 @@
           <div class="expertise-stream expertise-stream--stage" aria-hidden="true">
             <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
           </div>
-          <p class="expertise-marquee" aria-hidden="true">CONSULTING · SAAS · VOICE AI · AUTOMATION · CONSULTING · SAAS · VOICE AI · AUTOMATION ·</p>
-          <div class="expertise-method-track" id="expertise-method-track" tabindex="0" aria-label="Four AI concepts — scroll horizontally">
-            <article class="expertise-method-panel" id="expertise-panel-0">
+          <p class="expertise-marquee" aria-hidden="true">BUILD · GROW · CONNECT · OPERATE · BUILD · GROW · CONNECT · OPERATE ·</p>
+          <div class="expertise-method-track" id="expertise-method-track" tabindex="0" aria-label="Four services — scroll horizontally">
+            <article class="expertise-method-panel" id="service-app-development">
               <span class="expertise-method-watermark" aria-hidden="true">01</span>
               <div class="expertise-method-copy">
-                <h3>AI strategy &amp; consulting.</h3>
-                <p class="expertise-method-tagline">Find where AI can make a practical difference.</p>
+                <p class="expertise-method-step">01 / BUILD</p>
+                <h3>App development</h3>
+                <p class="expertise-method-tagline">Turn an idea into a working product.</p>
                 <ul class="expertise-method-list">
-                  <li>Identify useful applications based on business priorities and team workflows</li>
-                  <li>Assess data readiness, integration needs, and implementation constraints</li>
-                  <li>Define a focused roadmap with clear evaluation criteria</li>
+                  <li>Custom web, mobile, and enterprise software — 10-day delivery when requirements are clear, or fully managed builds with Vela AI agents.</li>
+                  <li>Product engineering from discovery and design through implementation, testing, and launch, with human review at the gates that matter.</li>
+                  <li>AI-enabled applications, SaaS, and integrations connected to the APIs, data, and workflows your team already uses.</li>
                 </ul>
-                <p class="expertise-method-chips">AI READINESS · USE-CASE DISCOVERY · ROADMAP</p>
+                <p class="expertise-method-chips">10-DAY DELIVERY · VEL.AI AGENTS</p>
+                <a class="expertise-method-link" href="/contact.html?service=app-development">Discuss your app <span aria-hidden="true">↗</span></a>
               </div>
             </article>
-            <article class="expertise-method-panel" id="expertise-panel-1">
+            <article class="expertise-method-panel" id="service-digital-marketing">
               <span class="expertise-method-watermark" aria-hidden="true">02</span>
               <div class="expertise-method-copy">
-                <h3>Ledgro. Business software, by module.</h3>
-                <p class="expertise-method-tagline">Web and mobile applications for different business types, in one platform.</p>
+                <p class="expertise-method-step">02 / GROW</p>
+                <h3>AI Digital marketing</h3>
+                <p class="expertise-method-tagline">Bring your brand to the right audience.</p>
                 <ul class="expertise-method-list">
-                  <li>Choose modules for your business—from rice and dairy to ecommerce</li>
-                  <li>Pay monthly and activate the modules you need</li>
-                  <li>Add modules as your business needs grow, with web and mobile access</li>
+                  <li>AI-driven content, storytelling, and social programs planned and produced in your brand voice — edited where nuance matters.</li>
+                  <li>Paid search and social campaigns launched, optimized, and reported with creative and spend tied to clear goals.</li>
+                  <li>Landing pages, funnels, and messaging aligned with the product and sales motion you are building.</li>
                 </ul>
-                <p class="expertise-method-chips">CONNECTED MODULES · AI-DRIVEN SAAS · LEDGRO</p>
+                <p class="expertise-method-chips">CONTENT · SOCIAL · ADS</p>
+                <a class="expertise-method-link" href="/contact.html?service=digital-marketing">Plan your growth <span aria-hidden="true">↗</span></a>
               </div>
             </article>
-            <article class="expertise-method-panel" id="expertise-panel-2">
+            <article class="expertise-method-panel" id="service-it-consulting">
               <span class="expertise-method-watermark" aria-hidden="true">03</span>
               <div class="expertise-method-copy">
-                <h3>VEL.ai. Beyond the first build.</h3>
-                <p class="expertise-method-tagline">A voice-first vision for creating, operating, and evolving software.</p>
+                <p class="expertise-method-step">03 / CONNECT</p>
+                <h3>IT consulting</h3>
+                <p class="expertise-method-tagline">Make your technology work together.</p>
                 <ul class="expertise-method-list">
-                  <li>Describe a new requirement or a change to an existing project by voice or text</li>
-                  <li>Coordinate specialist agents with permissions, approvals, and quality gates</li>
-                  <li>Retain project memory across development, validation, release, and future changes</li>
+                  <li>Cloud, integration, ERP, and architecture roadmaps from discovery through rollout — scoped to how your teams operate today.</li>
+                  <li>Assess data flows, security, and AI readiness before you commit budget, with clear evaluation criteria.</li>
+                  <li>Handoff plans, operations, and governance so internal teams can run and extend what gets shipped.</li>
                 </ul>
-                <p class="expertise-method-chips">VOICE · AGENTS · CONTINUITY · VEL.AI</p>
+                <p class="expertise-method-chips">CLOUD · INTEGRATION · ERP</p>
+                <a class="expertise-method-link" href="/contact.html?service=it-consulting">Explore your roadmap <span aria-hidden="true">↗</span></a>
               </div>
             </article>
-            <article class="expertise-method-panel" id="expertise-panel-3">
+            <article class="expertise-method-panel" id="service-non-it-consulting">
               <span class="expertise-method-watermark" aria-hidden="true">04</span>
               <div class="expertise-method-copy">
-                <h3>Automation with purpose.</h3>
-                <p class="expertise-method-tagline">Connect information, decisions, and actions across everyday work.</p>
+                <p class="expertise-method-step">04 / OPERATE</p>
+                <h3>Non-IT consulting</h3>
+                <p class="expertise-method-tagline">Build a stronger business behind the scenes.</p>
                 <ul class="expertise-method-list">
-                  <li>Use AI to organize requests, summarize information, and prepare next steps</li>
-                  <li>Connect approved systems so tasks can move through a defined workflow</li>
-                  <li>Include human review, exception handling, and evaluation of results</li>
+                  <li>HR, recruitment, and people operations support aligned with growth, delivery capacity, and technology change.</li>
+                  <li>Operations, supply chain, and process advisory connected to the tools and automations you invest in.</li>
+                  <li>Finance, project management, risk, and change expertise for transformations that span business and tech.</li>
                 </ul>
-                <p class="expertise-method-chips">AI AGENTS · CONNECTED WORKFLOWS · HUMAN REVIEW</p>
+                <p class="expertise-method-chips">HR · OPS · STRATEGY</p>
+                <a class="expertise-method-link" href="/contact.html?service=non-it-consulting">Improve your operations <span aria-hidden="true">↗</span></a>
               </div>
             </article>
           </div>
           <div class="expertise-progress" aria-hidden="true">
-            <span class="expertise-progress-step is-active" data-expertise-pill="0"><i></i>CONSULTING</span>
-            <span class="expertise-progress-step" data-expertise-pill="1"><i></i>SAAS</span>
-            <span class="expertise-progress-step" data-expertise-pill="2"><i></i>VOICE AI</span>
-            <span class="expertise-progress-step" data-expertise-pill="3"><i></i>AUTOMATION</span>
+            <span class="expertise-progress-step is-active" data-expertise-pill="0"><i></i>BUILD</span>
+            <span class="expertise-progress-step" data-expertise-pill="1"><i></i>GROW</span>
+            <span class="expertise-progress-step" data-expertise-pill="2"><i></i>CONNECT</span>
+            <span class="expertise-progress-step" data-expertise-pill="3"><i></i>OPERATE</span>
           </div>
           <span class="expertise-rail" aria-hidden="true"><i></i></span>
           <p class="expertise-method-hint">KEEP SCROLLING →</p>
@@ -246,6 +407,103 @@
             <ellipse cx="820" cy="16" rx="6" ry="3" />
             <ellipse cx="1344" cy="48" rx="16" ry="8" />
           </svg>
+        </div>
+      </section>
+      <section class="business-model section" id="business" aria-labelledby="business-title">
+        <div class="business-aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="business-ambient" aria-hidden="true"></div>
+        <div class="business-head-backdrop" aria-hidden="true">
+          <div class="business-head-ambient-sparks">
+            <i style="--x: 6%; --y: 14%; --delay: 0s; --duration: 7s"></i>
+            <i style="--x: 18%; --y: 38%; --delay: -1.5s; --duration: 9s"></i>
+            <i style="--x: 32%; --y: 22%; --delay: -3s; --duration: 8s"></i>
+            <i style="--x: 48%; --y: 52%; --delay: -4.5s; --duration: 10s"></i>
+            <i style="--x: 62%; --y: 18%; --delay: -6s; --duration: 7s"></i>
+            <i style="--x: 76%; --y: 44%; --delay: -7.5s; --duration: 11s"></i>
+            <i style="--x: 90%; --y: 28%; --delay: -9s; --duration: 8s"></i>
+            <i style="--x: 12%; --y: 68%; --delay: -10.5s; --duration: 9s"></i>
+            <i style="--x: 38%; --y: 78%; --delay: -12s; --duration: 10s"></i>
+            <i style="--x: 55%; --y: 8%; --delay: -13.5s; --duration: 7s"></i>
+            <i style="--x: 68%; --y: 62%; --delay: -15s; --duration: 9s"></i>
+            <i style="--x: 84%; --y: 72%; --delay: -16.5s; --duration: 8s"></i>
+            <i style="--x: 96%; --y: 48%; --delay: -18s; --duration: 11s"></i>
+            <i style="--x: 42%; --y: 32%; --delay: -19.5s; --duration: 8s"></i>
+          </div>
+          <div class="business-head-wire-stage">
+            <svg class="business-head-wireframe" viewBox="0 0 480 360" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+              <g class="business-head-wire-globe" stroke="currentColor">
+                <ellipse cx="240" cy="180" rx="168" ry="168" />
+                <ellipse cx="240" cy="180" rx="168" ry="62" />
+                <ellipse cx="240" cy="180" rx="62" ry="168" />
+                <path d="M240 24 L240 336 M72 180 L408 180" />
+              </g>
+            </svg>
+          </div>
+          <span class="business-head-shimmer"></span>
+        </div>
+        <div class="business-grid">
+          <div class="business-head">
+            <div class="business-head-main">
+              <div class="business-topline">
+                <p class="section-label intro-reveal" data-delay="0"><span aria-hidden="true"></span>00 / THE BUSINESS BEHIND THE DESIGN</p>
+                <span class="business-kicker intro-reveal" data-delay="1"><i aria-hidden="true"></i> THREE REVENUE LINES · ONE ENGINEERING TEAM</span>
+              </div>
+              <h2 id="business-title" class="intro-reveal" data-delay="1">What we sell today.<br /><em>And who pays for it.</em></h2>
+            </div>
+            <div class="business-lead-wrap intro-reveal" data-delay="2">
+              <p class="business-lead">Three revenue lines at different stages of maturity — labelled so you can see what is earning now versus what we are still building.</p>
+              <ol class="business-maturity" aria-label="Revenue line maturity">
+                <li class="is-live"><span class="business-maturity-dot" aria-hidden="true"></span><strong>Live</strong><span>Services</span></li>
+                <li><span class="business-maturity-dot" aria-hidden="true"></span><strong>Building</strong><span>vel.ai</span></li>
+                <li><span class="business-maturity-dot" aria-hidden="true"></span><strong>Early</strong><span>Ledgro</span></li>
+              </ol>
+            </div>
+          </div>
+          <div class="business-flow intro-reveal" data-delay="3" aria-hidden="true">
+            <span class="business-flow-caption">THE ENGINE</span>
+            <div class="business-flow-track">
+              <span class="business-flow-node is-active"><b>01</b> Client engagements</span>
+              <span class="business-flow-line"><i></i></span>
+              <span class="business-flow-node"><b>02</b> Engineering &amp; AI R&amp;D</span>
+              <span class="business-flow-line"><i></i></span>
+              <span class="business-flow-node"><b>03</b> Product modules</span>
+            </div>
+          </div>
+          <div class="business-cards">
+            <article class="business-card business-card--featured intro-reveal" data-delay="3">
+              <span class="business-card-index" aria-hidden="true">01</span>
+              <div class="business-card-top"><span class="business-card-tag">SERVICES</span><span class="business-stage business-stage--live"><i aria-hidden="true"></i> Earning revenue</span></div>
+              <h3>Product engineering &amp; consulting</h3>
+              <p>Custom application delivery, digital marketing, and IT and non-IT consulting — the practice our client portfolio was built on.</p>
+              <dl class="business-facts">
+                <div><dt>Who pays</dt><dd>Client organizations commissioning a build or an advisory engagement</dd></div>
+                <div><dt>How it is billed</dt><dd>Fixed-scope project fees, plus monthly consulting and staffing retainers</dd></div>
+              </dl>
+              <a class="business-link" href="/contact.html?intent=idea#contact-brief">Discuss an engagement <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="business-card intro-reveal" data-delay="4">
+              <span class="business-card-index" aria-hidden="true">02</span>
+              <div class="business-card-top"><span class="business-card-tag">VEL.AI</span><span class="business-stage business-stage--build">In development</span></div>
+              <h3>Agent platform for software delivery</h3>
+              <p>Planning, engineering, and validation agents that build an application and keep evolving it under human direction. Proven inside our own delivery work first.</p>
+              <dl class="business-facts">
+                <div><dt>Who pays</dt><dd>Teams with written requirements who want to run the build themselves</dd></div>
+                <div><dt>Intended model</dt><dd>Per-workspace subscription. Public pricing is not set yet, so early builds are quoted per project.</dd></div>
+              </dl>
+              <a class="business-link" href="/contact.html?intent=vel#contact-brief">Build with vel.ai <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="business-card intro-reveal" data-delay="5">
+              <span class="business-card-index" aria-hidden="true">03</span>
+              <div class="business-card-top"><span class="business-card-tag">LEDGRO</span><span class="business-stage business-stage--build">Early modules</span></div>
+              <h3>Modular business operations SaaS</h3>
+              <p>Customers, orders, invoicing, and inventory as subscribable modules, with industry modules for rice milling, dairy, and ecommerce.</p>
+              <dl class="business-facts">
+                <div><dt>Who pays</dt><dd>Operating businesses replacing spreadsheets and disconnected tools</dd></div>
+                <div><dt>Intended model</dt><dd>Monthly subscription per active module, with implementation billed separately</dd></div>
+              </dl>
+              <a class="business-link" href="/contact.html?demo=ledgro#contact-brief">Book a Ledgro demo <span aria-hidden="true">↗</span></a>
+            </article>
+          </div>
         </div>
       </section>
       <section class="approach section connected" id="approach" aria-labelledby="connected-title">
@@ -285,7 +543,7 @@
             <li class="reveal"><span>04 / LAUNCH &amp; IMPROVE</span><h3>Launch. Learn. Improve.</h3><p>Introduce the product to users, track real-world performance, and refine it as business needs evolve.</p></li>
           </ol></div>
       </section>
-      <section id="partner" class="dataserv-partner section" aria-labelledby="partner-title">
+      <section id="partner" class="dataserv-partner section" aria-labelledby="partner-title" hidden>
         <div class="partner-orbit partner-concept" role="img" aria-label="Concept illustration: one idea connects planning, creation, and review agents to produce software.">
           <div class="concept-caption"><span>IDEA → INTELLIGENCE → SOFTWARE</span><span>CONCEPT MODEL</span></div>
           <svg viewBox="0 0 520 460" fill="none" aria-hidden="true">
@@ -321,14 +579,18 @@
         <div class="partner-invitation"><div><span class="partner-invitation-label">YOUR NEXT IDEA STARTS HERE</span><p>What would you like to build?</p></div><div class="partner-actions"><a class="button" href="/contact.html">Talk to Dataserv <span aria-hidden="true">↗</span></a><a class="partner-secondary" href="#expertise">Explore our expertise <span aria-hidden="true">↓</span></a></div></div>
       </section>
     </main>
-    <nav class="section-pagination" aria-label="Homepage sections"><span class="pagination-position" aria-hidden="true">01 / 05</span><div class="pagination-links"><a class="pagination-link" href="#home" aria-label="01. Welcome" aria-describedby="page-detail-home" aria-current="location"><span class="pagination-tick" aria-hidden="true"></span><span class="pagination-detail" id="page-detail-home" role="tooltip"><span class="pagination-number">01 / EXPLORE DATASERV</span><strong>Welcome</strong><span>AI-driven software from a US-based company, built around practical business needs.</span></span></a><a class="pagination-link" href="#about" aria-label="02. Our point of view" aria-describedby="page-detail-about"><span class="pagination-tick" aria-hidden="true"></span><span class="pagination-detail" id="page-detail-about" role="tooltip"><span class="pagination-number">02 / EXPLORE DATASERV</span><strong>Our point of view</strong><span>How product thinking, AI, and engineering move your business forward.</span></span></a><a class="pagination-link" href="#expertise" aria-label="03. Products &amp; expertise" aria-describedby="page-detail-expertise"><span class="pagination-tick" aria-hidden="true"></span><span class="pagination-detail" id="page-detail-expertise" role="tooltip"><span class="pagination-number">03 / EXPLORE DATASERV</span><strong>Products &amp; expertise</strong><span>Explore Ledgro, VEL.ai, and the engineering expertise behind our products.</span></span></a><a class="pagination-link" href="#approach" aria-label="04. Our approach" aria-describedby="page-detail-approach"><span class="pagination-tick" aria-hidden="true"></span><span class="pagination-detail" id="page-detail-approach" role="tooltip"><span class="pagination-number">04 / EXPLORE DATASERV</span><strong>Our approach</strong><span>Explore our four-layer approach to AI-driven software and connected products.</span></span></a><a class="pagination-link" href="#partner" aria-label="05. Partner with Dataserv Inc." aria-describedby="page-detail-partner"><span class="pagination-tick" aria-hidden="true"></span><span class="pagination-detail" id="page-detail-partner" role="tooltip"><span class="pagination-number">05 / EXPLORE DATASERV</span><strong>Partner with Dataserv Inc.</strong><span>Explore AI-driven products, connected workflows, and practical engineering knowledge.</span></span></a></div><span class="pagination-end" aria-hidden="true">EXPLORE</span></nav>
+    <nav class="section-pagination" aria-label="Homepage sections"><span class="pagination-position" aria-hidden="true">01 / 05</span><div class="pagination-links"><a class="pagination-link" href="#home" aria-label="01. Welcome" aria-describedby="page-detail-home" aria-current="location"><span class="pagination-tick" aria-hidden="true"></span><span class="pagination-detail" id="page-detail-home" role="tooltip"><span class="pagination-number">01 / EXPLORE</span><strong>Welcome</strong><span>Next-gen AI automations and Ledgro enterprise SaaS.</span></span></a><a class="pagination-link" href="#about" aria-label="02. Our point of view" aria-describedby="page-detail-about"><span class="pagination-tick" aria-hidden="true"></span><span class="pagination-detail" id="page-detail-about" role="tooltip"><span class="pagination-number">02 / EXPLORE</span><strong>Our point of view</strong><span>How product thinking, AI, and engineering move your business forward.</span></span></a><a class="pagination-link" href="#expertise" aria-label="03. Engineering expertise" aria-describedby="page-detail-expertise"><span class="pagination-tick" aria-hidden="true"></span><span class="pagination-detail" id="page-detail-expertise" role="tooltip"><span class="pagination-number">03 / EXPLORE</span><strong>Engineering expertise</strong><span>Four AI concepts and four service practices — app delivery, marketing, and consulting.</span></span></a><a class="pagination-link" href="#business" aria-label="04. What we sell today" aria-describedby="page-detail-business"><span class="pagination-tick" aria-hidden="true"></span><span class="pagination-detail" id="page-detail-business" role="tooltip"><span class="pagination-number">04 / EXPLORE</span><strong>What we sell today</strong><span>Services, vel.ai and Ledgro — who pays and how.</span></span></a><a class="pagination-link" href="#approach" aria-label="05. Our approach" aria-describedby="page-detail-approach"><span class="pagination-tick" aria-hidden="true"></span><span class="pagination-detail" id="page-detail-approach" role="tooltip"><span class="pagination-number">05 / EXPLORE</span><strong>Our approach</strong><span>Four connected layers for AI-driven software.</span></span></a></div><span class="pagination-end" aria-hidden="true">EXPLORE</span></nav>
     <footer>
-      <a class="brand" href="https://www.dataservinc.com/"><img src="/assets/logo.png" alt="DataServ Inc." /></a>
-      <p>US-based company. AI-driven software.</p>
+      <a class="brand" href="/"><img src="/assets/logo.png" alt="DataServ Inc." /></a>
+      <p>Vela AI services &amp; Ledgro enterprise SaaS · US-based engineering.</p>
       <div>
-        <a href="https://www.dataservinc.com/">Company</a>
-        <a href="https://www.dataservinc.com/careers">Careers</a>
+        <a href="#expertise">Services &amp; expertise</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/blogs.html">Insights</a>
+        <a href="/contact.html?demo=seminar">Seminar demo</a>
         <a href="https://www.dataservinc.com/privacy">Privacy</a>
+        <a href="https://www.dataservinc.com/terms">Terms</a>
       </div>
       <small>© 2026 Dataserv Inc.</small>
     </footer>
@@ -338,10 +600,12 @@
         <source src="/assets/brand-film.mp4" type="video/mp4" />
       </video>
     </dialog>
-    <script type="module" src="/src/hero-refresh.js"></script>
+    <script type="module" src="/src/launch-hero.js"></script>
+    <script type="module" src="/src/business-model.js"></script>
     <script src="/app.js"></script>
     <script type="module" src="/src/scene-loader.js"></script>
-    <script type="module" src="/src/products.js"></script>
     <script type="module" src="/src/section-pagination.js"></script>
+    <script type="module" src="/src/theme.js"></script>
+    <script type="module" src="/src/header-nav.js"></script>
   </body>
 </html>

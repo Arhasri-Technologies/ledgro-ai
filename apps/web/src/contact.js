@@ -8,7 +8,6 @@ updateHeaderShell();
 const intentCards = document.querySelectorAll('.contact-intent-card');
 const interestSelect = document.querySelector('#interest');
 const form = document.querySelector('#contact-form');
-const submitBtn = document.querySelector('#contact-submit');
 const statusTitle = document.querySelector('#contact-status-title');
 
 intentCards.forEach(card => {
@@ -27,6 +26,27 @@ intentCards.forEach(card => {
     });
   });
 });
+
+// Preserve the visitor's chosen homepage route without submitting any data.
+const inquiry = new URLSearchParams(location.search);
+const requestedRoute = inquiry.get('demo') === 'ledgro' ? 'ledgro' : inquiry.get('intent');
+const inquiryRoutes = {
+  vel: { interest: 'VEL.ai', stage: 'Have requirements', intent: 'products' },
+  idea: { interest: 'Web Application', stage: 'Exploring', intent: 'build-new' },
+  ledgro: { interest: 'Ledgro', stage: 'Existing product', intent: 'products' },
+  investor: { interest: 'Investor / Partnership', stage: 'Exploring', intent: 'products' },
+};
+const chosenRoute = inquiryRoutes[requestedRoute];
+if (chosenRoute) {
+  if (interestSelect) interestSelect.value = chosenRoute.interest;
+  const stage = document.querySelector('#stage');
+  if (stage && !stage.value) stage.value = chosenRoute.stage;
+  intentCards.forEach(card => {
+    const selected = card.dataset.intent === chosenRoute.intent;
+    card.classList.toggle('is-selected', selected);
+    card.setAttribute('aria-pressed', String(selected));
+  });
+}
 
 function showFieldError(id, message) {
   const input = document.querySelector(`#${id}`);
@@ -61,53 +81,39 @@ function validateForm() {
   return !form.querySelector('.contact-field.is-invalid');
 }
 
-/** Wire to API / Supabase / CRM — returns true when the brief was accepted. */
-async function submitProjectBrief(payload) {
-  await new Promise(r => setTimeout(r, 1400));
-  console.info('[contact] brief ready for backend:', payload);
-  return true;
-}
-
-form?.addEventListener('submit', async event => {
+// No delivery backend is configured. Prepare a reviewable email instead of
+// claiming that a brief has been transmitted or accepted.
+form?.addEventListener('submit', event => {
   event.preventDefault();
   if (!validateForm()) {
-    const firstInvalid = form.querySelector('.contact-field.is-invalid input, .contact-field.is-invalid select, .contact-field.is-invalid textarea');
-    firstInvalid?.focus();
+    form.querySelector('.contact-field.is-invalid input, .contact-field.is-invalid select, .contact-field.is-invalid textarea')?.focus();
     return;
   }
-  const payload = {
-    firstName: document.querySelector('#first-name')?.value.trim(),
-    lastName: document.querySelector('#last-name')?.value.trim(),
-    email: document.querySelector('#email')?.value.trim(),
-    company: document.querySelector('#company')?.value.trim(),
-    phone: document.querySelector('#phone')?.value.trim(),
-    region: document.querySelector('#region')?.value.trim(),
-    interest: interestSelect?.value,
-    stage: document.querySelector('#stage')?.value,
-    timeline: document.querySelector('#timeline')?.value,
-    budget: document.querySelector('#budget')?.value,
-    message: document.querySelector('#message')?.value.trim(),
-    intent: document.querySelector('.contact-intent-card.is-selected')?.dataset.intent ?? null,
-  };
+  const fields = [
+    ['First name', 'first-name'], ['Last name', 'last-name'], ['Email', 'email'],
+    ['Company', 'company'], ['Phone', 'phone'], ['Region', 'region'],
+    ['Interest', 'interest'], ['Project stage', 'stage'], ['Timeline', 'timeline'],
+    ['Budget', 'budget'], ['Project brief', 'message'],
+  ];
+  const body = fields.map(([label, id]) => `${label}: ${document.getElementById(id)?.value.trim() || 'Not specified'}`).join('\n\n');
+  const emailLink = document.getElementById('contact-email-draft');
+  emailLink.href = `mailto:contact@dataservinc.com?subject=${encodeURIComponent(`Project inquiry: ${interestSelect.value}`)}&body=${encodeURIComponent(body)}`;
+  document.getElementById('contact-copy-brief').dataset.brief = body;
+  statusTitle.textContent = 'YOUR EMAIL DRAFT IS READY.';
+  form.classList.add('is-draft');
+  emailLink.focus();
+});
 
-  submitBtn.disabled = true;
-  const label = submitBtn.innerHTML;
-  submitBtn.textContent = 'TRANSMITTING BRIEF...';
-
+form?.addEventListener('input', () => {
+  form.classList.remove('is-draft');
+  const copy = document.getElementById('contact-copy-brief');
+  if (copy) { delete copy.dataset.brief; copy.textContent = 'Copy brief'; }
+});
+document.getElementById('contact-copy-brief')?.addEventListener('click', async event => {
   try {
-    const accepted = await submitProjectBrief(payload);
-    if (!accepted) throw new Error('Submission failed');
-    statusTitle.textContent = 'MESSAGE RECEIVED.';
-    form.classList.add('is-success');
+    await navigator.clipboard.writeText(event.currentTarget.dataset.brief || '');
+    document.getElementById('contact-copy-brief').textContent = 'Brief copied';
   } catch {
-    statusTitle.textContent = 'UNABLE TO SEND.';
-    document.querySelector('#contact-form-status')?.setAttribute('role', 'alert');
-    // Keep the filled-in fields visible so the brief can be sent again.
-    form.classList.add('is-error');
-    const statusCopy = document.querySelector('.contact-status-copy');
-    if (statusCopy) statusCopy.textContent = 'Something went wrong. Please try again or email contact@dataservinc.com directly.';
-  } finally {
-    submitBtn.disabled = false;
-    submitBtn.innerHTML = label;
+    document.querySelector('.contact-status-copy').textContent = 'Copy is unavailable in this browser. Your entries remain above; copy them into an email to contact@dataservinc.com.';
   }
 });

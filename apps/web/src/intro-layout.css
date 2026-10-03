@@ -1,0 +1,210 @@
+/* About / intro — compact split, no dead vertical space */
+.intro.intro-animated.section {
+  padding: clamp(40px, 6vh, 64px) clamp(20px, 4.6vw, 72px) !important;
+}
+
+/* Homepage company intro: same canvas + type as .launch-hero (not legacy mint .intro) */
+.home-page #about.intro.intro-animated.section {
+  --launch-ink: color-mix(in srgb, #ffffff 94%, var(--brand-logo-cyan));
+  --launch-muted: color-mix(in srgb, var(--brand-logo-blue) 28%, #8fa4bc);
+  --launch-accent: var(--brand-logo-cyan);
+  --launch-line: color-mix(in srgb, var(--brand-logo-blue) 22%, transparent);
+  border-top: none;
+  background: radial-gradient(
+      ellipse at 85% 18%,
+      color-mix(in srgb, var(--brand-logo-blue) 22%, transparent),
+      transparent 50%
+    ),
+    var(--brand-logo-navy) !important;
+  color: var(--launch-ink);
+}
+
+html[data-theme='light'] .home-page #about.intro.intro-animated.section {
+  --launch-ink: var(--brand-logo-navy);
+  --launch-muted: color-mix(in srgb, var(--brand-logo-navy) 45%, #6b8494);
+  --launch-accent: var(--brand-logo-blue);
+  --launch-line: color-mix(in srgb, var(--brand-logo-blue) 20%, transparent);
+  background: radial-gradient(
+      ellipse at 85% 20%,
+      color-mix(in srgb, var(--brand-logo-cyan) 22%, #d5e8ff),
+      transparent 55%
+    ),
+    #f4f8ff !important;
+  color: var(--launch-ink);
+}
+
+.home-page #about.intro.intro-animated .intro-content .section-label {
+  color: var(--launch-accent);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+}
+
+.home-page #about.intro.intro-animated .intro-headline,
+.home-page #about.intro.intro-animated .intro-line {
+  color: var(--launch-ink);
+}
+
+.home-page #about.intro.intro-animated .intro-line-em {
+  background: linear-gradient(
+    110deg,
+    var(--brand-logo-blue) 10%,
+    var(--brand-logo-cyan) 45%,
+    color-mix(in srgb, var(--brand-logo-cyan) 65%, #ffffff) 55%,
+    var(--brand-logo-blue) 90%
+  );
+  background-size: 240% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+html[data-theme='light'] .home-page #about.intro.intro-animated .intro-line-em {
+  background-image: linear-gradient(
+    110deg,
+    var(--brand-logo-navy),
+    var(--brand-logo-blue) 45%,
+    var(--brand-logo-cyan) 75%,
+    var(--brand-logo-navy)
+  );
+}
+
+.home-page #about.intro.intro-animated .large-copy {
+  color: var(--launch-muted);
+}
+
+.home-page #about.intro.intro-animated .asterisk {
+  color: var(--launch-accent);
+}
+
+.home-page #about.intro.intro-animated .intro-metrics {
+  border-top-color: var(--launch-line);
+}
+
+.home-page #about.intro.intro-animated .intro-metric {
+  color: var(--launch-muted);
+}
+
+.home-page #about.intro.intro-animated .intro-metric-num {
+  color: var(--launch-ink);
+}
+
+.home-page #about.intro.intro-animated .intro-stage-hint,
+.home-page #about.intro.intro-animated .intro-stage-tag {
+  color: color-mix(in srgb, var(--launch-muted) 88%, transparent);
+}
+
+html[data-theme='dark'] .home-page #about.intro.intro-animated .intro-drift::before {
+  background-image: radial-gradient(color-mix(in srgb, var(--brand-logo-blue) 45%, transparent) 1.3px, transparent 1.3px),
+    radial-gradient(color-mix(in srgb, var(--brand-logo-blue) 22%, transparent) 1px, transparent 1px);
+}
+
+html[data-theme='dark'] .home-page #about.intro.intro-animated .intro-drift::after {
+  background-image: radial-gradient(color-mix(in srgb, var(--brand-logo-cyan) 35%, transparent) 1px, transparent 1px);
+}
+
+html[data-theme='dark'] .home-page #about.intro.intro-animated .intro-drift span {
+  background: rgba(57, 189, 255, 0.45);
+  box-shadow: 0 0 6px rgba(57, 189, 255, 0.25);
+}
+
+html[data-theme='light'] .home-page #about.intro.intro-animated .intro-drift::before {
+  background-image: radial-gradient(rgba(18, 97, 212, 0.2) 1.3px, transparent 1.3px),
+    radial-gradient(rgba(18, 97, 212, 0.1) 1px, transparent 1px);
+}
+
+html[data-theme='light'] .home-page #about.intro.intro-animated .intro-drift::after {
+  background-image: radial-gradient(rgba(36, 84, 138, 0.15) 1px, transparent 1px);
+}
+
+.intro.intro-animated .intro-grid {
+  align-items: start;
+  gap: clamp(24px, 3vw, 36px);
+  max-width: 1240px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (min-width: 960px) {
+  .intro.intro-animated .intro-grid {
+    grid-template-columns: minmax(0, 1.12fr) minmax(280px, 440px);
+    gap: clamp(28px, 4vw, 52px);
+  }
+
+  .intro.intro-animated .intro-stage {
+    position: sticky;
+    top: 96px;
+    max-width: 440px;
+    width: 100%;
+    min-height: 360px;
+    aspect-ratio: 1;
+    justify-self: end;
+    margin: 0;
+  }
+}
+
+.intro.intro-animated .intro-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+}
+
+.intro.intro-animated .intro-content .section-label {
+  margin-bottom: 12px;
+}
+
+.intro.intro-animated .intro-headline {
+  font-size: clamp(28px, 3.4vw, 50px);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  max-width: 11.5em;
+}
+
+.intro.intro-animated .intro-bottom {
+  margin-top: 16px;
+  gap: 16px;
+  align-items: flex-start;
+  max-width: 42rem;
+}
+
+.intro.intro-animated .asterisk {
+  font-size: clamp(26px, 3.5vw, 38px);
+  margin-top: 0;
+}
+
+.intro.intro-animated .large-copy {
+  font-size: clamp(15px, 1.35vw, 17px);
+  line-height: 1.62;
+  max-width: none;
+}
+
+.intro.intro-animated .intro-metrics {
+  margin-top: 20px;
+  padding-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px 16px;
+  max-width: 42rem;
+  width: 100%;
+}
+
+.intro.intro-animated .intro-metric-num {
+  font-size: clamp(20px, 2.4vw, 28px);
+  margin-bottom: 2px;
+}
+
+.intro.intro-animated .intro-metric {
+  font-size: 10px;
+}
+
+@media (max-width: 700px) {
+  .intro.intro-animated .intro-metrics {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .intro.intro-animated .intro-stage {
+    max-width: min(340px, 100%);
+    min-height: 280px;
+  }
+}

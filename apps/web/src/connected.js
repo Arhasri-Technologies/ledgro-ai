@@ -30,8 +30,8 @@ function init() {
   const camera = new THREE.PerspectiveCamera(36, 1, .1, 60);
   camera.position.set(6, 5, 8);
   camera.lookAt(0, 0, 0);
-  scene.add(new THREE.AmbientLight(0xc4ffec, 2));
-  const light = new THREE.DirectionalLight(0xcaffed, 4);
+  scene.add(new THREE.AmbientLight(0x9ec8ff, 2));
+  const light = new THREE.DirectionalLight(0x00dfff, 4);
   light.position.set(3, 7, 4);
   scene.add(light);
   const stack = new THREE.Group();
@@ -43,11 +43,11 @@ function init() {
     const group = new THREE.Group();
     group.position.y = 1.65 - index * 1.1;
     const geometry = new THREE.BoxGeometry(3.25, .13, 2.65);
-    const plate = new THREE.Mesh(geometry, new THREE.MeshStandardMaterial({ color: 0x39776e, metalness: .55, roughness: .25, transparent: true, opacity: .5 }));
+    const plate = new THREE.Mesh(geometry, new THREE.MeshStandardMaterial({ color: 0x0a2a5c, metalness: .55, roughness: .25, transparent: true, opacity: .5 }));
     plate.userData.layer = index;
     group.add(plate);
     plates.push(plate);
-    const edge = new THREE.LineSegments(new THREE.EdgesGeometry(geometry), new THREE.LineBasicMaterial({ color: 0x8ed8bc, transparent: true, opacity: .55 }));
+    const edge = new THREE.LineSegments(new THREE.EdgesGeometry(geometry), new THREE.LineBasicMaterial({ color: 0x1a6bff, transparent: true, opacity: .55 }));
     group.add(edge);
     edges.push(edge);
     const gridPositions = [];
@@ -55,13 +55,13 @@ function init() {
       gridPositions.push(-1.5, .08, n * .35, 1.5, .08, n * .35);
       gridPositions.push(n * .45, .08, -1.2, n * .45, .08, 1.2);
     }
-    const grid = new THREE.LineSegments(new THREE.BufferGeometry().setAttribute('position', new THREE.Float32BufferAttribute(gridPositions, 3)), new THREE.LineBasicMaterial({ color: 0x9fe2c7, opacity: .17, transparent: true }));
+    const grid = new THREE.LineSegments(new THREE.BufferGeometry().setAttribute('position', new THREE.Float32BufferAttribute(gridPositions, 3)), new THREE.LineBasicMaterial({ color: 0x00dfff, opacity: .17, transparent: true }));
     group.add(grid);
-    const core = new THREE.Mesh(new THREE.BoxGeometry(.58, .1, .58), new THREE.MeshStandardMaterial({ color: 0xb9ffdf, emissive: 0x5aad87, emissiveIntensity: .6, metalness: .4, roughness: .25 }));
+    const core = new THREE.Mesh(new THREE.BoxGeometry(.58, .1, .58), new THREE.MeshStandardMaterial({ color: 0x00dfff, emissive: 0x1a6bff, emissiveIntensity: .6, metalness: .4, roughness: .25 }));
     core.position.y = .13;
     group.add(core);
     for (const x of [-1.45, 1.45]) for (const z of [-1.13, 1.13]) {
-      const node = new THREE.Mesh(new THREE.SphereGeometry(.045, 10, 8), new THREE.MeshBasicMaterial({ color: 0xc7ffe3 }));
+      const node = new THREE.Mesh(new THREE.SphereGeometry(.045, 10, 8), new THREE.MeshBasicMaterial({ color: 0x00dfff }));
       node.position.set(x, .12, z);
       group.add(node);
     }
@@ -69,13 +69,13 @@ function init() {
   }
   for (const x of [-1.45, 1.45]) for (const z of [-1.13, 1.13]) {
     const geometry = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(x, -1.65, z), new THREE.Vector3(x, 1.85, z)]);
-    stack.add(new THREE.Line(geometry, new THREE.LineDashedMaterial({ color: 0x80baa6, transparent: true, opacity: .35, dashSize: .06, gapSize: .07 })).computeLineDistances());
-    const marker = new THREE.Mesh(new THREE.SphereGeometry(.055, 10, 8), new THREE.MeshBasicMaterial({ color: 0xd1ffe5 }));
+    stack.add(new THREE.Line(geometry, new THREE.LineDashedMaterial({ color: 0x1a6bff, transparent: true, opacity: .35, dashSize: .06, gapSize: .07 })).computeLineDistances());
+    const marker = new THREE.Mesh(new THREE.SphereGeometry(.055, 10, 8), new THREE.MeshBasicMaterial({ color: 0x00dfff }));
     marker.position.set(x, 0, z);
     markers.push(marker);
     stack.add(marker);
   }
-  const ring = new THREE.Mesh(new THREE.RingGeometry(2.45, 2.46, 100), new THREE.MeshBasicMaterial({ color: 0x78b9a0, transparent: true, opacity: .25, side: THREE.DoubleSide }));
+  const ring = new THREE.Mesh(new THREE.RingGeometry(2.45, 2.46, 100), new THREE.MeshBasicMaterial({ color: 0x1a6bff, transparent: true, opacity: .25, side: THREE.DoubleSide }));
   ring.rotation.x = -Math.PI / 2;
   ring.position.y = -2.05;
   stack.add(ring);
@@ -88,7 +88,7 @@ function init() {
   const paused = () => localPaused || document.body.classList.contains('motion-paused') || document.hidden;
   function draw() { renderer.render(scene, camera); }
   renderSelection = () => {
-    plates.forEach((plate, i) => { plate.material.color.setHex(i === selected ? 0xa8e8ce : 0x39776e); plate.material.opacity = i === selected ? .85 : .35; edges[i].material.opacity = i === selected ? 1 : .4; });
+    plates.forEach((plate, i) => { plate.material.color.setHex(i === selected ? 0x00dfff : 0x0a2a5c); plate.material.opacity = i === selected ? .85 : .35; edges[i].material.opacity = i === selected ? 1 : .4; });
     draw();
   };
   function tick(now) {

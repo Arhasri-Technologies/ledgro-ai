@@ -1,0 +1,677 @@
+/* Company / About — Cerebrium-style split with centered earth globe */
+.intro.intro--company-spotlight {
+  --spot-ink: color-mix(in srgb, #ffffff 94%, var(--brand-logo-cyan));
+  --spot-muted: color-mix(in srgb, #a8b8d0 72%, var(--brand-logo-blue));
+  --spot-accent: #ff2d9a;
+  --spot-accent-soft: color-mix(in srgb, var(--spot-accent) 35%, var(--brand-logo-cyan));
+  --spot-line: color-mix(in srgb, var(--brand-logo-blue) 28%, transparent);
+  --phase-accent: #88e9ed;
+  --phase-stars: 0.72;
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  min-height: 100vh;
+  padding: clamp(48px, 8vh, 88px) clamp(20px, 4.5vw, 72px) clamp(72px, 12vh, 120px) !important;
+  border-top: none;
+  background:
+    radial-gradient(ellipse 48% 42% at 58% 48%, color-mix(in srgb, var(--spot-accent) 22%, transparent), transparent 72%),
+    radial-gradient(ellipse 38% 32% at 58% 50%, color-mix(in srgb, var(--brand-logo-cyan) 12%, transparent), transparent 68%),
+    radial-gradient(ellipse 80% 50% at 18% 80%, color-mix(in srgb, var(--brand-logo-blue) 28%, transparent), transparent 55%),
+    #060912 !important;
+  color: var(--spot-ink);
+}
+
+html[data-theme='light'] .home-page #about.intro.intro-animated.section.intro--company-spotlight {
+  --spot-ink: color-mix(in srgb, #ffffff 94%, var(--brand-logo-cyan));
+  --spot-muted: color-mix(in srgb, #a8b8d0 72%, var(--brand-logo-blue));
+  --launch-ink: var(--spot-ink);
+  color: var(--spot-ink);
+  background:
+    radial-gradient(ellipse 55% 45% at 62% 48%, color-mix(in srgb, var(--spot-accent) 16%, transparent), transparent 62%),
+    #060912 !important;
+}
+
+/* Same small sparkles / streams as #expertise (Intelligence, applied.) */
+.intro--company-spotlight > .expertise-drift,
+.intro--company-spotlight > .expertise-stream {
+  z-index: 2;
+  opacity: var(--phase-stars, 0.72);
+}
+
+.intro--company-spotlight > .expertise-glow {
+  z-index: 1;
+  top: 4%;
+  height: min(85vh, 780px);
+  opacity: 0.72;
+  background:
+    radial-gradient(42% 48% at 58% 46%, rgba(255, 77, 175, 0.1), transparent 70%),
+    radial-gradient(46% 50% at 58% 46%, rgba(136, 233, 237, 0.16), transparent 72%);
+}
+
+.intro--company-spotlight > .expertise-stream {
+  height: 100%;
+  min-height: 100%;
+  opacity: calc(var(--phase-stars, 0.72) * 0.85);
+}
+
+.intro-spotlight-pin {
+  position: relative;
+  z-index: 0;
+}
+
+.intro-spotlight-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 50% 46% at 58% 50%, color-mix(in srgb, var(--spot-accent) 24%, transparent), transparent 74%),
+    radial-gradient(ellipse 44% 40% at 58% 48%, color-mix(in srgb, var(--brand-logo-cyan) 14%, transparent), transparent 70%),
+    radial-gradient(ellipse 85% 55% at 8% 92%, color-mix(in srgb, var(--brand-logo-blue) 30%, transparent), transparent 58%),
+    radial-gradient(ellipse 45% 40% at 92% 8%, color-mix(in srgb, var(--brand-logo-cyan) 12%, transparent), transparent 52%),
+    #060912;
+}
+
+.intro-spotlight-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  background-image:
+    radial-gradient(ellipse 55% 50% at 58% 48%, rgba(6, 9, 18, 0) 0%, rgba(6, 9, 18, 0.35) 100%),
+    linear-gradient(180deg, rgba(6, 9, 18, 0.35) 0%, transparent 32%, transparent 68%, rgba(6, 9, 18, 0.5) 100%);
+}
+
+.intro-spotlight-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.055;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  mix-blend-mode: soft-light;
+}
+
+.intro-spotlight-stage {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  transform: translate(-50%, -50%);
+  width: min(58vw, 640px);
+  height: min(58vw, 640px);
+  max-height: 72vh;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.intro-spotlight-orb {
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 42% 38%,
+    color-mix(in srgb, var(--spot-accent-soft) 55%, transparent),
+    color-mix(in srgb, var(--brand-logo-blue) 18%, transparent) 42%,
+    transparent 72%
+  );
+  filter: blur(6px);
+  opacity: 0.26;
+  animation: spotlight-orb-breathe 7s ease-in-out infinite;
+}
+
+.intro-spotlight-glow {
+  position: absolute;
+  inset: -5%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, color-mix(in srgb, var(--spot-accent) 28%, transparent) 0%, transparent 55%),
+    radial-gradient(circle, color-mix(in srgb, var(--brand-logo-cyan) 12%, transparent) 0%, transparent 68%);
+  filter: blur(32px);
+  opacity: 0.2;
+}
+
+.intro-spotlight-rings {
+  position: absolute;
+  inset: 12%;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  perspective: 900px;
+}
+
+.intro-spotlight-rings span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 88%;
+  height: 88%;
+  margin: -44% 0 0 -44%;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--spot-accent) 45%, transparent);
+  box-shadow:
+    0 0 24px color-mix(in srgb, var(--spot-accent) 18%, transparent),
+    inset 0 0 40px color-mix(in srgb, var(--brand-logo-cyan) 8%, transparent);
+  transform: rotateX(72deg);
+  opacity: 0.22;
+}
+
+.intro-spotlight-rings span:nth-child(1) {
+  transform: rotateX(78deg) scale(0.92);
+  opacity: 0.35;
+}
+.intro-spotlight-rings span:nth-child(2) {
+  transform: rotateX(68deg) scale(0.96);
+}
+.intro-spotlight-rings span:nth-child(3) {
+  transform: rotateX(58deg);
+  border-color: color-mix(in srgb, var(--spot-accent-soft) 55%, transparent);
+}
+.intro-spotlight-rings span:nth-child(4) {
+  transform: rotateX(48deg) scale(1.04);
+  opacity: 0.4;
+}
+.intro-spotlight-rings span:nth-child(5) {
+  transform: rotateX(38deg) scale(1.08);
+  opacity: 0.25;
+}
+
+.intro--company-spotlight .intro-stage {
+  position: absolute;
+  inset: 18% 14%;
+  margin: 0;
+  max-width: none;
+  min-height: 0;
+  aspect-ratio: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+.intro--company-spotlight .intro-stage-disk--globe {
+  inset: 0;
+  border: none;
+  box-shadow: none;
+  opacity: 0.5;
+  filter: saturate(0.38) brightness(0.64) contrast(0.88);
+}
+
+.intro--company-spotlight .intro-stage-disk--globe::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  z-index: 6;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 50% 48%,
+    transparent 48%,
+    rgba(6, 9, 18, 0.28) 72%,
+    rgba(6, 9, 18, 0.55) 100%
+  );
+}
+
+.intro--company-spotlight .intro-stage-hint,
+.intro--company-spotlight .intro-stage-tag {
+  color: color-mix(in srgb, var(--spot-muted) 90%, transparent);
+  font-size: 7px;
+}
+
+.intro-spotlight-shell {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(28px, 4vw, 48px);
+  max-width: 1320px;
+  margin: 0 auto;
+  width: 100%;
+  align-items: start;
+}
+
+@media (min-width: 960px) {
+  .intro.intro-animated.section.intro--company-spotlight {
+    min-height: 0;
+    padding: 0 !important;
+    margin: 0;
+  }
+
+  .intro-spotlight-pin {
+    position: sticky;
+    top: 80px;
+    z-index: 0;
+    height: calc(100svh - 80px);
+    min-height: 640px;
+    overflow: hidden;
+  }
+
+  .intro-spotlight-pin::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    background: linear-gradient(90deg, #060912 0%, rgba(6, 9, 18, 0.5) 30%, rgba(6, 9, 18, 0.15) 48%, transparent 62%);
+  }
+
+  .intro-spotlight-stage {
+    left: 58%;
+    top: 50%;
+    width: min(150vh, 1600px);
+    height: min(150vh, 1600px);
+    max-height: none;
+  }
+
+  .intro.intro-animated.intro--company-spotlight .intro-stage {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    min-height: 0;
+    aspect-ratio: auto;
+    margin: 0;
+  }
+
+  .intro-spotlight-shell {
+    position: relative;
+    z-index: 1;
+    max-width: none;
+    grid-template-columns: minmax(260px, 38%) minmax(280px, 34%);
+    justify-content: space-between;
+    align-items: start;
+    min-height: calc(135svh - 80px);
+    margin-top: calc(80px - 100svh);
+    padding: clamp(40px, 7vh, 72px) clamp(28px, 5vw, 88px) clamp(48px, 8vh, 96px);
+    pointer-events: none;
+  }
+
+  .intro-spotlight-left {
+    position: sticky;
+    top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: start;
+    height: calc(100svh - 80px);
+    max-width: 34rem;
+  }
+
+  .intro-spotlight-right {
+    max-width: 30rem;
+    margin-left: auto;
+    padding: 0;
+    translate: -28px 0;
+  }
+
+  /* Zigzag: every other card tucks into the globe. Outer cards stay clear of the side rail. */
+  .intro-spotlight-list li:nth-child(odd) {
+    translate: clamp(-148px, -10vw, -92px) 0;
+  }
+
+  .intro-spotlight-list li {
+    min-height: 0;
+  }
+
+  .intro-spotlight-left a,
+  .intro-spotlight-right a,
+  .intro-spotlight-lead,
+  .intro-spotlight-list {
+    pointer-events: auto;
+  }
+}
+
+.intro-spotlight-kicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 clamp(20px, 3vh, 32px);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--spot-muted);
+}
+
+.intro-spotlight-kicker i {
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--spot-accent), color-mix(in srgb, var(--spot-accent) 40%, transparent));
+  border-radius: 2px;
+  box-shadow: 0 0 12px color-mix(in srgb, var(--spot-accent) 45%, transparent);
+}
+
+.intro-spotlight-kicker i::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  margin-top: -2px;
+  border-radius: 50%;
+  background: var(--spot-accent);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--spot-accent) 60%, transparent);
+}
+
+.intro.intro--company-spotlight h2.intro-spotlight-title {
+  margin: 0;
+  font-size: clamp(32px, 3.4vw, 48px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+  color: #fff;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45);
+}
+
+.intro.intro--company-spotlight h2 em {
+  font-size: inherit;
+  line-height: inherit;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: inherit;
+  background: linear-gradient(
+    110deg,
+    var(--brand-logo-blue) 8%,
+    var(--brand-logo-cyan) 42%,
+    color-mix(in srgb, var(--brand-logo-cyan) 70%, #ffffff) 52%,
+    var(--brand-logo-blue) 92%
+  );
+  background-size: 220% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 12px color-mix(in srgb, var(--brand-logo-blue) 35%, transparent));
+}
+
+.intro-spotlight-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(16px, 2.5vw, 28px);
+  margin-top: clamp(24px, 4vh, 36px);
+}
+
+.intro--company-spotlight .launch-primary {
+  background: linear-gradient(115deg, var(--spot-accent), color-mix(in srgb, var(--spot-accent) 55%, #ff6bcb));
+  color: #1a0520;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  padding: 16px 20px;
+  gap: 18px;
+  border-radius: 6px;
+  box-shadow: 0 12px 40px color-mix(in srgb, var(--spot-accent) 28%, transparent);
+}
+
+html[data-theme='light'] .intro--company-spotlight .launch-primary {
+  color: #fff;
+}
+
+.intro--company-spotlight .launch-secondary {
+  border-bottom-color: color-mix(in srgb, var(--spot-muted) 35%, transparent);
+  color: color-mix(in srgb, var(--brand-logo-cyan) 55%, var(--spot-ink));
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+.intro-spotlight-lead {
+  position: relative;
+  margin: 0 0 16px;
+  padding: 20px 22px 20px 26px;
+  border-radius: 20px;
+  background: linear-gradient(155deg, #ffffff 0%, #f2f8ff 55%, #e8f4ff 100%);
+  border: 1px solid color-mix(in srgb, var(--brand-logo-cyan) 32%, #ffffff);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 0 0 1px color-mix(in srgb, var(--brand-logo-blue) 10%, transparent),
+    0 20px 48px rgba(4, 12, 32, 0.26),
+    0 8px 28px color-mix(in srgb, var(--brand-logo-blue) 14%, transparent);
+  font-size: 14px;
+  line-height: 1.65;
+  color: #334155;
+  max-width: none;
+}
+
+.intro-spotlight-lead::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 20%;
+  bottom: 20%;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: linear-gradient(180deg, var(--brand-logo-blue), var(--brand-logo-cyan));
+  box-shadow: 0 0 14px color-mix(in srgb, var(--brand-logo-cyan) 45%, transparent);
+}
+
+.intro-spotlight-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (min-width: 960px) {
+  .intro-spotlight-list {
+    gap: clamp(80px, 15vh, 168px);
+  }
+}
+
+.intro-spotlight-list li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 20px 22px 20px 26px;
+  border-radius: 20px;
+  background: linear-gradient(155deg, #ffffff 0%, #f6faff 45%, #edf5ff 100%);
+  border: 1px solid color-mix(in srgb, var(--brand-logo-cyan) 28%, #ffffff);
+  color: #142033;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 0 0 1px color-mix(in srgb, var(--brand-logo-blue) 8%, transparent),
+    0 18px 44px rgba(4, 12, 32, 0.24),
+    0 6px 26px color-mix(in srgb, var(--brand-logo-blue) 12%, transparent);
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+  overflow: hidden;
+}
+
+.intro-spotlight-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 18%;
+  bottom: 18%;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: linear-gradient(180deg, var(--brand-logo-blue), var(--brand-logo-cyan));
+  box-shadow: 0 0 12px color-mix(in srgb, var(--brand-logo-cyan) 50%, transparent);
+}
+
+.intro-spotlight-list li::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(125deg, color-mix(in srgb, var(--brand-logo-cyan) 12%, transparent), transparent 42%);
+  opacity: 0.65;
+}
+
+.intro-spotlight-icon {
+  position: relative;
+  z-index: 1;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  margin: 0;
+  border-radius: 14px;
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--brand-logo-blue) 14%, #ffffff),
+    color-mix(in srgb, var(--brand-logo-cyan) 22%, #ffffff)
+  );
+  border: 1px solid color-mix(in srgb, var(--brand-logo-cyan) 40%, transparent);
+  color: var(--brand-logo-blue);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.8) inset,
+    0 6px 16px color-mix(in srgb, var(--brand-logo-blue) 18%, transparent);
+}
+
+.intro-spotlight-list li > div {
+  position: relative;
+  z-index: 1;
+}
+
+.intro-spotlight-list h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 6px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--brand-logo-navy);
+}
+
+.intro-spotlight-list p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.58;
+  color: #4a5d73;
+}
+
+@media (hover: hover) {
+  .intro-spotlight-list li:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, var(--brand-logo-cyan) 55%, #ffffff);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.95) inset,
+      0 0 0 1px color-mix(in srgb, var(--brand-logo-blue) 22%, transparent),
+      0 26px 56px rgba(4, 12, 32, 0.32),
+      0 10px 36px color-mix(in srgb, var(--brand-logo-blue) 22%, transparent);
+  }
+
+  .intro-spotlight-lead:hover {
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.95) inset,
+      0 0 0 1px color-mix(in srgb, var(--brand-logo-blue) 18%, transparent),
+      0 24px 52px rgba(4, 12, 32, 0.3),
+      0 10px 32px color-mix(in srgb, var(--brand-logo-blue) 18%, transparent);
+  }
+}
+
+@media (max-width: 959px) {
+  .intro.intro--company-spotlight {
+    min-height: auto;
+    padding-bottom: clamp(56px, 10vh, 88px) !important;
+  }
+
+  .intro-spotlight-pin {
+    min-height: min(88vw, 420px);
+    margin-bottom: clamp(8px, 2vh, 20px);
+  }
+
+  .intro-spotlight-stage {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: min(100%, 520px);
+    height: auto;
+    aspect-ratio: 1;
+    margin: 0 auto clamp(32px, 6vh, 48px);
+    order: -1;
+  }
+
+  .intro--company-spotlight .intro-stage {
+    inset: 14% 10%;
+  }
+
+  .intro-spotlight-shell {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .intro-spotlight-left,
+  .intro-spotlight-right {
+    max-width: none;
+  }
+}
+
+@keyframes spotlight-orb-breathe {
+  50% {
+    opacity: 0.65;
+    transform: scale(0.97);
+  }
+}
+
+@keyframes spotlight-title-shine {
+  50% {
+    background-position: 100% center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-spotlight-orb,
+  .intro-spotlight-title em {
+    animation: none !important;
+  }
+
+  .intro-spotlight-list li {
+    transition: none;
+  }
+
+  .intro-spotlight-pin {
+    position: relative;
+    top: auto;
+    height: auto;
+    overflow: visible;
+  }
+
+  .intro-spotlight-shell {
+    margin-top: 0;
+    pointer-events: auto;
+  }
+
+  .intro-spotlight-left {
+    position: static;
+    height: auto;
+  }
+
+  .intro-spotlight-list li {
+    min-height: 0;
+  }
+}
+
+/* /about.html — shared site header + company spotlight, then legacy about sections */
+.about-page #company-spotlight {
+  scroll-margin-top: calc(var(--about-header-height, 96px) + 16px);
+}
+
+.about-page .about-spotlight-edge.expertise-edge svg {
+  fill: #091f26;
+}
+
+.about-page .intro--company-spotlight h2.intro-spotlight-title em {
+  color: transparent;
+}
+
+@media (min-width: 960px) {
+  .about-page .intro-spotlight-pin {
+    top: var(--about-header-height, 96px);
+    height: calc(100svh - var(--about-header-height, 96px));
+  }
+
+  .about-page .intro-spotlight-left {
+    top: var(--about-header-height, 96px);
+    height: calc(100svh - var(--about-header-height, 96px));
+  }
+
+  .about-page .intro-spotlight-shell {
+    margin-top: calc(var(--about-header-height, 96px) - 100svh);
+  }
+}
