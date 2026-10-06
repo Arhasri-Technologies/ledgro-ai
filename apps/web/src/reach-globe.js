@@ -77,7 +77,40 @@ if (host && section) {
     .replace(/<main>[\s\S]*?<\/main>/, '')
     .replace(/<link\b[^>]*>/g, '')
     .replace('https://unpkg.com/three@0.149.0/build/three.min.js', '/vendor/three-r149.min.js')
-    .replace('</head>', `<style>html,body{width:100%;height:100%;overflow:hidden}body{pointer-events:none}.veil{display:none}</style>${bootstrap}</head>`)
+    .replace(
+      'LIGHT: [0.16, 0.22, 0.96],',
+      'LIGHT: [0.08, 0.04, 0.99],',
+    )
+    .replace('BACK_MUL: 0.11,', 'BACK_MUL: 0.32,')
+    .replace('GAIN: 0.60,', 'GAIN: 0.72,')
+    // Soft starfield around the earth — never on the continents.
+    .replace('DUST: 16000,', 'DUST: 14000,')
+    .replace('DUST_GAIN: 0.42,', 'DUST_GAIN: 0.40,')
+    // Globe is centered; align the star hole to the true limb and clear the disk.
+    .replace(
+      'var sil = Math.hypot(x * k, y * k - 0.043) / 0.50;        /* 1 = the limb */',
+      'var sil = Math.hypot(x * k, y * k) / 0.50;        /* 1 = the limb */',
+    )
+    .replace(
+      'var hole = 0.10 + 0.90 * sm(0.72, 1.06, sil);',
+      'var hole = sm(1.18, 1.52, sil);',
+    )
+    // Also drop any star that sits inside / on the globe sphere.
+    .replace(
+      'if (Math.random() > Math.min(1, Math.pow(dustW(x, y, z), wPow || 1) * 0.10)) continue;',
+      'if (Math.hypot(x, y, z) < 0.72) continue; if (Math.random() > Math.min(1, Math.pow(dustW(x, y, z), wPow || 1) * 0.10)) continue;',
+    )
+    // Lock the globe dead-center in the frame.
+    .replace('globe.position.y = GLOBE_MID_OFF;', 'globe.position.y = 0;')
+    .replace(
+      '</head>',
+      `<style>
+        html,body{width:100%;height:100%;margin:0;overflow:hidden;background:#000}
+        body{pointer-events:none;display:grid;place-items:center}
+        canvas{display:block;margin:auto}
+        .veil{display:none}
+      </style>${bootstrap}</head>`,
+    )
   host.replaceChildren(frame)
 
   window.addEventListener('pagehide', (event) => {

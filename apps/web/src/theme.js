@@ -6,12 +6,17 @@ function preferred() {
   return matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
 }
 
+/* White mark on dark surfaces; dark mark on light surfaces. */
 const logos = { dark: '/assets/logo-dark.png', light: '/assets/logo.png' }
 
 function paintLogos(theme) {
-  const src = logos[theme] || logos.dark
+  const pageTheme = theme === 'light' ? 'light' : 'dark'
   document.querySelectorAll('.brand img').forEach((img) => {
     if (!img.getAttribute('src')?.includes('/assets/logo')) return
+    // Homepage header is always dark — keep the white logo there.
+    const onDarkHeader =
+      document.body.classList.contains('home-page') && img.closest('.site-header')
+    const src = onDarkHeader ? logos.dark : logos[pageTheme] || logos.dark
     if (img.getAttribute('src') !== src) img.setAttribute('src', src)
   })
 }

@@ -1,20 +1,55 @@
-/* Keep the opening two sections consistent without changing other pages. */
+/* Homepage: Poppins for page content; header keeps its own type. */
+.home-page main,
+.home-page footer {
+  --font-reading: 'Poppins', sans-serif;
+  --font-display: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+.home-page main :is(h1, h2, h3, h4, p, a, span, button, li, label, small, strong, em),
+.home-page footer :is(p, a, span, small) {
+  font-family: inherit;
+}
+.home-page main :is(h1, h2, h3) em {
+  font-family: inherit;
+}
+.home-page main p,
+.home-page main li,
+.home-page footer p,
+.home-page footer a,
+.home-page footer small {
+  font-weight: 500;
+}
+.home-page main :is(strong, b),
+.home-page main a.reach-link--primary,
+.home-page main .button {
+  font-weight: 600;
+}
+
+/* Opening sections — Poppins throughout, including main hero title. */
 #home.reach,
 #vision.signal-hero {
   --font-display: 'Poppins', sans-serif;
   font-family: 'Poppins', sans-serif;
 }
-#home.reach :is(h1, p, a, span, button),
+#home.reach :is(p, a, span, button),
 #vision.signal-hero :is(h2, p, a, span, button) {
   font-family: inherit;
 }
-#home.reach h1,
+#home.reach h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(30px, 4vw, 52px);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
 #vision.signal-hero h2 {
   font-family: 'Poppins', sans-serif;
-  font-size: clamp(40px, 5.3vw, 80px);
-  font-weight: 500;
-  line-height: 1.12;
-  letter-spacing: -0.035em;
+  font-size: clamp(26px, 3.2vw, 44px);
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
   text-wrap: balance;
 }
 #home.reach h1 em,
@@ -31,26 +66,27 @@
 }
 #home .reach-lead,
 #vision .signal-description {
-  font-size: clamp(14px, 1.15vw, 17px);
-  font-weight: 400;
-  line-height: 1.8;
+  font-size: clamp(13px, 1vw, 15px);
+  font-weight: 500;
+  line-height: 1.7;
   letter-spacing: 0;
   max-width: 44ch;
-  margin: 26px 0 32px;
+  margin: 20px 0 24px;
 }
 #home .reach-kicker,
 #vision .signal-eyebrow {
+  font-family: 'Poppins', sans-serif;
   font-size: 10px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.6;
   letter-spacing: 0.14em;
 }
 #home .reach-actions a,
-#vision .signal-actions a { font-size: 13px; font-weight: 500; }
+#vision .signal-actions a { font-size: 12px; font-weight: 600; }
 #home .reach-caption { font-family: 'Poppins', sans-serif; }
 @media (max-width: 760px) {
-  #home.reach h1,
-  #vision.signal-hero h2 { font-size: clamp(36px, 8.5vw, 58px); }
+  #home.reach h1 { font-size: clamp(28px, 7.5vw, 42px); }
+  #vision.signal-hero h2 { font-size: clamp(26px, 7vw, 40px); }
 }
 
 /* Center the opening message over the globe with a balanced contrast layer. */
@@ -58,7 +94,6 @@
 #home .reach-copy { width: 100%; max-width: 1040px; margin-inline: auto; min-width: 0; }
 #home .reach-kicker,
 #home .reach-actions { justify-content: center; }
-#home.reach h1 { font-size: clamp(38px, 5.5vw, 82px); font-weight: 600; line-height: 1.13; }
 #home.reach h1 em {
   background-image: linear-gradient(100deg, #d5e5ff 0%, #86b4ff 40%, #48d9ff 100%);
   filter: drop-shadow(0 3px 22px #268bff40);
@@ -66,15 +101,84 @@
 #home .reach-lead { margin-inline: auto; max-width: 54ch; color: #c2cee1; }
 #home .reach-caption { left: 24px; right: 24px; text-align: center; }
 #home.reach::before {
-  background: radial-gradient(ellipse at 50% 48%, #040c1bbd 0%, #040c1b66 48%, #040c1b26 75%),
-    linear-gradient(0deg, #060d1d 0%, transparent 25%, transparent 80%, #060d1d66);
+  /* Even vignette — keep earth brightness matched top and bottom. */
+  background:
+    radial-gradient(ellipse 72% 68% at 50% 50%, transparent 0%, transparent 42%, #040c1b55 78%, #040c1bcc 100%),
+    linear-gradient(0deg, #060d1d66 0%, transparent 18%, transparent 82%, #060d1d55 100%);
 }
 @media (max-width: 760px) {
-  #home.reach h1 { font-size: clamp(36px, 8vw, 58px); }
   #home .reach-actions { gap: 18px 24px; }
 }
 
-/* A quiet dark header continues the globe's backdrop in either page theme. */
+/* Background earth — centered in the hero, both axes. */
+#home .reach-stage {
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+#home #reach-globe,
+#home .reach-fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  transform: none;
+  transform-origin: center center;
+}
+#home #reach-globe iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: none;
+}
+#home .reach-fallback {
+  inset: 12% 18%;
+  width: auto;
+  height: auto;
+}
+
+/* Remaining homepage sections — Poppins + minimal type scale. */
+.home-page main h2,
+.home-page main .expertise-framework-title,
+.home-page main .intro-spotlight-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(24px, 2.8vw, 40px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+.home-page main h2 em,
+.home-page main .expertise-framework-title span,
+.home-page main .intro-spotlight-title em {
+  font-family: inherit;
+}
+.home-page main h3 {
+  font-size: clamp(16px, 1.6vw, 22px);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+.home-page main p,
+.home-page main li {
+  font-size: clamp(13px, 1vw, 15px);
+  line-height: 1.7;
+  font-weight: 500;
+}
+.home-page main .section-label,
+.home-page main .partner-invitation-label,
+.home-page main .partner-pillar-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+.home-page footer {
+  font-size: 13px;
+}
+.home-page footer small { font-size: 12px; }
+
+/* Dark glass header — leave nav type alone; logo sits on dark without a white pad. */
 .home-page .site-header.dataserv-header,
 html[data-theme='light'] .home-page .site-header.dataserv-header {
   --header-h: 78px;
@@ -91,7 +195,28 @@ html[data-theme='light'] .home-page .site-header.dataserv-header {
 .home-page .site-header .nav-trigger { color: #b9c8dc; }
 .home-page .site-header .nav-link:hover,
 .home-page .site-header .nav-trigger:hover { color: #fff; }
-.home-page .site-header .brand img { filter: brightness(0) invert(1); width: 112px; }
+.home-page .site-header .brand {
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+}
+/* Header is dark — white logo asset (set in theme.js / index.html). */
+.home-page .site-header .brand img {
+  filter: none;
+  width: 158px;
+  height: auto;
+  display: block;
+}
+.home-page footer .brand img {
+  width: 150px;
+  height: auto;
+}
+html[data-theme='light'] .home-page footer .brand img {
+  filter: none;
+}
+@media (max-width: 480px) {
+  .home-page .site-header .brand img { width: 132px; }
+}
 .home-page .site-header .header-cta {
   background: #1a4dff;
   box-shadow: none;
@@ -103,7 +228,7 @@ html[data-theme='light'] .home-page .site-header.dataserv-header {
   .home-page .site-header.dataserv-header { --header-h: 72px; }
 }
 
-/* Let the opening globe show through; keep the original logo legible. */
+/* Let the opening globe show through the header chrome. */
 .home-page .site-header.dataserv-header:not(.is-scrolled),
 html[data-theme='light'] .home-page .site-header.dataserv-header:not(.is-scrolled) {
   background: transparent;
@@ -111,10 +236,4 @@ html[data-theme='light'] .home-page .site-header.dataserv-header:not(.is-scrolle
   -webkit-backdrop-filter: none;
 }
 .home-page .site-header.dataserv-header:not(.is-scrolled)::after { display: none; }
-.home-page .site-header .brand {
-  padding: 6px 10px;
-  border-radius: 8px;
-  background: #fff;
-}
-.home-page .site-header .brand img { filter: none; }
 .home-page .site-header.dataserv-header { margin-bottom: calc(-1 * var(--header-h)) !important; }
