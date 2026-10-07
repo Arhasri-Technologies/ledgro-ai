@@ -22,7 +22,11 @@
     <link rel="stylesheet" href="/src/theme.css" />
     <link rel="stylesheet" href="/src/site-header.css" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-      <link rel="stylesheet" href="/src/about-hero-polish.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Genos:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/about-redesign.css" />
+    <link rel="stylesheet" href="/src/about-hero-polish.css" />
   </head>
   <body class="about-page home-page">
     <a class="skip" href="#main">Skip to content</a>
@@ -93,40 +97,28 @@
       </div>
     </header>
     <main id="main">
-      <section class="launch-hero" aria-labelledby="about-title">
-        <div id="about-energy-background" aria-hidden="true"></div>
-        <div class="launch-topline"><span><i></i> COMPANY · NEW HAMPSHIRE, USA</span><span>PEOPLE / SOFTWARE / DELIVERY</span></div>
-        <div class="launch-main">
-          <div class="launch-copy">
-            <p class="launch-eyebrow">COMPANY OVERVIEW</p>
-            <h1 id="about-title">Our people.<br /><em>Your next possibility.</em></h1>
-            <p class="launch-lead">Great software starts with people who care about the outcome. From New Hampshire to teams across regions, we bring the talent, technology, and follow-through to turn ambitious ideas into working systems.</p>
-            <div class="launch-actions">
-              <a class="launch-primary" href="#overview">Get to know us <span aria-hidden="true">↓</span></a>
-              <a class="launch-secondary" href="#values">Core values <span aria-hidden="true">↓</span></a>
+      <section class="about-hero" aria-labelledby="about-title">
+        <div class="about-hero__shell">
+          <p class="about-intro__eyebrow">Company overview</p>
+          <div class="about-hero__layout">
+            <div>
+              <h1 id="about-title">Human expertise.<br /><em>Built for global scale.</em></h1>
+              <p class="about-hero__lead">DataServ Inc. is headquartered in New Hampshire and delivers software, staffing, and consulting worldwide. We combine enterprise integration experience with modern AI-assisted engineering — always with people accountable for the outcome.</p>
+              <div class="about-hero__chips">
+                <span class="about-hero__chip">IT staffing</span>
+                <span class="about-hero__chip">Product engineering</span>
+                <span class="about-hero__chip">Ledgro &amp; Vela AI</span>
+              </div>
+              <div class="about-hero__actions launch-actions">
+                <a class="launch-primary" href="#overview">Who we are <span aria-hidden="true">↓</span></a>
+                <a class="launch-secondary" href="#clients">Client portfolio <span aria-hidden="true">↓</span></a>
+              </div>
             </div>
+            <figure class="about-hero__visual">
+              <img src="/assets/about/about-global.jpg" alt="Abstract illustration of global delivery: connected regions and enterprise software pathways." width="864" height="1152" loading="eager" decoding="async" />
+              <figcaption>New Hampshire roots. Global delivery mindset. One team from discovery through launch.</figcaption>
+            </figure>
           </div>
-          <aside class="about-blueprint" aria-label="People, technology, and delivery connected">
-            <div class="blueprint-top"><span><i></i> THE DATASERV BLUEPRINT</span><button class="about-motion-toggle" type="button" aria-pressed="false">Pause motion</button></div>
-            <div class="blueprint-world" aria-hidden="true">
-              <svg class="blueprint-sphere" viewBox="0 0 500 440" fill="none">
-                <defs><radialGradient id="sphere-glow"><stop stop-color="#39bdff" stop-opacity=".18"/><stop offset="1" stop-color="#39bdff" stop-opacity="0"/></radialGradient></defs>
-                <circle cx="250" cy="220" r="210" fill="url(#sphere-glow)" stroke="none"/>
-                <g class="sphere-lines" stroke="currentColor" stroke-width=".8">
-                  <circle cx="250" cy="220" r="164"/><ellipse cx="250" cy="220" rx="124" ry="164"/><ellipse cx="250" cy="220" rx="65" ry="164"/>
-                  <ellipse cx="250" cy="220" rx="164" ry="54"/><ellipse cx="250" cy="220" rx="164" ry="112"/>
-                  <path d="M86 220h328M250 56v328M108 138h284M108 302h284"/>
-                </g>
-                <g class="sphere-orbit" stroke="currentColor"><ellipse cx="250" cy="220" rx="221" ry="84" transform="rotate(-32 250 220)" stroke-dasharray="3 7"/><circle cx="438" cy="105" r="5" fill="currentColor"/></g>
-                <path class="blueprint-signal" d="M58 310L170 247 250 220 338 146 447 155" stroke="currentColor" stroke-width="2" stroke-dasharray="8 12"/>
-              </svg>
-              <div class="blueprint-core"><span>Human at heart.</span><strong>Engineered<br/>to connect.</strong><small>PEOPLE × POSSIBILITY</small></div>
-              <span class="blueprint-tag blueprint-tag--people">01 / PEOPLE <i></i></span>
-              <span class="blueprint-tag blueprint-tag--technology">02 / TECHNOLOGY <i></i></span>
-              <span class="blueprint-tag blueprint-tag--delivery">03 / DELIVERY <i></i></span>
-            </div>
-            <div class="blueprint-caption"><span>BASED IN NEW HAMPSHIRE<br/><strong>Built for a connected world.</strong></span><span class="blueprint-coordinate" aria-hidden="true">NH / USA<br/>↗ GLOBAL THINKING</span></div>
-          </aside>
         </div>
       </section>
 
@@ -145,9 +137,9 @@
             <h2>A company built around <em>the work and the people.</em></h2>
           </div>
           <div class="about-prose about-reveal" style="--d:1">
-            <p class="about-lede">Dataserv was started by technologists with long experience in e-business, enterprise integration, business intelligence, and ERP, and in running an open-ended software training and development institute.</p>
-            <p>That mix is still how the company is organized. Software development, global outsourcing, and professional staffing sit in one place, so the system and the people who run it are hired and built together.</p>
-            <p>The aim is to stay a reliable source of skilled software engineers, and to be the outsourcing partner a client can hold to a deadline. We keep adapting as the tools change, and we still measure the work by whether it meets the expectation on time and at a cost the brief can justify.</p>
+            <p class="about-lede">Founded by technologists, DataServ brings experience across enterprise integration, business intelligence, e-business, and ERP. Our roots in software development and training shape the way we build today.</p>
+            <p>We bring software development, global delivery, and professional staffing together. That means the technology you need and the people who make it work can grow together.</p>
+            <p>Our focus is simple: understand your business, build with care, and deliver work that earns your trust. As technology evolves, we keep learning — and keep your goals at the center.</p>
           </div>
         </div>
         <div class="about-practices">
@@ -345,7 +337,6 @@
       <small>© 2026 DataServ Inc.</small>
     </footer>
     <script type="module" src="/src/about.js"></script>
-    <script type="module" src="/src/about-energy.jsx"></script>
     <script type="module" src="/src/theme.js"></script>
     <script type="module" src="/src/header-nav.js"></script>
   </body>

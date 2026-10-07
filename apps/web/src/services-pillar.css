@@ -12,9 +12,181 @@
   scroll-margin-top: 110px;
 }
 
+.home-page .expertise-animated.section {
+  padding-top: clamp(40px, 5vw, 72px);
+  padding-bottom: clamp(8px, 1.5vw, 16px);
+}
+
+/* Compact vertical scroll range for 6 steps (scroll-pin drives horizontal slide). */
+.home-page .expertise-animated {
+  --panel-scroll: 28svh;
+}
+
+@media (min-width: 960px) {
+  .home-page .expertise-animated .expertise-pin {
+    height: calc(100svh + (var(--panels, 6) - 1) * var(--panel-scroll)) !important;
+  }
+
+  .home-page .expertise-animated .expertise-pin-inner {
+    position: sticky;
+    top: 0;
+    height: auto;
+    max-height: 100svh;
+    overflow: visible;
+    padding-bottom: clamp(12px, 2vh, 20px);
+  }
+
+  .home-page .expertise-animated .expertise-method-track {
+    overflow: visible;
+    scroll-snap-type: none;
+    padding: 0 0 0 5%;
+  }
+
+  .home-page .expertise-animated .expertise-method-panel--compact {
+    flex: 0 0 min(46vw, 500px);
+    padding: clamp(10px, 1.6vh, 18px) clamp(16px, 3vw, 28px);
+  }
+}
+
+@media (max-width: 959px) {
+  .home-page .expertise-animated .expertise-pin {
+    height: auto !important;
+  }
+
+  .home-page .expertise-animated .expertise-pin-inner {
+    position: relative;
+    height: auto;
+    max-height: none;
+  }
+
+  .home-page .expertise-animated .expertise-method-track {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 5%;
+    -webkit-overflow-scrolling: touch;
+    padding: 4px 5% 12px;
+  }
+
+  .home-page .expertise-animated .expertise-method-panel--compact {
+    scroll-snap-align: start;
+    flex: 0 0 min(84vw, 520px);
+  }
+
+  .home-page .expertise-animated .expertise-progress,
+  .home-page .expertise-animated .expertise-method-hint {
+    display: none;
+  }
+}
+
+.expertise-pin-inner {
+  justify-content: flex-start;
+  align-content: start;
+  gap: clamp(8px, 1.4vh, 14px);
+  padding-top: clamp(4px, 1vh, 12px);
+  overflow: visible;
+}
+
+.home-page .expertise-animated .expertise-rail {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.home-page .expertise-animated .expertise-progress {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.home-page .expertise-animated .expertise-method-hint {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.home-page .expertise-animated .expertise-edge {
+  height: clamp(20px, 3vw, 40px);
+}
+
+.expertise-pin-inner .expertise-framework {
+  flex-shrink: 0;
+  margin-bottom: 0;
+  padding: 0 5%;
+}
+
+.expertise-pin-inner .expertise-framework-label {
+  margin-bottom: 12px;
+}
+
+.expertise-pin-inner .expertise-framework-title {
+  margin-bottom: 14px;
+}
+
+.expertise-pin-inner .expertise-framework-pills {
+  margin-top: 0;
+}
+
+@media (min-width: 960px) {
+  .expertise-method-panel {
+    min-height: 0;
+    align-items: flex-start;
+    padding-top: clamp(12px, 2vh, 24px);
+    padding-bottom: clamp(12px, 2vh, 24px);
+  }
+
+  .expertise-method-copy h3 {
+    margin-bottom: 12px;
+  }
+
+  .expertise-method-copy h3::after {
+    margin-top: 12px;
+  }
+
+  .expertise-method-panel--compact .expertise-method-step {
+    margin-bottom: 8px;
+  }
+}
+
+.expertise-framework-pills {
+  max-width: 52rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  line-height: 1.65;
+}
+
+.expertise-progress {
+  flex-wrap: wrap;
+  row-gap: 10px;
+  gap: clamp(8px, 1.6vw, 22px);
+  padding: 0 4%;
+}
+
+.expertise-progress-step {
+  font-size: 8px;
+  letter-spacing: 0.1em;
+}
+
+.expertise-method-panel--compact .expertise-method-tagline {
+  margin-bottom: 0;
+}
+
+@media (max-width: 959px) {
+  .home-page .expertise-animated .expertise-method-panel {
+    min-height: 0;
+  }
+
+  .expertise-method-panel--compact {
+    min-height: 0;
+    padding-top: clamp(16px, 4vw, 28px);
+    padding-bottom: clamp(16px, 4vw, 28px);
+  }
+
+  .home-page .expertise-animated.section {
+    padding-bottom: clamp(16px, 4vw, 28px);
+  }
+}
+
 .expertise-method-step {
   margin: 0 0 12px;
-  font: 10px/1.4 monospace;
   letter-spacing: 0.1em;
   color: var(--phase-accent, var(--site-accent));
 }

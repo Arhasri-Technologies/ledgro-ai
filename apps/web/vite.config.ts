@@ -20,6 +20,13 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(import.meta.dirname, 'index.html'),
+        'ai-ml': resolve(import.meta.dirname, 'ai-ml.html'),
+        'ai-automation': resolve(import.meta.dirname, 'ai-automation.html'),
+        'web-applications': resolve(import.meta.dirname, 'web-applications.html'),
+        'mobile-apps': resolve(import.meta.dirname, 'mobile-apps.html'),
+        'cloud-data': resolve(import.meta.dirname, 'cloud-data.html'),
+        'api-integrations': resolve(import.meta.dirname, 'api-integrations.html'),
+
         appDevelopment: resolve(import.meta.dirname, 'app-development.html'),
         contact: resolve(import.meta.dirname, 'contact.html'),
         blogs: resolve(import.meta.dirname, 'blogs.html'),

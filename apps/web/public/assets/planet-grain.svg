@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600"><filter id="clouds"><feTurbulence type="fractalNoise" baseFrequency=".017 .035" numOctaves="5" seed="21"/><feColorMatrix type="saturate" values="0"/></filter><path fill="#aaa" filter="url(#clouds)" d="M0 0h600v600H0z"/></svg>

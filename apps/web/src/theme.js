@@ -13,10 +13,7 @@ function paintLogos(theme) {
   const pageTheme = theme === 'light' ? 'light' : 'dark'
   document.querySelectorAll('.brand img').forEach((img) => {
     if (!img.getAttribute('src')?.includes('/assets/logo')) return
-    // Homepage header is always dark — keep the white logo there.
-    const onDarkHeader =
-      document.body.classList.contains('home-page') && img.closest('.site-header')
-    const src = onDarkHeader ? logos.dark : logos[pageTheme] || logos.dark
+    const src = logos[pageTheme]
     if (img.getAttribute('src') !== src) img.setAttribute('src', src)
   })
 }

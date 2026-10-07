@@ -1,0 +1,233 @@
+/* Each side sphere is centered on the viewport boundary: exactly half is visible. */
+#home.planet-carousel {
+  --planet-size: min(74vw, 86svh, 880px);
+  --planet-accent: #8fc6ff;
+  min-height: max(740px, 100svh);
+  background: #030812;
+  padding: 150px 24px 145px;
+}
+#home[data-active="venus"] { --planet-accent: #edc28b; }
+#home[data-active="mars"] { --planet-accent: #f5a58f; }
+#home.planet-carousel::before {
+  z-index: 1;
+  background: radial-gradient(ellipse at center, #030812b0 0%, #03081270 28%, transparent 62%), linear-gradient(0deg, #030812 0%, transparent 25%, transparent 80%, #03081255);
+}
+.planet-scene { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.planet-scene::before { content: ""; position: absolute; inset: 0; opacity: .85; background: url("/assets/carousel-stars.svg") center / 1200px 750px repeat; }
+.planet {
+  position: absolute; width: var(--planet-size); height: var(--planet-size); left: 50%; top: 50%;
+  transform: translate(-50%, -50%); border-radius: 50%; opacity: 1;
+  transition: left 1000ms cubic-bezier(.22,1,.36,1), transform 1000ms cubic-bezier(.22,1,.36,1), opacity 800ms ease, filter 1000ms ease;
+  filter: brightness(.95);
+}
+.planet[data-position="-1"] { left: 0%; transform: translate(-50%, -50%) scale(.52); filter: brightness(.8); }
+.planet[data-position="1"] { left: 100%; transform: translate(-50%, -50%) scale(.52); filter: brightness(.8); }
+.planet[data-position="-2"] { left: -45%; transform: translate(-50%, -50%) scale(.3); opacity: 0; }
+.planet[data-position="2"] { left: 145%; transform: translate(-50%, -50%) scale(.3); opacity: 0; }
+#home .planet--earth .reach-stage { border-radius: 50%; overflow: hidden; }
+#home .planet--earth #reach-globe { background: transparent; }
+#home .planet--earth .reach-fallback { inset: 8%; border-radius: 50%; background: radial-gradient(circle at 30% 28%, #5588ab, #13365f 40%, #040d1f 75%); }
+.planet-surface { width: 100%; height: 100%; border-radius: 50%; background-position: center; background-size: 104.167%; background-repeat: no-repeat; }
+.planet--venus .planet-surface { background-image: url('/assets/venus-realistic.png'); }
+.planet--mars .planet-surface { background-image: url('/assets/mars-realistic.png'); }
+/* Earth stays crisp without the surrounding halo or highlighted rim. */
+#home .planet--earth, #home .planet--earth .reach-stage, #home .planet--earth #reach-globe, #home .planet--earth .reach-fallback { box-shadow: none; border: 0; outline: 0; }
+#home .planet--earth { filter: none; }
+#home.planet-carousel .reach-copy { max-width: min(660px, 60vw); text-shadow: 0 2px 24px #000b; }
+#home.planet-carousel h1 {
+  font-family: 'Genos', 'Poppins', sans-serif;
+  font-size: clamp(38px, 5.2vw, 76px);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -.03em;
+  color: #f4f7ff;
+}
+#home.planet-carousel .reach-kicker { color: var(--planet-accent); font-size: 10px; letter-spacing: .18em; }
+#home .planet-tagline { font-size: clamp(18px, 2vw, 26px); color: var(--planet-accent); margin: 16px 0 0; }
+#home.planet-carousel .reach-lead { color: #d4dceb; font-size: 15px; min-height: 5.1em; max-width: 49ch; }
+#home.planet-carousel .reach-link--primary { background: #e9efff; border-color: #fff5; color: #0a1730; text-shadow: none; box-shadow: 0 4px 32px #0004; }
+#home.planet-carousel .reach-link--primary:hover { background: #fff; transform: translateY(-2px); }
+.planet-nav { position: absolute; z-index: 3; top: 50%; transform: translateY(-50%); width: max(120px, 15vw); min-height: 180px; padding: 24px; border: 0; background: transparent; color: #fff; text-shadow: 0 1px 6px #000, 0 1px 3px #000; cursor: pointer; display: grid; align-content: center; gap: 10px; transition: background .3s, color .3s; }
+.planet-nav--left { left: 0; text-align: left; border-radius: 0 100px 100px 0; }
+.planet-nav--right { right: 0; text-align: right; border-radius: 100px 0 0 100px; }
+.planet-nav[hidden] { display: none; }
+.planet-nav:hover { background: #ffffff0a; color: #ffe6c7; }
+.planet-nav-world { font-size: 9px; letter-spacing: .16em; color: #fff; text-shadow: 0 1px 6px #000, 0 1px 3px #000; }
+.planet-nav strong { font-size: clamp(15px, 1.6vw, 23px); font-weight: 500; }
+.planet-nav-action { font-size: 11px; color: #d9dfeb; }
+.planet-carousel button:focus-visible { outline: 2px solid #b4d7ff; outline-offset: -4px; }
+.planet-pagination { position: absolute; z-index: 3; bottom: 80px; left: 50%; transform: translateX(-50%); display: flex; gap: 4px; }
+.planet-pagination button { width: 44px; height: 44px; border: 0; background: none; cursor: pointer; display: grid; place-items: center; }
+.planet-pagination span { width: 6px; height: 6px; background: #73819a; border-radius: 10px; transition: width .5s, background .5s; }
+.planet-pagination [aria-pressed="true"] span { width: 26px; background: var(--planet-accent); }
+#home .planet-footnote { position: absolute; bottom: 44px; left: 0; right: 0; margin: 0; color: #90a0b8; font-size: 9px; letter-spacing: .2em; }
+@media (max-width: 700px) {
+  #home.planet-carousel { --planet-size: min(115vw, 620px); min-height: 800px; padding: 145px 24px 260px; }
+  #home.planet-carousel .reach-copy { max-width: 100%; }
+  #home.planet-carousel h1 { font-size: clamp(34px, 9vw, 54px); }
+  #home.planet-carousel .reach-lead { font-size: 14px; max-width: 36ch; }
+  .planet { top: 39%; }
+  .planet[data-position="-1"], .planet[data-position="1"] { top: 74%; }
+  .planet { transition-property: left, top, transform, opacity, filter; }
+  .planet-nav { top: 74%; min-height: 112px; padding: 18px; width: 32%; }
+  .planet-nav-world { font-size: 8px; }
+  .planet-pagination { bottom: 65px; }
+  #home .planet-footnote { bottom: 34px; font-size: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #home.planet-carousel *, #home.planet-carousel *::after { transition: none !important; animation: none !important; }
+}
+/* The retained scene includes a starfield around its globe; crop to its limb. */
+#home.planet-carousel #reach-globe iframe { transform: scale(1.85); }
+#home.planet-carousel .planet--earth .reach-stage { background: #030812; }
+/* Composite the network globe into the shared starfield, without a lit disk. */
+#home .planet--earth { mix-blend-mode: screen; }
+
+/* A daylight palette for the entire hero, including its embedded Earth scene. */
+html[data-theme='light'] #home.planet-carousel {
+  --planet-accent: #215b8c;
+  color: #112840;
+  background: radial-gradient(ellipse at 50% 36%, #fff 0%, #edf4fb 65%, #e5eef8 100%);
+  border-color: #d5e2ef;
+}
+html[data-theme='light'] #home[data-active='venus'] { --planet-accent: #78511f; }
+html[data-theme='light'] #home[data-active='mars'] { --planet-accent: #9b3f29; }
+html[data-theme='light'] #home.planet-carousel::before {
+  background: radial-gradient(ellipse at center, #f4f8ffdc 0%, #f4f8ff99 28%, transparent 62%), linear-gradient(0deg, #e5eef8 0%, transparent 24%, transparent 85%, #edf4fb55);
+}
+html[data-theme='light'] #home .planet-scene::before {
+  filter: invert(1) sepia(.3) saturate(2) hue-rotate(165deg);
+  opacity: .48;
+}
+html[data-theme='light'] #home .planet { filter: brightness(1.08) saturate(.88); }
+html[data-theme='light'] #home .planet[data-position='-1'],
+html[data-theme='light'] #home .planet[data-position='1'] { filter: brightness(1.15) saturate(.75); }
+/* White points on the logo-blue Earth surface in light mode. */
+html[data-theme='light'] #home .planet.planet--earth {
+  filter: none;
+  mix-blend-mode: normal;
+  clip-path: circle(46%);
+}
+html[data-theme='light'] #home .planet--earth .reach-stage { background: #285e83; }
+html[data-theme='light'] #home .planet--earth .reach-fallback {
+  background: #285e83;
+}
+html[data-theme='light'] #home.planet-carousel .reach-copy { text-shadow: none; }
+html[data-theme='light'] #home.planet-carousel h1 { color: #112840; }
+html[data-theme='light'] #home.planet-carousel .reach-lead { color: #344b61; }
+html[data-theme='light'] #home.planet-carousel .reach-link--primary {
+  color: #fff; background: #164caf; border-color: #164caf; box-shadow: 0 8px 22px #164caf1a;
+}
+html[data-theme='light'] #home.planet-carousel .reach-link--primary:hover { background: #103b8a; }
+html[data-theme='light'] #home .planet-nav {
+  color: #152b43; text-shadow: 0 1px 4px #fff;
+  background: radial-gradient(ellipse at center, #f4f8ffcc, #f4f8ff66 40%, transparent 72%);
+}
+html[data-theme='light'] #home .planet-nav:hover { background: radial-gradient(ellipse at center, #f4f8ffee, #f4f8ff88 40%, transparent 75%); color: #164caf; }
+html[data-theme='light'] #home .planet-nav-world,
+html[data-theme='light'] #home .planet-nav-action { color: #344b61; text-shadow: none; }
+html[data-theme='light'] #home .planet-pagination span { background: #8196ad; }
+html[data-theme='light'] #home .planet-pagination [aria-pressed='true'] span { background: var(--planet-accent); }
+html[data-theme='light'] #home .planet-footnote { color: #51677e; }
+html[data-theme='light'] #home button:focus-visible,
+html[data-theme='light'] #home a:focus-visible { outline-color: #164caf; }
+
+/* The navigation sits over the hero and must follow its theme too. */
+html[data-theme='light'] .home-page .site-header.dataserv-header {
+  --site-text: #112840;
+  --site-muted: #425973;
+  --site-surface: #fff;
+  --site-border: #c7d7e7;
+  --header-dropdown-bg: #f8fbff;
+  color: #112840;
+}
+html[data-theme='light'] .home-page .site-header.dataserv-header.is-scrolled { background: #f8fbfff2; box-shadow: 0 8px 28px #244c6e12; }
+html[data-theme='light'] .home-page .site-header .header-nav--main > .nav-link,
+html[data-theme='light'] .home-page .site-header .header-nav--main > .nav-item > .nav-trigger,
+html[data-theme='light'] .home-page .site-header .nav-trigger { color: #344b61; }
+html[data-theme='light'] .home-page .site-header .nav-link:hover,
+html[data-theme='light'] .home-page .site-header .nav-trigger:hover { color: #164caf; }
+html[data-theme='light'] .home-page .site-header .theme-toggle,
+html[data-theme='light'] .home-page .site-header .header-menu-toggle { color: #244c6e; background: #e8f0fa; border-color: #c7d7e7; }
+html[data-theme='light'] .home-page .section-pagination { --rail-ink: #51677e; --rail-active: #164caf; }
+html[data-theme='light'] .home-page .pagination-detail { background: #f8fbfff5; border-color: #c7d7e7; color: #425973; box-shadow: 0 8px 24px #244c6e1a; }
+html[data-theme='light'] .home-page .pagination-detail strong { color: #112840; }
+html[data-theme='light'] .home-page .pagination-number { color: #345c80; }
+@media (max-width: 760px) {
+  html[data-theme='light'] .home-page .section-pagination { background: #f8fbfff2; border-color: #c7d7e7; }
+}
+
+/* Stars stay in the shared sky, behind the planets and readable content. */
+#home .planet-scene::before {
+  background-size: 960px 600px;
+  animation: planet-star-shimmer 8s ease-in-out infinite alternate;
+}
+#home .planet-scene::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: url('/assets/carousel-stars.svg') 170px 90px / 1650px 1050px repeat;
+  opacity: .45;
+}
+.planet-shooting-stars {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  --meteor-head: #e2f5ff;
+  --meteor-tail: #83c7fba6;
+}
+.planet-shooting-stars i {
+  position: absolute;
+  left: 8%; top: 16%;
+  width: clamp(70px, 10vw, 150px); height: 2px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, transparent, var(--meteor-tail) 65%, var(--meteor-head));
+  opacity: 0;
+  transform: rotate(28deg);
+  animation: planet-meteor 12s linear infinite;
+  animation-delay: -1s;
+}
+.planet-shooting-stars i::after {
+  content: ''; position: absolute; right: 0; top: -1px;
+  width: 4px; height: 4px; border-radius: 50%; background: var(--meteor-head);
+  box-shadow: 0 0 8px var(--meteor-tail);
+}
+.planet-shooting-stars i:nth-child(2) { left: 65%; top: 14%; animation-duration: 17s; animation-delay: -7s; }
+.planet-shooting-stars i:nth-child(3) { left: 4%; top: 64%; animation-duration: 21s; animation-delay: -13s; }
+@keyframes planet-meteor {
+  0% { opacity: 0; transform: translate3d(-8vw, -40px, 0) rotate(28deg); }
+  2% { opacity: .9; }
+  11% { opacity: .7; }
+  16%, 100% { opacity: 0; transform: translate3d(30vw, 170px, 0) rotate(28deg); }
+}
+@keyframes planet-star-shimmer { from { opacity: .65; } to { opacity: 1; } }
+html[data-theme='light'] #home .planet-scene::before { animation-name: planet-star-shimmer-light; }
+html[data-theme='light'] #home .planet-scene::after { filter: invert(1); opacity: .22; }
+html[data-theme='light'] #home .planet-shooting-stars { --meteor-head: #2b5a91; --meteor-tail: #4b83bda6; }
+@keyframes planet-star-shimmer-light { from { opacity: .35; } to { opacity: .6; } }
+#home.scene-out-of-view .planet-scene::before,
+#home.stars-paused .planet-scene::before,
+#home.scene-out-of-view .planet-shooting-stars i,
+#home.stars-paused .planet-shooting-stars i { animation-play-state: paused; }
+@media (max-width: 700px) {
+  .planet-shooting-stars i:nth-child(2) { left: 55%; top: 9%; }
+  .planet-shooting-stars i:nth-child(3) { top: 80%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #home .planet-scene::before { animation: none !important; }
+  #home .planet-shooting-stars { display: none; }
+}
+
+/* Keep the blue Earth clear of the pale content overlay. */
+html[data-theme='light'] #home.planet-carousel[data-active='earth']::before {
+  background: linear-gradient(0deg, #e5eef8 0%, transparent 18%, transparent 85%, #edf4fb55);
+}
+html[data-theme='light'] #home.planet-carousel[data-active='earth'] .reach-copy { text-shadow: 0 2px 12px #00368b80; }
+html[data-theme='light'] #home.planet-carousel[data-active='earth'] h1,
+html[data-theme='light'] #home.planet-carousel[data-active='earth'] .reach-lead,
+html[data-theme='light'] #home.planet-carousel[data-active='earth'] .reach-kicker,
+html[data-theme='light'] #home.planet-carousel[data-active='earth'] .planet-tagline { color: #fff; }
+html[data-theme='light'] #home.planet-carousel[data-active='earth'] .reach-link--primary { background: #fff; border-color: #fff; color: #164caf; }

@@ -28,13 +28,18 @@
 
 /* Opening sections — Poppins throughout, including main hero title. */
 #home.reach,
+#vision.about-intro,
 #vision.signal-hero {
   --font-display: 'Poppins', sans-serif;
   font-family: 'Poppins', sans-serif;
 }
 #home.reach :is(p, a, span, button),
+#vision.about-intro :is(p, a, span, button),
 #vision.signal-hero :is(h2, p, a, span, button) {
   font-family: inherit;
+}
+#vision.about-intro .about-intro__title {
+  font-family: 'Genos', 'Poppins', sans-serif;
 }
 #home.reach h1 {
   font-family: 'Poppins', sans-serif;
@@ -43,6 +48,12 @@
   line-height: 1.12;
   letter-spacing: -0.02em;
   text-wrap: balance;
+}
+/* Section 1 brand names (DataServ Inc. / Ledgro / Vel.ai) — Genos (Google Fonts). */
+#home.planet-carousel h1 {
+  font-family: 'Genos', 'Poppins', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.03em;
 }
 #vision.signal-hero h2 {
   font-family: 'Poppins', sans-serif;
@@ -160,6 +171,50 @@
   line-height: 1.3;
   letter-spacing: -0.02em;
 }
+/* Expertise carousel — keep Poppins display scale for step titles (not global h3). */
+.home-page main .expertise-animated .expertise-method-copy h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(30px, 3.8vw, 52px);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  max-width: 19ch;
+  text-wrap: balance;
+}
+.home-page main .expertise-animated .expertise-method-tagline {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(13px, 1.05vw, 15px);
+  line-height: 1.65;
+  font-weight: 500;
+  max-width: 36ch;
+}
+.home-page main .expertise-animated .expertise-method-step,
+.home-page main .expertise-animated .expertise-framework-label,
+.home-page main .expertise-animated .expertise-framework-pills,
+.home-page main .expertise-animated .expertise-progress,
+.home-page main .expertise-animated .expertise-method-link,
+.home-page main .expertise-animated .expertise-method-hint {
+  font-family: 'Poppins', sans-serif;
+}
+.home-page main .expertise-animated .expertise-framework-title {
+  font-weight: 600;
+}
+.home-page main .expertise-animated .expertise-method-hint {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+.home-page main .expertise-animated .expertise-method-step,
+.home-page main .expertise-animated .expertise-framework-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+@media (max-width: 640px) {
+  .home-page main .expertise-animated .expertise-method-copy h3 {
+    font-size: clamp(26px, 7vw, 38px);
+  }
+}
 .home-page main p,
 .home-page main li {
   font-size: clamp(13px, 1vw, 15px);
@@ -237,3 +292,37 @@ html[data-theme='light'] .home-page .site-header.dataserv-header:not(.is-scrolle
 }
 .home-page .site-header.dataserv-header:not(.is-scrolled)::after { display: none; }
 .home-page .site-header.dataserv-header { margin-bottom: calc(-1 * var(--header-h)) !important; }
+
+/* Journal spotlight — Genos + logo navy / blue / cyan (after enterprise trust). */
+.home-page main .home-journal {
+  --font-display: 'Genos', 'Poppins', sans-serif;
+  font-family: 'Genos', 'Poppins', sans-serif;
+}
+.home-page main .home-journal :is(
+  .home-journal__mast,
+  .home-journal__eyebrow,
+  .home-journal__title,
+  .home-journal__body,
+  .home-journal__cta,
+  .home-journal__journal-link,
+  .home-journal__nav button
+) {
+  font-family: 'Genos', 'Poppins', sans-serif;
+}
+.home-page main .home-journal h2.home-journal__title {
+  font-family: 'Genos', 'Poppins', sans-serif;
+  font-size: clamp(2.05rem, 4.5vw, 3.55rem);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+.home-page main .home-journal h2.home-journal__title em {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 500;
+}
+.home-page main .home-journal p.home-journal__body {
+  font-weight: 400;
+  font-size: clamp(0.98rem, 1.35vw, 1.08rem);
+  line-height: 1.8;
+}

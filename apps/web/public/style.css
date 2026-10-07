@@ -154,7 +154,7 @@
 .expertise-framework-pills span{cursor:pointer;transition:color .25s}
 .expertise-framework-pills span.is-active,.expertise-framework-pills span:hover{color:#88e9ed}
 .expertise-pin{position:relative;margin:0 -5%}
-.expertise-pin-inner{position:relative;display:flex;flex-direction:column;justify-content:center;gap:28px;overflow:hidden}
+.expertise-pin-inner{position:relative;display:flex;flex-direction:column;justify-content:flex-start;gap:clamp(14px,2.2vh,22px);overflow:hidden}
 .expertise-pin-inner::before{content:'';position:absolute;inset:8% 0 auto;height:42%;pointer-events:none;background:radial-gradient(58% 80% at 70% 40%,rgba(32,98,114,calc(var(--phase-ink,0)*.14)),transparent 70%);animation:glowBreathe 13s ease-in-out infinite alternate}
 .expertise-marquee{position:absolute;left:0;top:-14px;z-index:0;margin:0;white-space:nowrap;font:600 clamp(40px,6vw,88px)/1 'Inter',sans-serif;letter-spacing:-.02em;color:var(--phase-wm,rgba(136,233,237,.07));pointer-events:none;user-select:none;transform:translate3d(calc(-38% + var(--phase-p,0)*36vw),0,0);-webkit-mask-image:linear-gradient(90deg,transparent,#000 16%,#000 84%,transparent);mask-image:linear-gradient(90deg,transparent,#000 16%,#000 84%,transparent)}
 .expertise-rail{display:block;height:1px;margin:0 5%;background:var(--phase-line,rgba(136,233,237,.2))}
@@ -184,10 +184,10 @@
 .expertise-progress-step.is-active i{opacity:1;width:34px}
 .expertise-method-hint{position:relative;z-index:1;text-align:center;font:9px monospace;letter-spacing:.2em;color:var(--phase-muted,rgba(136,233,237,.4));margin:0}
 @media(min-width:960px){
-.expertise-pin{height:calc(var(--panels,4) * 78vh)}
-.expertise-pin-inner{position:sticky;top:0;height:100vh;overflow:hidden}
+.expertise-pin{height:calc(var(--panels,4) * 50vh)}
+.expertise-pin-inner{position:sticky;top:0;height:auto;max-height:100svh;overflow:visible;padding-bottom:clamp(12px,2vh,20px)}
 .expertise-method-track{overflow:visible;scroll-snap-type:none;padding:0 0 0 5%;gap:clamp(24px,2.5vw,40px)}
-.expertise-method-panel{flex:0 0 min(46vw,620px);min-height:min(62vh,520px)}
+.expertise-method-panel{flex:0 0 min(46vw,620px);min-height:0;align-items:flex-start}
 }
 @media(prefers-reduced-motion:no-preference){
 .expertise-animated .expertise-drift{transform:translate3d(0,calc(var(--expertise-scroll)*-32px),0) scale(calc(1.02 + var(--expertise-scroll)*.015))}

@@ -17,6 +17,7 @@ if (host && section) {
   const sync = () => {
     if (ready) frame.contentWindow?.postMessage({
       type: 'reach-state', active: visible && !document.hidden, reduced: reduced.matches,
+      light: document.documentElement.dataset.theme === 'light',
     }, '*')
   }
   const receive = (event) => {
@@ -33,6 +34,8 @@ if (host && section) {
   observer.observe(section)
   document.addEventListener('visibilitychange', sync)
   reduced.addEventListener('change', sync)
+  const themeObserver = new MutationObserver(sync)
+  themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] })
 
   const bootstrap = `<script>
     (() => {
@@ -59,6 +62,8 @@ if (host && section) {
       window.addEventListener('message', event => {
         if (event.source !== parent || event.data?.type !== 'reach-state') return;
         const state = event.data;
+        const material = window.__betawise?.compMat;
+        if (material?.uniforms.uLightMode) material.uniforms.uLightMode.value = state.light ? 1 : 0;
         active = state.active && !state.reduced;
         if (state.reduced) window.__betawise?.shot(12, 1);
         else if (active) window.__betawise?.play();
@@ -83,6 +88,25 @@ if (host && section) {
     )
     .replace('BACK_MUL: 0.11,', 'BACK_MUL: 0.32,')
     .replace('GAIN: 0.60,', 'GAIN: 0.72,')
+    // Keep the original globe detail, without an artificial illuminated rim.
+    .replace('RIM_A: 0.50,', 'RIM_A: 0.0,')
+    .replace('RIM_B: 0.30,', 'RIM_B: 0.65,')
+    .replace('RIM_LIGHT: 0.85,', 'RIM_LIGHT: 0.0,')
+    .replace('c += b * uBloom;', 'c += b * 0.0;')
+    // Recolor the rendered points and routes, rather than inverting the globe.
+    // Light mode uses soft white points over shaded ocean blues; dark output is unchanged.
+    .replace('uBloom: { value: CFG.BLOOM },', `uLightMode: { value: ${document.documentElement.dataset.theme === 'light' ? 1 : 0} }, uBloom: { value: CFG.BLOOM },`)
+    .replace('uniform float uBloom,uExp,uGrain,uTime;', 'uniform float uBloom,uExp,uGrain,uTime,uLightMode;')
+    .replace(
+      'gl_FragColor = vec4(max(c,0.0),1.0);',
+      'float ink = smoothstep(0.025, 0.65, max(c.r, max(c.g, c.b))); vec2 globeUV = (vU - 0.5) / 0.245; float sphereZ = sqrt(max(0.0, 1.0 - dot(globeUV, globeUV))); vec3 normal = normalize(vec3(globeUV, sphereZ + 0.001)); float sun = clamp(dot(normal, normalize(vec3(-0.45, 0.55, 1.0))), 0.0, 1.0); vec3 ocean = mix(vec3(0.035, 0.11, 0.20), vec3(0.16, 0.38, 0.53), sun); vec3 land = mix(vec3(0.42, 0.59, 0.66), vec3(0.90, 0.95, 0.93), sun); vec3 daylight = mix(ocean, land, ink * 0.88); gl_FragColor = vec4(mix(max(c,0.0), daylight, uLightMode),1.0);',
+    )
+    // Fine city-to-city paths with distinct moving pulses; bloom stays off.
+    // The existing light-mode compositor turns cyan into readable blue routes.
+    .replace(
+      'ARC_GAIN: 1.55, ARC_BASE: 0.40, ARC_TAIL: 5.5, ARC_SPEED: 0.34,',
+      'ARC_GAIN: 2.2, ARC_BASE: 0.16, ARC_TAIL: 14.0, ARC_SPEED: 0.22,',
+    )
     // Soft starfield around the earth — never on the continents.
     .replace('DUST: 16000,', 'DUST: 14000,')
     .replace('DUST_GAIN: 0.42,', 'DUST_GAIN: 0.40,')
@@ -116,6 +140,7 @@ if (host && section) {
   window.addEventListener('pagehide', (event) => {
     if (event.persisted) return
     observer.disconnect()
+    themeObserver.disconnect()
     window.removeEventListener('message', receive)
     document.removeEventListener('visibilitychange', sync)
     reduced.removeEventListener('change', sync)

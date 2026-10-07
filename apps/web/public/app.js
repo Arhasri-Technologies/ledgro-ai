@@ -63,8 +63,9 @@ if(!reduced){
       return {x:(i+slide)*step,active:Math.min(span,i+(r>=.85?1:0))};
     };
     let pinRaf=0;
+    const trackPhase=()=>applyPhase(Math.min(1,Math.max(0,methodTrack.scrollLeft/Math.max(1,methodTrack.scrollWidth-methodTrack.clientWidth))));
     const updatePin=()=>{pinRaf=0;
-      if(!pinned()){methodTrack.style.transform='';applyPhase(Math.min(1,Math.max(0,methodTrack.scrollLeft/Math.max(1,methodTrack.scrollWidth-methodTrack.clientWidth))));return}
+      if(!pinned()){methodTrack.style.transform='';trackPhase();return}
       const total=methodPin.offsetHeight-window.innerHeight;
       const p=Math.min(1,Math.max(0,-methodPin.getBoundingClientRect().top/Math.max(1,total)));
       methodTrack.style.transform=`translate3d(${(-place(p).x).toFixed(1)}px,0,0)`;
@@ -74,9 +75,17 @@ if(!reduced){
     window.addEventListener('resize',updatePin,{passive:true});
     methodTrack.addEventListener('scroll',()=>{if(!pinned()&&!pinRaf)pinRaf=requestAnimationFrame(updatePin)},{passive:true});
     pills.forEach(p=>p.addEventListener('click',()=>{const i=Number(p.dataset.expertisePill);
-      if(!pinned()){document.getElementById('expertise-panel-'+i)?.scrollIntoView({behavior:'smooth',inline:'start',block:'nearest'});return}
+      if(!pinned()){panels[i]?.scrollIntoView({behavior:'smooth',inline:'start',block:'nearest'});return}
       const total=methodPin.offsetHeight-window.innerHeight;const docTop=methodPin.getBoundingClientRect().top+window.scrollY;const target=docTop+total*(i/(panels.length-1));
       window.scrollTo({top:target,behavior:'smooth'})}));
+    if('IntersectionObserver' in window){
+      const panelObs=new IntersectionObserver(entries=>{if(pinned())return;const hit=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(!hit)return;const i=panels.indexOf(hit.target);if(i<0)return;
+        pills.forEach(pill=>pill.classList.toggle('is-active',Number(pill.dataset.expertisePill)===i));
+        panels.forEach((panel,i2)=>panel.classList.toggle('is-current',i2===i));
+        applyPhase(i/Math.max(1,panels.length-1));
+      },{root:methodTrack,threshold:[0.45,0.65,0.85]});
+      panels.forEach(panel=>panelObs.observe(panel));
+    }
     updatePin();
   }
   const introSection=document.querySelector('.intro-animated');

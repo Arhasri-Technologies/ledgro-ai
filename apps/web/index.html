@@ -25,7 +25,6 @@
     <link rel="stylesheet" href="/src/typography.css" />
     <link rel="stylesheet" href="/src/partner.css" />
     <link rel="stylesheet" href="/src/services-pillar.css" />
-    <link rel="stylesheet" href="/src/business-model.css" />
     <link rel="stylesheet" href="/src/site-header.css" />
     <link rel="stylesheet" href="/src/intro-layout.css" />
     <link rel="stylesheet" href="/src/intro-company-spotlight.css" />
@@ -35,8 +34,15 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Isometra&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Genos:wght@400;500;600&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/src/home-typography.css" />
+    <link rel="stylesheet" href="/src/delivery-showcase.css" />
+    <link rel="stylesheet" href="/src/planet-carousel.css" />
+    <link rel="stylesheet" href="/src/company-story.css" />
+    <link rel="stylesheet" href="/src/about-redesign.css" />
+  <link rel="stylesheet" href="/src/capability-gallery.css" />
+  <link rel="stylesheet" href="/src/section-scallop.css" />
+    <link rel="stylesheet" href="/src/home-journal-carousel.css" />
   </head>
   <body class="home-page">
     <a class="skip" href="#main">Skip to content</a>
@@ -161,17 +167,30 @@
       </div>
     </header>
     <main id="main">
-      <section class="section reach" id="home" aria-labelledby="hero-title">
-        <div class="reach-copy">
-          <p class="reach-kicker"><i aria-hidden="true"></i> Where ideas become products</p>
-          <h1 id="hero-title">Start with wonder.<br /><em>Finish with software.</em></h1>
-          <p class="reach-lead">From the first spark to the software that moves your business. We bring AI and expert engineering together to build what’s next.</p>
-          <div class="reach-actions"><a class="reach-link reach-link--primary" href="/contact.html?intent=idea">Let’s build your idea <span aria-hidden="true">↗</span></a><a class="reach-link" href="/about.html#clients">Explore our work <span aria-hidden="true">→</span></a></div>
+      <section class="section reach planet-carousel" id="home" aria-labelledby="hero-title" aria-roledescription="carousel" data-active="earth">
+        <div class="planet-scene" aria-hidden="true">
+          <div class="planet-shooting-stars"><i></i><i></i><i></i></div>
+          <div class="planet planet--venus" data-planet="venus" data-position="-1"><div class="planet-surface"></div></div>
+          <div class="planet planet--earth" data-planet="earth" data-position="0">
+            <div class="reach-stage"><div class="reach-fallback"></div><div id="reach-globe"></div></div>
+          </div>
+          <div class="planet planet--mars" data-planet="mars" data-position="1"><div class="planet-surface"></div></div>
         </div>
-        <div class="reach-stage">
-          <div class="reach-fallback" aria-hidden="true"></div>
-          <div id="reach-globe" aria-hidden="true"></div>
+        <div class="reach-copy" aria-live="polite" aria-atomic="true">
+          <p class="reach-kicker">One company. A world of possibilities.</p>
+          <h1 id="hero-title">DataServ Inc.</h1>
+          <p class="planet-tagline">Ideas without limits.</p>
+          <p class="reach-lead">We bring AI and expert engineering together to turn your next big idea into software that moves your business.</p>
+          <div class="reach-actions"><a class="reach-link reach-link--primary" href="/contact.html?intent=idea">Let’s build your idea <span aria-hidden="true">↗</span></a></div>
         </div>
+        <button class="planet-nav planet-nav--left" type="button" aria-label="Explore Ledgro on Venus"><span class="planet-nav-world">VENUS / 01</span><strong>Ledgro</strong><span class="planet-nav-action">← Explore</span></button>
+        <button class="planet-nav planet-nav--right" type="button" aria-label="Explore Vel.ai on Mars"><span class="planet-nav-world">MARS / 03</span><strong>Vel.ai</strong><span class="planet-nav-action">Explore →</span></button>
+        <div class="planet-pagination" role="group" aria-label="Choose a planet">
+          <button type="button" data-slide="0" aria-label="Show Ledgro" aria-pressed="false"><span></span></button>
+          <button type="button" data-slide="1" aria-label="Show DataServ Inc." aria-pressed="true"><span></span></button>
+          <button type="button" data-slide="2" aria-label="Show Vel.ai" aria-pressed="false"><span></span></button>
+        </div>
+        <p class="planet-footnote">THREE WORLDS. ONE CONNECTED VISION.</p>
       </section>
       <div class="hero-marquee" aria-hidden="true">
         <div class="hero-marquee__viewport">
@@ -189,30 +208,470 @@
           </div>
         </div>
       </div>
-      <section id="vision" class="signal-hero" aria-labelledby="vision-title" data-phase="0">
-        <div class="signal-aura" aria-hidden="true"></div>
-        <div class="signal-top"><span><i></i> HUMAN AMBITION. INTELLIGENT ENGINEERING.</span><span>DATASERV / PRODUCT STUDIO</span></div>
-        <div class="signal-layout">
-          <div class="signal-copy">
-            <p class="signal-eyebrow"><span></span> FROM POSSIBILITY TO PRODUCT</p>
-            <h2 id="vision-title">Clarity in the brief.<br><em>Power in the build.</em></h2>
-            <p class="signal-description">Great software starts with understanding how you work. We bring product design, AI, and engineering together to simplify complex workflows and turn everyday challenges into useful digital experiences.</p>
+      <section id="vision" class="about-intro company-story" aria-labelledby="vision-title">
+        <div class="about-intro__shell">
+          <div class="about-intro__top">
+            <span><strong>People first</strong> · Possibilities next</span>
+            <span>New Hampshire, USA · Global delivery</span>
           </div>
-          <div class="signal-art" aria-label="An evolving three-dimensional form representing the journey from idea to launch">
-            <div class="signal-art-grid" aria-hidden="true"></div>
-            <div class="signal-orbit-fallback" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-            <canvas id="signal-canvas" aria-hidden="true"></canvas>
-            <div class="signal-coordinate" aria-hidden="true">THE SHAPE OF WHAT’S NEXT<br><span>01 — INFINITE POSSIBILITY</span></div>
-            <div class="signal-satellite signal-satellite--a" aria-hidden="true"><span>✳</span> A spark of possibility</div>
-            <div class="signal-satellite signal-satellite--b" aria-hidden="true"><span>⌘</span> Intelligence, in motion</div>
-            <div class="signal-art-bottom"><span><i></i> YOUR VISION. TAKING SHAPE.</span><button type="button" id="signal-motion" aria-pressed="false" aria-label="Pause hero animation">Ⅱ</button></div>
+          <div class="about-intro__layout">
+            <div class="about-intro__copy">
+              <p class="about-intro__eyebrow">About DataServ</p>
+              <h2 class="about-intro__title" id="vision-title">
+                <span class="about-intro__title-line">AI accelerates the work.</span>
+                <span class="about-intro__title-line about-intro__title-line--accent"><em>People own the outcome.</em></span>
+              </h2>
+              <p class="about-intro__lead">DataServ is a software and technology partner for enterprises that need speed without losing control. From New Hampshire we deliver globally — staffing, product engineering, and Ledgro and Vela AI — with senior engineers accountable through launch.</p>
+              <div class="about-intro__actions">
+                <a class="about-intro__cta about-intro__cta--primary" href="/about.html">Company overview <span aria-hidden="true">↗</span></a>
+                <a class="about-intro__cta about-intro__cta--ghost" href="/contact.html">Talk to our team <span aria-hidden="true">→</span></a>
+              </div>
+              <ul class="about-intro__metrics about-intro__metrics--list" aria-label="Company highlights">
+                <li class="about-intro__metric"><strong>25+</strong><span>Years building software</span></li>
+                <li class="about-intro__metric"><strong>Global</strong><span>Delivery &amp; staffing</span></li>
+                <li class="about-intro__metric"><strong>AI +</strong><span>Human governance</span></li>
+              </ul>
+            </div>
+            <div class="about-intro__visual about-intro__visual--wire">
+              <div class="about-intro__wire-grid" aria-hidden="true"></div>
+              <div class="company-process about-intro__blueprint" data-sleeping="true">
+                <div class="process-heading">
+                  <span>How software comes together</span>
+                  <button type="button" id="process-motion" aria-pressed="false" aria-label="Pause blueprint animation">Ⅱ</button>
+                </div>
+                <div class="process-blueprint">
+                  <span class="blueprint-caption-top">Exploded system view</span>
+                  <canvas id="company-blueprint" aria-hidden="true"></canvas>
+                  <div class="blueprint-fallback" aria-hidden="true">
+                    <span>Experience layer</span>
+                    <span>Services layer</span>
+                    <span>Data foundation</span>
+                  </div>
+                  <span class="blueprint-caption-bottom">Wireframe · live</span>
+                </div>
+                <div class="blueprint-steps" role="group" aria-label="Blueprint layers">
+                  <button type="button" data-blueprint-step aria-pressed="true"><span>01</span>Experience</button>
+                  <button type="button" data-blueprint-step aria-pressed="false"><span>02</span>Services</button>
+                  <button type="button" data-blueprint-step aria-pressed="false"><span>03</span>Foundation</button>
+                </div>
+                <div class="blueprint-detail" id="blueprint-detail">
+                  <strong>Map the experience.</strong>
+                  <p>Start with the people using your software and the work they need to do.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
+      <section class="capability-gallery" id="capabilities" aria-labelledby="capabilities-title">
+        <span id="services" class="expertise-service-anchor" aria-hidden="true"></span>
+        <span id="expertise" class="expertise-service-anchor" aria-hidden="true"></span>
+ <div class="capability-gallery__scallop" aria-hidden="true"></div>
+ <div class="capability-gallery__intro-dots" aria-hidden="true"></div>
+ <div class="capability-heading"><div><p class="capability-eyebrow"><span></span> THE POSSIBILITIES ARE OPEN</p><h2 id="capabilities-title">A new perspective.<br><em>On what’s possible.</em></h2></div><div class="capability-heading__stage" aria-hidden="true"><canvas class="capability-atmosphere"></canvas></div><p>Intelligent solutions. Exceptional people.<br>Explore the many ways we move you forward.</p></div>
+ <div class="capability-toolbar"><div class="capability-filters" role="group" aria-label="Filter capabilities"><button type="button" data-filter="all" aria-pressed="true">All expertise <sup>09</sup></button><button type="button" data-filter="solutions" aria-pressed="false">Solutions <sup>05</sup></button><button type="button" data-filter="services" aria-pressed="false">Services <sup>04</sup></button></div><span class="capability-hint">SELECT AN IMAGE. EXPLORE A POSSIBILITY. ↗</span></div>
+ <div class="capability-track" tabindex="0" aria-label="Services and solutions gallery; scroll horizontally to explore"><a class="capability-card" href="/ai-ml.html" data-category="solutions" style="--card-order:0" aria-label="Explore AI &amp; Machine Learning">
+ <img src="/assets/capabilities/ai-ml.jpg" alt="" loading="lazy" decoding="async" width="1122" height="1402" />
+ <span class="capability-card-top"><span>Solution / 01</span><span aria-hidden="true">↗</span></span>
+ <span class="capability-card-copy"><span>Intelligence, put to work.</span><strong>AI &amp; Machine Learning</strong><span class="capability-card-open">Explore solution <span aria-hidden="true">↗</span></span></span>
+ </a><a class="capability-card" href="/ai-automation.html" data-category="solutions" style="--card-order:1" aria-label="Explore AI Automation">
+ <img src="/assets/capabilities/ai-automation.jpg" alt="" loading="lazy" decoding="async" width="1122" height="1402" />
+ <span class="capability-card-top"><span>Solution / 02</span><span aria-hidden="true">↗</span></span>
+ <span class="capability-card-copy"><span>Make room for what’s next.</span><strong>AI Automation</strong><span class="capability-card-open">Explore solution <span aria-hidden="true">↗</span></span></span>
+ </a><a class="capability-card" href="/web-applications.html" data-category="solutions" style="--card-order:2" aria-label="Explore Web Applications">
+ <img src="/assets/capabilities/web-applications.jpg" alt="" loading="lazy" decoding="async" width="1122" height="1402" />
+ <span class="capability-card-top"><span>Solution / 03</span><span aria-hidden="true">↗</span></span>
+ <span class="capability-card-copy"><span>Your next big idea. Online.</span><strong>Web Applications</strong><span class="capability-card-open">Explore solution <span aria-hidden="true">↗</span></span></span>
+ </a><a class="capability-card" href="/mobile-apps.html" data-category="solutions" style="--card-order:3" aria-label="Explore Mobile Apps">
+ <img src="/assets/capabilities/mobile-apps.jpg" alt="" loading="lazy" decoding="async" width="1122" height="1402" />
+ <span class="capability-card-top"><span>Solution / 04</span><span aria-hidden="true">↗</span></span>
+ <span class="capability-card-copy"><span>Possibility in your pocket.</span><strong>Mobile Apps</strong><span class="capability-card-open">Explore solution <span aria-hidden="true">↗</span></span></span>
+ </a><a class="capability-card" href="/cloud-data.html" data-category="solutions" style="--card-order:4" aria-label="Explore Cloud &amp; Data">
+ <img src="/assets/capabilities/cloud-data.jpg" alt="" loading="lazy" decoding="async" width="1122" height="1402" />
+ <span class="capability-card-top"><span>Solution / 05</span><span aria-hidden="true">↗</span></span>
+ <span class="capability-card-copy"><span>A foundation without limits.</span><strong>Cloud &amp; Data</strong><span class="capability-card-open">Explore solution <span aria-hidden="true">↗</span></span></span>
+ </a><a class="capability-card" href="/app-development.html" data-category="services" style="--card-order:5" aria-label="Explore Application Development">
+ <img src="/assets/capabilities/app-development.jpg" alt="" loading="lazy" decoding="async" width="1122" height="1402" />
+ <span class="capability-card-top"><span>Service / 06</span><span aria-hidden="true">↗</span></span>
+ <span class="capability-card-copy"><span>Built around your ambition.</span><strong>Application Development</strong><span class="capability-card-open">Explore service <span aria-hidden="true">↗</span></span></span>
+ </a><a class="capability-card" href="/api-integrations.html" data-category="services" style="--card-order:6" aria-label="Explore API Integrations">
+ <img src="/assets/capabilities/api-integrations.jpg" alt="" loading="lazy" decoding="async" width="1122" height="1402" />
+ <span class="capability-card-top"><span>Service / 07</span><span aria-hidden="true">↗</span></span>
+ <span class="capability-card-copy"><span>Everything, working together.</span><strong>API Integrations</strong><span class="capability-card-open">Explore service <span aria-hidden="true">↗</span></span></span>
+ </a><a class="capability-card" href="/it-consulting.html" data-category="services" style="--card-order:7" aria-label="Explore IT Consulting">
+ <img src="/assets/capabilities/it-consulting.jpg" alt="" loading="lazy" decoding="async" width="1122" height="1402" />
+ <span class="capability-card-top"><span>Service / 08</span><span aria-hidden="true">↗</span></span>
+ <span class="capability-card-copy"><span>The expertise to move ahead.</span><strong>IT Consulting</strong><span class="capability-card-open">Explore service <span aria-hidden="true">↗</span></span></span>
+ </a><a class="capability-card" href="/non-it-consulting.html" data-category="services" style="--card-order:8" aria-label="Explore Non-IT Consulting">
+ <img src="/assets/capabilities/non-it-consulting.jpg" alt="" loading="lazy" decoding="async" width="1122" height="1402" />
+ <span class="capability-card-top"><span>Service / 09</span><span aria-hidden="true">↗</span></span>
+ <span class="capability-card-copy"><span>Great people. Greater impact.</span><strong>Non-IT Consulting</strong><span class="capability-card-open">Explore service <span aria-hidden="true">↗</span></span></span>
+ </a></div>
+ <div class="capability-footer"><span><i></i> BUILT FOR YOUR NEXT CHAPTER</span><div class="capability-navigation"><span class="capability-count" aria-live="polite">01 / 09</span><button type="button" data-direction="-1" aria-label="Previous capability">←</button><button type="button" data-direction="1" aria-label="Next capability">→</button><button type="button" class="capability-motion" aria-label="Pause gallery motion" aria-pressed="false">Ⅱ</button></div></div>
+ <div class="capability-gallery__land" aria-hidden="true"></div>
+ </section>
 
+      <section class="delivery-showcase" id="delivery-journey" aria-labelledby="delivery-journey-title" data-delivery-root>
+        <svg class="delivery-showcase__defs" width="0" height="0" aria-hidden="true" focusable="false">
+          <defs>
+            <clipPath id="enterprise-bubble-scallop" clipPathUnits="objectBoundingBox">
+              <path d="M0.99300,0.50000 L0.99237,0.50460 L0.99050,0.50917 L0.98754,0.51368 L0.98366,0.51810 L0.97913,0.52242 L0.97425,0.52663 L0.96933,0.53076 L0.96470,0.53482 L0.96064,0.53885 L0.95740,0.54289 L0.95520,0.54698 L0.95413,0.55117 L0.95424,0.55549 L0.95548,0.55997 L0.95773,0.56462 L0.96080,0.56945 L0.96441,0.57445 L0.96829,0.57957 L0.97211,0.58476 L0.97556,0.58998 L0.97836,0.59515 L0.98025,0.60020 L0.98104,0.60507 L0.98064,0.60970 L0.97900,0.61405 L0.97616,0.61809 L0.97227,0.62182 L0.96751,0.62527 L0.96213,0.62847 L0.95644,0.63150 L0.95072,0.63443 L0.94530,0.63736 L0.94044,0.64038 L0.93639,0.64360 L0.93333,0.64709 L0.93135,0.65094 L0.93050,0.65517 L0.93072,0.65982 L0.93188,0.66486 L0.93379,0.67025 L0.93620,0.67592 L0.93884,0.68177 L0.94141,0.68769 L0.94362,0.69355 L0.94519,0.69921 L0.94591,0.70456 L0.94560,0.70948 L0.94418,0.71390 L0.94161,0.71778 L0.93795,0.72109 L0.93332,0.72386 L0.92791,0.72616 L0.92196,0.72808 L0.91573,0.72977 L0.90951,0.73135 L0.90357,0.73300 L0.89816,0.73487 L0.89350,0.73711 L0.88973,0.73983 L0.88695,0.74314 L0.88518,0.74708 L0.88436,0.75165 L0.88437,0.75682 L0.88503,0.76251 L0.88612,0.76857 L0.88739,0.77487 L0.88858,0.78121 L0.88943,0.78741 L0.88970,0.79328 L0.88921,0.79865 L0.88782,0.80339 L0.88544,0.80738 L0.88208,0.81058 L0.87777,0.81300 L0.87264,0.81467 L0.86686,0.81571 L0.86063,0.81626 L0.85418,0.81651 L0.84776,0.81668 L0.84160,0.81696 L0.83591,0.81758 L0.83087,0.81872 L0.82659,0.82054 L0.82315,0.82315 L0.82054,0.82659 L0.81872,0.83087 L0.81758,0.83591 L0.81696,0.84160 L0.81668,0.84776 L0.81651,0.85418 L0.81626,0.86063 L0.81571,0.86686 L0.81467,0.87264 L0.81300,0.87777 L0.81058,0.88208 L0.80738,0.88544 L0.80339,0.88782 L0.79865,0.88921 L0.79328,0.88970 L0.78741,0.88943 L0.78121,0.88858 L0.77487,0.88739 L0.76857,0.88612 L0.76251,0.88503 L0.75682,0.88437 L0.75165,0.88436 L0.74708,0.88518 L0.74314,0.88695 L0.73983,0.88973 L0.73711,0.89350 L0.73487,0.89816 L0.73300,0.90357 L0.73135,0.90951 L0.72977,0.91573 L0.72808,0.92196 L0.72616,0.92791 L0.72386,0.93332 L0.72109,0.93795 L0.71778,0.94161 L0.71390,0.94418 L0.70948,0.94560 L0.70456,0.94591 L0.69921,0.94519 L0.69355,0.94362 L0.68769,0.94141 L0.68177,0.93884 L0.67592,0.93620 L0.67025,0.93379 L0.66486,0.93188 L0.65982,0.93072 L0.65517,0.93050 L0.65094,0.93135 L0.64709,0.93333 L0.64360,0.93639 L0.64038,0.94044 L0.63736,0.94530 L0.63443,0.95072 L0.63150,0.95644 L0.62847,0.96213 L0.62527,0.96751 L0.62182,0.97227 L0.61809,0.97616 L0.61405,0.97900 L0.60970,0.98064 L0.60507,0.98104 L0.60020,0.98025 L0.59515,0.97836 L0.58998,0.97556 L0.58476,0.97211 L0.57957,0.96829 L0.57445,0.96441 L0.56945,0.96080 L0.56462,0.95773 L0.55997,0.95548 L0.55549,0.95424 L0.55117,0.95413 L0.54698,0.95520 L0.54289,0.95740 L0.53885,0.96064 L0.53482,0.96470 L0.53076,0.96933 L0.52663,0.97425 L0.52242,0.97913 L0.51810,0.98366 L0.51368,0.98754 L0.50917,0.99050 L0.50460,0.99237 L0.50000,0.99300 L0.49540,0.99237 L0.49083,0.99050 L0.48632,0.98754 L0.48190,0.98366 L0.47758,0.97913 L0.47337,0.97425 L0.46924,0.96933 L0.46518,0.96470 L0.46115,0.96064 L0.45711,0.95740 L0.45302,0.95520 L0.44883,0.95413 L0.44451,0.95424 L0.44003,0.95548 L0.43538,0.95773 L0.43055,0.96080 L0.42555,0.96441 L0.42043,0.96829 L0.41524,0.97211 L0.41002,0.97556 L0.40485,0.97836 L0.39980,0.98025 L0.39493,0.98104 L0.39030,0.98064 L0.38595,0.97900 L0.38191,0.97616 L0.37818,0.97227 L0.37473,0.96751 L0.37153,0.96213 L0.36850,0.95644 L0.36557,0.95072 L0.36264,0.94530 L0.35962,0.94044 L0.35640,0.93639 L0.35291,0.93333 L0.34906,0.93135 L0.34483,0.93050 L0.34018,0.93072 L0.33514,0.93188 L0.32975,0.93379 L0.32408,0.93620 L0.31823,0.93884 L0.31231,0.94141 L0.30645,0.94362 L0.30079,0.94519 L0.29544,0.94591 L0.29052,0.94560 L0.28610,0.94418 L0.28222,0.94161 L0.27891,0.93795 L0.27614,0.93332 L0.27384,0.92791 L0.27192,0.92196 L0.27023,0.91573 L0.26865,0.90951 L0.26700,0.90357 L0.26513,0.89816 L0.26289,0.89350 L0.26017,0.88973 L0.25686,0.88695 L0.25292,0.88518 L0.24835,0.88436 L0.24318,0.88437 L0.23749,0.88503 L0.23143,0.88612 L0.22513,0.88739 L0.21879,0.88858 L0.21259,0.88943 L0.20672,0.88970 L0.20135,0.88921 L0.19661,0.88782 L0.19262,0.88544 L0.18942,0.88208 L0.18700,0.87777 L0.18533,0.87264 L0.18429,0.86686 L0.18374,0.86063 L0.18349,0.85418 L0.18332,0.84776 L0.18304,0.84160 L0.18242,0.83591 L0.18128,0.83087 L0.17946,0.82659 L0.17685,0.82315 L0.17341,0.82054 L0.16913,0.81872 L0.16409,0.81758 L0.15840,0.81696 L0.15224,0.81668 L0.14582,0.81651 L0.13937,0.81626 L0.13314,0.81571 L0.12736,0.81467 L0.12223,0.81300 L0.11792,0.81058 L0.11456,0.80738 L0.11218,0.80339 L0.11079,0.79865 L0.11030,0.79328 L0.11057,0.78741 L0.11142,0.78121 L0.11261,0.77487 L0.11388,0.76857 L0.11497,0.76251 L0.11563,0.75682 L0.11564,0.75165 L0.11482,0.74708 L0.11305,0.74314 L0.11027,0.73983 L0.10650,0.73711 L0.10184,0.73487 L0.09643,0.73300 L0.09049,0.73135 L0.08427,0.72977 L0.07804,0.72808 L0.07209,0.72616 L0.06668,0.72386 L0.06205,0.72109 L0.05839,0.71778 L0.05582,0.71390 L0.05440,0.70948 L0.05409,0.70456 L0.05481,0.69921 L0.05638,0.69355 L0.05859,0.68769 L0.06116,0.68177 L0.06380,0.67592 L0.06621,0.67025 L0.06812,0.66486 L0.06928,0.65982 L0.06950,0.65517 L0.06865,0.65094 L0.06667,0.64709 L0.06361,0.64360 L0.05956,0.64038 L0.05470,0.63736 L0.04928,0.63443 L0.04356,0.63150 L0.03787,0.62847 L0.03249,0.62527 L0.02773,0.62182 L0.02384,0.61809 L0.02100,0.61405 L0.01936,0.60970 L0.01896,0.60507 L0.01975,0.60020 L0.02164,0.59515 L0.02444,0.58998 L0.02789,0.58476 L0.03171,0.57957 L0.03559,0.57445 L0.03920,0.56945 L0.04227,0.56462 L0.04452,0.55997 L0.04576,0.55549 L0.04587,0.55117 L0.04480,0.54698 L0.04260,0.54289 L0.03936,0.53885 L0.03530,0.53482 L0.03067,0.53076 L0.02575,0.52663 L0.02087,0.52242 L0.01634,0.51810 L0.01246,0.51368 L0.00950,0.50917 L0.00763,0.50460 L0.00700,0.50000 L0.00763,0.49540 L0.00950,0.49083 L0.01246,0.48632 L0.01634,0.48190 L0.02087,0.47758 L0.02575,0.47337 L0.03067,0.46924 L0.03530,0.46518 L0.03936,0.46115 L0.04260,0.45711 L0.04480,0.45302 L0.04587,0.44883 L0.04576,0.44451 L0.04452,0.44003 L0.04227,0.43538 L0.03920,0.43055 L0.03559,0.42555 L0.03171,0.42043 L0.02789,0.41524 L0.02444,0.41002 L0.02164,0.40485 L0.01975,0.39980 L0.01896,0.39493 L0.01936,0.39030 L0.02100,0.38595 L0.02384,0.38191 L0.02773,0.37818 L0.03249,0.37473 L0.03787,0.37153 L0.04356,0.36850 L0.04928,0.36557 L0.05470,0.36264 L0.05956,0.35962 L0.06361,0.35640 L0.06667,0.35291 L0.06865,0.34906 L0.06950,0.34483 L0.06928,0.34018 L0.06812,0.33514 L0.06621,0.32975 L0.06380,0.32408 L0.06116,0.31823 L0.05859,0.31231 L0.05638,0.30645 L0.05481,0.30079 L0.05409,0.29544 L0.05440,0.29052 L0.05582,0.28610 L0.05839,0.28222 L0.06205,0.27891 L0.06668,0.27614 L0.07209,0.27384 L0.07804,0.27192 L0.08427,0.27023 L0.09049,0.26865 L0.09643,0.26700 L0.10184,0.26513 L0.10650,0.26289 L0.11027,0.26017 L0.11305,0.25686 L0.11482,0.25292 L0.11564,0.24835 L0.11563,0.24318 L0.11497,0.23749 L0.11388,0.23143 L0.11261,0.22513 L0.11142,0.21879 L0.11057,0.21259 L0.11030,0.20672 L0.11079,0.20135 L0.11218,0.19661 L0.11456,0.19262 L0.11792,0.18942 L0.12223,0.18700 L0.12736,0.18533 L0.13314,0.18429 L0.13937,0.18374 L0.14582,0.18349 L0.15224,0.18332 L0.15840,0.18304 L0.16409,0.18242 L0.16913,0.18128 L0.17341,0.17946 L0.17685,0.17685 L0.17946,0.17341 L0.18128,0.16913 L0.18242,0.16409 L0.18304,0.15840 L0.18332,0.15224 L0.18349,0.14582 L0.18374,0.13937 L0.18429,0.13314 L0.18533,0.12736 L0.18700,0.12223 L0.18942,0.11792 L0.19262,0.11456 L0.19661,0.11218 L0.20135,0.11079 L0.20672,0.11030 L0.21259,0.11057 L0.21879,0.11142 L0.22513,0.11261 L0.23143,0.11388 L0.23749,0.11497 L0.24318,0.11563 L0.24835,0.11564 L0.25292,0.11482 L0.25686,0.11305 L0.26017,0.11027 L0.26289,0.10650 L0.26513,0.10184 L0.26700,0.09643 L0.26865,0.09049 L0.27023,0.08427 L0.27192,0.07804 L0.27384,0.07209 L0.27614,0.06668 L0.27891,0.06205 L0.28222,0.05839 L0.28610,0.05582 L0.29052,0.05440 L0.29544,0.05409 L0.30079,0.05481 L0.30645,0.05638 L0.31231,0.05859 L0.31823,0.06116 L0.32408,0.06380 L0.32975,0.06621 L0.33514,0.06812 L0.34018,0.06928 L0.34483,0.06950 L0.34906,0.06865 L0.35291,0.06667 L0.35640,0.06361 L0.35962,0.05956 L0.36264,0.05470 L0.36557,0.04928 L0.36850,0.04356 L0.37153,0.03787 L0.37473,0.03249 L0.37818,0.02773 L0.38191,0.02384 L0.38595,0.02100 L0.39030,0.01936 L0.39493,0.01896 L0.39980,0.01975 L0.40485,0.02164 L0.41002,0.02444 L0.41524,0.02789 L0.42043,0.03171 L0.42555,0.03559 L0.43055,0.03920 L0.43538,0.04227 L0.44003,0.04452 L0.44451,0.04576 L0.44883,0.04587 L0.45302,0.04480 L0.45711,0.04260 L0.46115,0.03936 L0.46518,0.03530 L0.46924,0.03067 L0.47337,0.02575 L0.47758,0.02087 L0.48190,0.01634 L0.48632,0.01246 L0.49083,0.00950 L0.49540,0.00763 L0.50000,0.00700 L0.50460,0.00763 L0.50917,0.00950 L0.51368,0.01246 L0.51810,0.01634 L0.52242,0.02087 L0.52663,0.02575 L0.53076,0.03067 L0.53482,0.03530 L0.53885,0.03936 L0.54289,0.04260 L0.54698,0.04480 L0.55117,0.04587 L0.55549,0.04576 L0.55997,0.04452 L0.56462,0.04227 L0.56945,0.03920 L0.57445,0.03559 L0.57957,0.03171 L0.58476,0.02789 L0.58998,0.02444 L0.59515,0.02164 L0.60020,0.01975 L0.60507,0.01896 L0.60970,0.01936 L0.61405,0.02100 L0.61809,0.02384 L0.62182,0.02773 L0.62527,0.03249 L0.62847,0.03787 L0.63150,0.04356 L0.63443,0.04928 L0.63736,0.05470 L0.64038,0.05956 L0.64360,0.06361 L0.64709,0.06667 L0.65094,0.06865 L0.65517,0.06950 L0.65982,0.06928 L0.66486,0.06812 L0.67025,0.06621 L0.67592,0.06380 L0.68177,0.06116 L0.68769,0.05859 L0.69355,0.05638 L0.69921,0.05481 L0.70456,0.05409 L0.70948,0.05440 L0.71390,0.05582 L0.71778,0.05839 L0.72109,0.06205 L0.72386,0.06668 L0.72616,0.07209 L0.72808,0.07804 L0.72977,0.08427 L0.73135,0.09049 L0.73300,0.09643 L0.73487,0.10184 L0.73711,0.10650 L0.73983,0.11027 L0.74314,0.11305 L0.74708,0.11482 L0.75165,0.11564 L0.75682,0.11563 L0.76251,0.11497 L0.76857,0.11388 L0.77487,0.11261 L0.78121,0.11142 L0.78741,0.11057 L0.79328,0.11030 L0.79865,0.11079 L0.80339,0.11218 L0.80738,0.11456 L0.81058,0.11792 L0.81300,0.12223 L0.81467,0.12736 L0.81571,0.13314 L0.81626,0.13937 L0.81651,0.14582 L0.81668,0.15224 L0.81696,0.15840 L0.81758,0.16409 L0.81872,0.16913 L0.82054,0.17341 L0.82315,0.17685 L0.82659,0.17946 L0.83087,0.18128 L0.83591,0.18242 L0.84160,0.18304 L0.84776,0.18332 L0.85418,0.18349 L0.86063,0.18374 L0.86686,0.18429 L0.87264,0.18533 L0.87777,0.18700 L0.88208,0.18942 L0.88544,0.19262 L0.88782,0.19661 L0.88921,0.20135 L0.88970,0.20672 L0.88943,0.21259 L0.88858,0.21879 L0.88739,0.22513 L0.88612,0.23143 L0.88503,0.23749 L0.88437,0.24318 L0.88436,0.24835 L0.88518,0.25292 L0.88695,0.25686 L0.88973,0.26017 L0.89350,0.26289 L0.89816,0.26513 L0.90357,0.26700 L0.90951,0.26865 L0.91573,0.27023 L0.92196,0.27192 L0.92791,0.27384 L0.93332,0.27614 L0.93795,0.27891 L0.94161,0.28222 L0.94418,0.28610 L0.94560,0.29052 L0.94591,0.29544 L0.94519,0.30079 L0.94362,0.30645 L0.94141,0.31231 L0.93884,0.31823 L0.93620,0.32408 L0.93379,0.32975 L0.93188,0.33514 L0.93072,0.34018 L0.93050,0.34483 L0.93135,0.34906 L0.93333,0.35291 L0.93639,0.35640 L0.94044,0.35962 L0.94530,0.36264 L0.95072,0.36557 L0.95644,0.36850 L0.96213,0.37153 L0.96751,0.37473 L0.97227,0.37818 L0.97616,0.38191 L0.97900,0.38595 L0.98064,0.39030 L0.98104,0.39493 L0.98025,0.39980 L0.97836,0.40485 L0.97556,0.41002 L0.97211,0.41524 L0.96829,0.42043 L0.96441,0.42555 L0.96080,0.43055 L0.95773,0.43538 L0.95548,0.44003 L0.95424,0.44451 L0.95413,0.44883 L0.95520,0.45302 L0.95740,0.45711 L0.96064,0.46115 L0.96470,0.46518 L0.96933,0.46924 L0.97425,0.47337 L0.97913,0.47758 L0.98366,0.48190 L0.98754,0.48632 L0.99050,0.49083 L0.99237,0.49540 L0.99300,0.50000 Z" />
+            </clipPath>
+          </defs>
+        </svg>
+        <div class="delivery-showcase__scallop" aria-hidden="true"></div>
+        <div class="delivery-showcase__inner">
+          <div class="delivery-showcase__heading">
+            <div class="delivery-showcase__badge-cluster" data-delivery-reveal>
+              <span class="delivery-showcase__badge-shape delivery-showcase__badge-shape--dot" aria-hidden="true"></span>
+              <span class="delivery-showcase__badge-shape delivery-showcase__badge-shape--square" aria-hidden="true"></span>
+              <div class="delivery-showcase__badge-wrap">
+                <p class="delivery-showcase__badge"><span>Our</span><span>process</span></p>
+              </div>
+              <span class="delivery-showcase__badge-shape delivery-showcase__badge-shape--ring" aria-hidden="true"></span>
+              <span class="delivery-showcase__badge-shape delivery-showcase__badge-shape--diamond" aria-hidden="true"></span>
+            </div>
+            <h2 class="delivery-showcase__title" id="delivery-journey-title">
+              <span class="delivery-showcase__title-line" data-delivery-reveal>How we <span class="delivery-showcase__stamp">Build</span></span>
+              <span class="delivery-showcase__title-line" data-delivery-reveal>your software</span>
+            </h2>
+          </div>
+          <div class="delivery-showcase__stage" data-delivery-stage>
+            <div class="delivery-showcase__panels">
+              <div class="delivery-showcase__panels-viewport">
+              <article class="delivery-showcase__panel is-active" id="delivery-panel-discover" aria-labelledby="delivery-tab-discover" data-delivery-panel style="--step: 0">
+                <div class="delivery-showcase__folder-tab" id="delivery-tab-discover">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                Discover
+              </div>
+                <div class="delivery-showcase__panel-copy">
+                  <h3>Discover</h3>
+                  <ul>
+                    <li data-delivery-bullet><svg class="delivery-showcase__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2l1.4 4.3 4.5.1-3.6 2.7 1.4 4.3L12 11.4 8.3 13.6l1.4-4.3-3.6-2.7 4.5-.1z"/></svg>Map users, business rules, and the systems you already run.</li>
+                    <li data-delivery-bullet><svg class="delivery-showcase__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2l1.4 4.3 4.5.1-3.6 2.7 1.4 4.3L12 11.4 8.3 13.6l1.4-4.3-3.6-2.7 4.5-.1z"/></svg>Agree on focused scope and measurable success criteria.</li>
+                    <li data-delivery-bullet><svg class="delivery-showcase__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2l1.4 4.3 4.5.1-3.6 2.7 1.4 4.3L12 11.4 8.3 13.6l1.4-4.3-3.6-2.7 4.5-.1z"/></svg>Identify where AI and automation add the most value.</li>
+                  </ul>
+                </div>
+                <figure class="delivery-showcase__visual">
+                  <img src="/assets/delivery/discover.jpg?v=2" alt="Abstract illustration of discovery: a luminous lens over a connected system map." width="1152" height="864" loading="lazy" decoding="async" />
+                  <span class="delivery-showcase__sticker" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+                </figure>
+              </article>
+              <article class="delivery-showcase__panel is-active" id="delivery-panel-design" aria-labelledby="delivery-tab-design" data-delivery-panel style="--step: 1">
+                <div class="delivery-showcase__folder-tab" id="delivery-tab-design">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16v4z"/><path d="m13 7 4 4"/></svg>
+                Design
+              </div>
+                <div class="delivery-showcase__panel-copy">
+                  <h3>Design</h3>
+                  <ul>
+                    <li data-delivery-bullet><svg class="delivery-showcase__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2l1.4 4.3 4.5.1-3.6 2.7 1.4 4.3L12 11.4 8.3 13.6l1.4-4.3-3.6-2.7 4.5-.1z"/></svg>Journey maps, wireframes, and clickable prototypes.</li>
+                    <li data-delivery-bullet><svg class="delivery-showcase__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2l1.4 4.3 4.5.1-3.6 2.7 1.4 4.3L12 11.4 8.3 13.6l1.4-4.3-3.6-2.7 4.5-.1z"/></svg>Accessibility and error paths checked early.</li>
+                    <li data-delivery-bullet><svg class="delivery-showcase__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2l1.4 4.3 4.5.1-3.6 2.7 1.4 4.3L12 11.4 8.3 13.6l1.4-4.3-3.6-2.7 4.5-.1z"/></svg>Experiences shaped around real workflows, not slide decks.</li>
+                  </ul>
+                </div>
+                <figure class="delivery-showcase__visual">
+                  <img src="/assets/delivery/design.jpg?v=2" alt="Abstract illustration of design: layered glass wireframe panels in depth." width="1152" height="864" loading="lazy" decoding="async" />
+                  <span class="delivery-showcase__sticker" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span>
+                </figure>
+              </article>
+              <article class="delivery-showcase__panel is-active" id="delivery-panel-plan" aria-labelledby="delivery-tab-plan" data-delivery-panel style="--step: 2">
+                <div class="delivery-showcase__folder-tab" id="delivery-tab-plan">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>
+                Plan
+              </div>
+                <div class="delivery-showcase__panel-copy">
+                  <h3>Plan</h3>
+                  <ul>
+                    <li data-delivery-bullet><svg class="delivery-showcase__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2l1.4 4.3 4.5.1-3.6 2.7 1.4 4.3L12 11.4 8.3 13.6l1.4-4.3-3.6-2.7 4.5-.1z"/></svg>Architecture for APIs, data, permissions, and hosting.</li>
+                    <li data-delivery-bullet><svg class="delivery-showcase__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2l1.4 4.3 4.5.1-3.6 2.7 1.4 4.3L12 11.4 8.3 13.6l1.4-4.3-3.6-2.7 4.5-.1z"/></svg>Milestones you can track with clear ownership.</li>
+                    <li data-delivery-bullet><svg class="delivery-showcase__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2l1.4 4.3 4.5.1-3.6 2.7 1.4 4.3L12 11.4 8.3 13.6l1.4-4.3-3.6-2.7 4.5-.1z"/></svg>Integration points mapped before code starts.</li>
+                  </ul>
+                </div>
+                <figure class="delivery-showcase__visual">
+                  <img src="/assets/delivery/plan.jpg?v=2" alt="Abstract illustration of planning: blueprint planes and milestone nodes." width="1152" height="864" loading="lazy" decoding="async" />
+                  <span class="delivery-showcase__sticker" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg></span>
+                </figure>
+              </article>
+              <article class="delivery-showcase__panel is-active" id="delivery-panel-build" aria-labelledby="delivery-tab-build" data-delivery-panel style="--step: 3">
+                <div class="delivery-showcase__folder-tab" id="delivery-tab-build">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m13 2-9 12h7l-1 8 10-13h-8z"/></svg>
+                Build
+              </div>
+                <div class="delivery-showcase__panel-copy">
+                  <h3>Build</h3>
+                  <ul>
+                    <li data-delivery-bullet><svg class="delivery-showcase__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2l1.4 4.3 4.5.1-3.6 2.7 1.4 4.3L12 11.4 8.3 13.6l1.4-4.3-3.6-2.7 4.5-.1z"/></svg>Vela AI accelerates implementation; engineers review every change.</li>
+                    <li data-delivery-bullet><svg class="delivery-showcase__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2l1.4 4.3 4.5.1-3.6 2.7 1.4 4.3L12 11.4 8.3 13.6l1.4-4.3-3.6-2.7 4.5-.1z"/></svg>Focused sprints with working increments each cycle.</li>
+                    <li data-delivery-bullet><svg class="delivery-showcase__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2l1.4 4.3 4.5.1-3.6 2.7 1.4 4.3L12 11.4 8.3 13.6l1.4-4.3-3.6-2.7 4.5-.1z"/></svg>Automation, APIs, and workflows wired together.</li>
+                  </ul>
+                </div>
+                <figure class="delivery-showcase__visual">
+                  <img src="/assets/delivery/build.jpg?v=2" alt="Abstract illustration of build: modular blocks assembling with cyan energy." width="1152" height="864" loading="lazy" decoding="async" />
+                  <span class="delivery-showcase__sticker" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m13 2-9 12h7l-1 8 10-13h-8z"/></svg></span>
+                </figure>
+              </article>
+              <article class="delivery-showcase__panel is-active" id="delivery-panel-validate" aria-labelledby="delivery-tab-validate" data-delivery-panel style="--step: 4">
+                <div class="delivery-showcase__folder-tab" id="delivery-tab-validate">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m12 2 8 4v6c0 5-8 10-8 10S4 17 4 12V6z"/><path d="m9 12 2 2 4-4"/></svg>
+                Validate
+              </div>
+                <div class="delivery-showcase__panel-copy">
+                  <h3>Validate</h3>
+                  <ul>
+                    <li data-delivery-bullet><svg class="delivery-showcase__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2l1.4 4.3 4.5.1-3.6 2.7 1.4 4.3L12 11.4 8.3 13.6l1.4-4.3-3.6-2.7 4.5-.1z"/></svg>Exercise critical journeys, security boundaries, and accessibility.</li>
+                    <li data-delivery-bullet><svg class="delivery-showcase__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2l1.4 4.3 4.5.1-3.6 2.7 1.4 4.3L12 11.4 8.3 13.6l1.4-4.3-3.6-2.7 4.5-.1z"/></svg>Test representative load and AI-assisted flows under real conditions.</li>
+                    <li data-delivery-bullet><svg class="delivery-showcase__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2l1.4 4.3 4.5.1-3.6 2.7 1.4 4.3L12 11.4 8.3 13.6l1.4-4.3-3.6-2.7 4.5-.1z"/></svg>Release only when evidence matches agreed acceptance criteria.</li>
+                  </ul>
+                </div>
+                <figure class="delivery-showcase__visual">
+                  <img src="/assets/delivery/validate.jpg?v=2" alt="Abstract illustration of validation: shield and verification rings." width="1152" height="864" loading="lazy" decoding="async" />
+                  <span class="delivery-showcase__sticker" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 2 8 4v6c0 5-8 10-8 10S4 17 4 12V6z"/><path d="m9 12 2 2 4-4"/></svg></span>
+                </figure>
+              </article>
+              <article class="delivery-showcase__panel is-active" id="delivery-panel-launch" aria-labelledby="delivery-tab-launch" data-delivery-panel style="--step: 5">
+                <div class="delivery-showcase__folder-tab" id="delivery-tab-launch">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m12 2 8 4v6c0 5-8 10-8 10S4 17 4 12V6z"/></svg>
+                Launch
+              </div>
+                <div class="delivery-showcase__panel-copy">
+                  <h3>Launch</h3>
+                  <ul>
+                    <li data-delivery-bullet><svg class="delivery-showcase__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2l1.4 4.3 4.5.1-3.6 2.7 1.4 4.3L12 11.4 8.3 13.6l1.4-4.3-3.6-2.7 4.5-.1z"/></svg>Go live with monitoring, rollback, and runbooks ready.</li>
+                    <li data-delivery-bullet><svg class="delivery-showcase__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2l1.4 4.3 4.5.1-3.6 2.7 1.4 4.3L12 11.4 8.3 13.6l1.4-4.3-3.6-2.7 4.5-.1z"/></svg>Hand off knowledge so your team can operate with confidence.</li>
+                    <li data-delivery-bullet><svg class="delivery-showcase__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2l1.4 4.3 4.5.1-3.6 2.7 1.4 4.3L12 11.4 8.3 13.6l1.4-4.3-3.6-2.7 4.5-.1z"/></svg>Measure usage and plan the next release with your team.</li>
+                  </ul>
+                </div>
+                <figure class="delivery-showcase__visual">
+                  <img src="/assets/delivery/launch.jpg?v=2" alt="Abstract illustration of launch: upward light beam and monitoring rings." width="1152" height="864" loading="lazy" decoding="async" />
+                  <span class="delivery-showcase__sticker" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 2 8 4v6c0 5-8 10-8 10S4 17 4 12V6z"/></svg></span>
+                </figure>
+              </article>
+              </div>
+            </div>
+            <div class="delivery-showcase__zigzag" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
 
-      <section class="section expertise expertise-animated" id="expertise" aria-labelledby="expertise-framework-title">
+      <section class="enterprise-trust" id="enterprise-proof" aria-labelledby="enterprise-trust-heading" data-enterprise-root>
+        <div class="enterprise-trust__bg" aria-hidden="true">
+          <img src="/assets/ai-guided-delivery.jpg" alt="" width="1122" height="1402" loading="lazy" decoding="async" />
+          <div class="enterprise-trust__overlay"></div>
+        </div>
+        <div class="enterprise-trust__scallop-top" aria-hidden="true"></div>
+        <div class="enterprise-trust__inner">
+          <h2 class="enterprise-trust__hero-title" id="enterprise-trust-heading" data-enterprise-reveal>
+            You&rsquo;re <em>not</em> alone
+            <svg class="enterprise-trust__bolt" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"/></svg>
+          </h2>
+          <div class="enterprise-trust__intro" data-enterprise-reveal>
+            <p class="enterprise-trust__kicker">Why DataServ</p>
+            <h3>Why Enterprises Choose Us</h3>
+            <p>We don&rsquo;t just deliver software — we engineer intelligent systems that drive measurable business outcomes with enterprise-grade reliability.</p>
+          </div>
+          <div class="enterprise-trust__marquee" data-enterprise-marquee role="region" aria-label="Why enterprises choose us — auto-scrolling benefits, pauses on hover or focus">
+            <div class="enterprise-trust__marquee-viewport">
+            <div class="enterprise-trust__marquee-track">
+              <div class="enterprise-trust__marquee-group" role="list">
+                <article class="enterprise-trust__bubble" role="listitem">
+                  <div class="enterprise-trust__bubble-shape">
+                    <span class="enterprise-trust__quote-mark" aria-hidden="true">&rdquo;</span>
+                    <p>Intelligence embedded into systems by design, not as an afterthought.</p>
+                    <strong>AI-first engineering</strong>
+                    <small>Strategy · Build · Operate</small>
+                  </div>
+                </article>
+                <article class="enterprise-trust__bubble" role="listitem">
+                  <div class="enterprise-trust__bubble-shape">
+                    <span class="enterprise-trust__quote-mark" aria-hidden="true">&rdquo;</span>
+                    <p>Security, scalability, and compliance built into every solution we deliver.</p>
+                    <strong>Enterprise standards</strong>
+                    <small>Security · Scale · Compliance</small>
+                  </div>
+                </article>
+                <article class="enterprise-trust__bubble" role="listitem">
+                  <div class="enterprise-trust__bubble-shape">
+                    <span class="enterprise-trust__quote-mark" aria-hidden="true">&rdquo;</span>
+                    <p>AI + APIs + workflows working together for maximum operational efficiency.</p>
+                    <strong>Automation expertise</strong>
+                    <small>Integrations · Workflows</small>
+                  </div>
+                </article>
+                <article class="enterprise-trust__bubble" role="listitem">
+                  <div class="enterprise-trust__bubble-shape">
+                    <span class="enterprise-trust__quote-mark" aria-hidden="true">&rdquo;</span>
+                    <p>Speed with predictability — enterprise-grade processes that move fast.</p>
+                    <strong>Agile, governed delivery</strong>
+                    <small>Sprints · Governance</small>
+                  </div>
+                </article>
+                <article class="enterprise-trust__bubble" role="listitem">
+                  <div class="enterprise-trust__bubble-shape">
+                    <span class="enterprise-trust__quote-mark" aria-hidden="true">&rdquo;</span>
+                    <p>Focused on outcomes and sustainable success, not just project delivery.</p>
+                    <strong>Long-term partnership</strong>
+                    <small>Outcomes · Support</small>
+                  </div>
+                </article>
+              </div>
+              <div class="enterprise-trust__marquee-group" role="list" aria-hidden="true">
+                <article class="enterprise-trust__bubble" role="listitem">
+                  <div class="enterprise-trust__bubble-shape">
+                    <span class="enterprise-trust__quote-mark" aria-hidden="true">&rdquo;</span>
+                    <p>Intelligence embedded into systems by design, not as an afterthought.</p>
+                    <strong>AI-first engineering</strong>
+                    <small>Strategy · Build · Operate</small>
+                  </div>
+                </article>
+                <article class="enterprise-trust__bubble" role="listitem">
+                  <div class="enterprise-trust__bubble-shape">
+                    <span class="enterprise-trust__quote-mark" aria-hidden="true">&rdquo;</span>
+                    <p>Security, scalability, and compliance built into every solution we deliver.</p>
+                    <strong>Enterprise standards</strong>
+                    <small>Security · Scale · Compliance</small>
+                  </div>
+                </article>
+                <article class="enterprise-trust__bubble" role="listitem">
+                  <div class="enterprise-trust__bubble-shape">
+                    <span class="enterprise-trust__quote-mark" aria-hidden="true">&rdquo;</span>
+                    <p>AI + APIs + workflows working together for maximum operational efficiency.</p>
+                    <strong>Automation expertise</strong>
+                    <small>Integrations · Workflows</small>
+                  </div>
+                </article>
+                <article class="enterprise-trust__bubble" role="listitem">
+                  <div class="enterprise-trust__bubble-shape">
+                    <span class="enterprise-trust__quote-mark" aria-hidden="true">&rdquo;</span>
+                    <p>Speed with predictability — enterprise-grade processes that move fast.</p>
+                    <strong>Agile, governed delivery</strong>
+                    <small>Sprints · Governance</small>
+                  </div>
+                </article>
+                <article class="enterprise-trust__bubble" role="listitem">
+                  <div class="enterprise-trust__bubble-shape">
+                    <span class="enterprise-trust__quote-mark" aria-hidden="true">&rdquo;</span>
+                    <p>Focused on outcomes and sustainable success, not just project delivery.</p>
+                    <strong>Long-term partnership</strong>
+                    <small>Outcomes · Support</small>
+                  </div>
+                </article>
+              </div>
+            </div>
+            </div>
+          </div>
+          <div class="enterprise-trust__actions" data-enterprise-reveal>
+            <a class="delivery-showcase__cta delivery-showcase__cta--enter" href="/contact.html">Talk to us <i aria-hidden="true">→</i></a>
+          </div>
+        </div>
+        <div class="enterprise-trust__scallop-bottom" aria-hidden="true"></div>
+      </section>
+
+      <section
+        class="home-journal section"
+        id="insights"
+        aria-roledescription="carousel"
+        aria-label="Perspectives from the DataServ journal"
+        data-home-journal
+        tabindex="0"
+      >
+        <div class="home-journal__inner">
+          <header class="home-journal__mast">
+            <span>Behind the choices, a person.</span>
+            <span data-journal-counter aria-live="polite">AP / 01</span>
+          </header>
+          <div class="home-journal__viewport">
+            <div class="home-journal__track">
+              <article
+                class="home-journal__slide is-active"
+                data-journal-slide
+                data-code="AP / 01"
+                aria-label="Anil Potluri — perspective 1 of 2"
+              >
+                <figure class="home-journal__figure">
+                  <span class="home-journal__frame">
+                    <img
+                      class="home-journal__portrait"
+                      src="/assets/authors/anil.jpg"
+                      alt="Anil Potluri, Chief Technology Officer at DataServ"
+                      width="555"
+                      height="715"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </span>
+                </figure>
+                <div class="home-journal__copy">
+                  <p class="home-journal__eyebrow">From enterprise software to AI strategy</p>
+                  <h2 class="home-journal__title">My job isn&rsquo;t to have<br /><em>all the answers.</em></h2>
+                  <p class="home-journal__body">
+                    I&rsquo;m here to help shape architecture, guide technical decisions, and make sure the team has what it needs to move forward with confidence.
+                  </p>
+                  <p class="home-journal__body">
+                    I don&rsquo;t expect anyone to know everything. I expect us to ask the right questions, share what we learn, and build something we can stand behind together.
+                  </p>
+                  <div class="home-journal__cta-wrap">
+                    <a
+                      class="home-journal__cta"
+                      href="/blog-article.html?slug=future-of-enterprise-ai-transforming-business-operations"
+                    >Read Anil&rsquo;s perspective <span aria-hidden="true">↗</span></a>
+                  </div>
+                </div>
+              </article>
+              <article
+                class="home-journal__slide"
+                data-journal-slide
+                data-code="GA / 02"
+                data-crop="square"
+                aria-label="Gunda Ajay Kumar — perspective 2 of 2"
+                aria-hidden="true"
+                inert
+              >
+                <figure class="home-journal__figure">
+                  <span class="home-journal__frame">
+                    <img
+                      class="home-journal__portrait"
+                      src="/assets/authors/ajay.jpg"
+                      alt="Gunda Ajay Kumar, AI Solutions Architect at DataServ"
+                      width="2048"
+                      height="2048"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </span>
+                </figure>
+                <div class="home-journal__copy">
+                  <p class="home-journal__eyebrow">From research to responsible AI</p>
+                  <h2 class="home-journal__title">Trust isn&rsquo;t built in the model.<br /><em>It&rsquo;s built in the choices.</em></h2>
+                  <p class="home-journal__body">
+                    Responsible AI is less about perfect predictions and more about transparency, fairness, and accountability in the systems we ship.
+                  </p>
+                  <p class="home-journal__body">
+                    I work with teams to turn ethics from a slide deck into checkpoints in design, data, and delivery — so intelligence earns trust in production.
+                  </p>
+                  <div class="home-journal__cta-wrap">
+                    <a
+                      class="home-journal__cta"
+                      href="/blog-article.html?slug=building-responsible-ai-systems-ethics-best-practices"
+                    >Read Ajay&rsquo;s perspective <span aria-hidden="true">↗</span></a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+          <footer class="home-journal__footer">
+            <div class="home-journal__nav">
+              <button type="button" data-journal-prev aria-label="Previous perspective">←</button>
+              <div class="home-journal__dots" data-journal-dots role="tablist" aria-label="Choose a perspective"></div>
+              <button type="button" data-journal-next aria-label="Next perspective">→</button>
+            </div>
+            <a class="home-journal__journal-link" href="/blogs.html">Explore the journal <span aria-hidden="true">↗</span></a>
+          </footer>
+        </div>
+      </section>
+
+      <section class="section expertise expertise-animated" hidden aria-hidden="true">
         <div class="expertise-drift" aria-hidden="true">
           <span></span><span></span><span></span><span></span><span></span><span></span>
           <span></span><span></span><span></span><span></span><span></span><span></span>
@@ -221,17 +680,17 @@
         <div class="expertise-stream" aria-hidden="true">
           <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
         </div>
-        <div class="expertise-framework expertise-reveal">
-          <p class="expertise-framework-label">OUR ENGINEERING EXPERTISE</p>
-          <h2 class="expertise-framework-title" id="expertise-framework-title">Depth in every<br /><span>discipline.</span></h2>
-          <p class="expertise-framework-pills" aria-hidden="true">
-            <span class="is-active" data-expertise-pill="0">Build</span> · <span data-expertise-pill="1">Grow</span> ·
-            <span data-expertise-pill="2">Connect</span> · <span data-expertise-pill="3">Operate</span>
-          </p>
-        </div>
-        <span id="services" class="expertise-service-anchor" aria-hidden="true"></span>
         <div class="expertise-pin" id="expertise-pin">
           <div class="expertise-pin-inner">
+          <div class="expertise-framework expertise-reveal">
+            <p class="expertise-framework-label">OUR ENGINEERING EXPERTISE</p>
+            <h2 class="expertise-framework-title" id="expertise-framework-title">Depth in every<br /><span>discipline.</span></h2>
+            <p class="expertise-framework-pills" aria-hidden="true">
+              <span class="is-active" data-expertise-pill="0">Discover</span> · <span data-expertise-pill="1">Design</span> ·
+              <span data-expertise-pill="2">Plan</span> · <span data-expertise-pill="3">Build</span> ·
+              <span data-expertise-pill="4">Validate</span> · <span data-expertise-pill="5">Launch</span>
+            </p>
+          </div>
           <div class="expertise-ink" aria-hidden="true">
             <span></span><span></span><span></span><span></span><span></span>
             <b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b>
@@ -239,74 +698,65 @@
           <div class="expertise-stream expertise-stream--stage" aria-hidden="true">
             <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
           </div>
-          <p class="expertise-marquee" aria-hidden="true">BUILD · GROW · CONNECT · OPERATE · BUILD · GROW · CONNECT · OPERATE ·</p>
-          <div class="expertise-method-track" id="expertise-method-track" tabindex="0" aria-label="Four services — scroll horizontally">
-            <article class="expertise-method-panel" id="service-app-development">
+          <p class="expertise-marquee" aria-hidden="true">DISCOVER · DESIGN · PLAN · BUILD · VALIDATE · LAUNCH · DISCOVER · DESIGN · PLAN · BUILD · VALIDATE · LAUNCH ·</p>
+          <div class="expertise-method-track" id="expertise-method-track" tabindex="0" aria-label="Software delivery — six steps from idea to launch">
+            <article class="expertise-method-panel expertise-method-panel--compact" id="software-step-discover">
               <span class="expertise-method-watermark" aria-hidden="true">01</span>
               <div class="expertise-method-copy">
-                <p class="expertise-method-step">01 / BUILD</p>
-                <h3>App development</h3>
-                <p class="expertise-method-tagline">Turn an idea into a working product.</p>
-                <ul class="expertise-method-list">
-                  <li>Custom web, mobile, and enterprise software — 10-day delivery when requirements are clear, or fully managed builds with Vela AI agents.</li>
-                  <li>Product engineering from discovery and design through implementation, testing, and launch, with human review at the gates that matter.</li>
-                  <li>AI-enabled applications, SaaS, and integrations connected to the APIs, data, and workflows your team already uses.</li>
-                </ul>
-                <p class="expertise-method-chips">10-DAY DELIVERY · VEL.AI AGENTS</p>
-                <a class="expertise-method-link" href="/app-development.html">Explore app development <span aria-hidden="true">↗</span></a>
+                <p class="expertise-method-step">01 / DISCOVER</p>
+                <h3>Define the right scope.</h3>
+                <p class="expertise-method-tagline">Map users, business rules, and the systems you already run. Agree on focused scope and what success looks like.</p>
               </div>
             </article>
-            <article class="expertise-method-panel" id="service-digital-marketing">
+            <article class="expertise-method-panel expertise-method-panel--compact" id="software-step-design">
               <span class="expertise-method-watermark" aria-hidden="true">02</span>
               <div class="expertise-method-copy">
-                <p class="expertise-method-step">02 / GROW</p>
-                <h3>AI Digital marketing</h3>
-                <p class="expertise-method-tagline">Bring your brand to the right audience.</p>
-                <ul class="expertise-method-list">
-                  <li>AI-driven content, storytelling, and social programs planned and produced in your brand voice — edited where nuance matters.</li>
-                  <li>Paid search and social campaigns launched, optimized, and reported with creative and spend tied to clear goals.</li>
-                  <li>Landing pages, funnels, and messaging aligned with the product and sales motion you are building.</li>
-                </ul>
-                <p class="expertise-method-chips">CONTENT · SOCIAL · ADS</p>
-                <a class="expertise-method-link" href="/digital-marketing.html">See AI marketing <span aria-hidden="true">↗</span></a>
+                <p class="expertise-method-step">02 / DESIGN</p>
+                <h3>Design the experience.</h3>
+                <p class="expertise-method-tagline">Journey maps, wireframes, and a prototype your team can click through. Check accessibility and error paths early.</p>
               </div>
             </article>
-            <article class="expertise-method-panel" id="service-it-consulting">
+            <article class="expertise-method-panel expertise-method-panel--compact" id="software-step-plan">
               <span class="expertise-method-watermark" aria-hidden="true">03</span>
               <div class="expertise-method-copy">
-                <p class="expertise-method-step">03 / CONNECT</p>
-                <h3>IT consulting</h3>
-                <p class="expertise-method-tagline">Make your technology work together.</p>
-                <ul class="expertise-method-list">
-                  <li>Cloud, integration, ERP, and architecture roadmaps from discovery through rollout — scoped to how your teams operate today.</li>
-                  <li>Assess data flows, security, and AI readiness before you commit budget, with clear evaluation criteria.</li>
-                  <li>Handoff plans, operations, and governance so internal teams can run and extend what gets shipped.</li>
-                </ul>
-                <p class="expertise-method-chips">CLOUD · INTEGRATION · ERP</p>
-                <a class="expertise-method-link" href="/it-consulting.html">See IT consulting <span aria-hidden="true">↗</span></a>
+                <p class="expertise-method-step">03 / PLAN</p>
+                <h3>Plan the architecture.</h3>
+                <p class="expertise-method-tagline">Choose interfaces, APIs, data models, permissions, and hosting around the workload you expect. Set delivery milestones you can track.</p>
               </div>
             </article>
-            <article class="expertise-method-panel" id="service-non-it-consulting">
+            <article class="expertise-method-panel expertise-method-panel--compact" id="software-step-build">
               <span class="expertise-method-watermark" aria-hidden="true">04</span>
               <div class="expertise-method-copy">
-                <p class="expertise-method-step">04 / OPERATE</p>
-                <h3>Non-IT consulting</h3>
-                <p class="expertise-method-tagline">Build a stronger business behind the scenes.</p>
-                <ul class="expertise-method-list">
-                  <li>HR, recruitment, and people operations support aligned with growth, delivery capacity, and technology change.</li>
-                  <li>Operations, supply chain, and process advisory connected to the tools and automations you invest in.</li>
-                  <li>Finance, project management, risk, and change expertise for transformations that span business and tech.</li>
-                </ul>
-                <p class="expertise-method-chips">HR · OPS · STRATEGY</p>
-                <a class="expertise-method-link" href="/non-it-consulting.html">See non-IT consulting <span aria-hidden="true">↗</span></a>
+                <p class="expertise-method-step">04 / BUILD</p>
+                <h3>Build with AI, review with people.</h3>
+                <p class="expertise-method-tagline">Vela AI agents accelerate implementation and tests; engineers review changes and ship working increments. Scoped sprints when requirements are clear.</p>
+              </div>
+            </article>
+            <article class="expertise-method-panel expertise-method-panel--compact" id="software-step-validate">
+              <span class="expertise-method-watermark" aria-hidden="true">05</span>
+              <div class="expertise-method-copy">
+                <p class="expertise-method-step">05 / VALIDATE</p>
+                <h3>Test under real conditions.</h3>
+                <p class="expertise-method-tagline">Exercise critical journeys, security boundaries, accessibility, and representative load. Release only when evidence matches the acceptance criteria.</p>
+              </div>
+            </article>
+            <article class="expertise-method-panel expertise-method-panel--compact" id="software-step-launch">
+              <span class="expertise-method-watermark" aria-hidden="true">06</span>
+              <div class="expertise-method-copy">
+                <p class="expertise-method-step">06 / LAUNCH</p>
+                <h3>Launch, observe, and improve.</h3>
+                <p class="expertise-method-tagline">Go live with monitoring and rollback ready. Hand off knowledge, measure usage, and use feedback to plan the next release.</p>
+                <a class="expertise-method-link" href="/app-development.html#journey">See the full process <span aria-hidden="true">↗</span></a>
               </div>
             </article>
           </div>
           <div class="expertise-progress" aria-hidden="true">
-            <span class="expertise-progress-step is-active" data-expertise-pill="0"><i></i>BUILD</span>
-            <span class="expertise-progress-step" data-expertise-pill="1"><i></i>GROW</span>
-            <span class="expertise-progress-step" data-expertise-pill="2"><i></i>CONNECT</span>
-            <span class="expertise-progress-step" data-expertise-pill="3"><i></i>OPERATE</span>
+            <span class="expertise-progress-step is-active" data-expertise-pill="0"><i></i>DISCOVER</span>
+            <span class="expertise-progress-step" data-expertise-pill="1"><i></i>DESIGN</span>
+            <span class="expertise-progress-step" data-expertise-pill="2"><i></i>PLAN</span>
+            <span class="expertise-progress-step" data-expertise-pill="3"><i></i>BUILD</span>
+            <span class="expertise-progress-step" data-expertise-pill="4"><i></i>VALIDATE</span>
+            <span class="expertise-progress-step" data-expertise-pill="5"><i></i>LAUNCH</span>
           </div>
           <span class="expertise-rail" aria-hidden="true"><i></i></span>
           <p class="expertise-method-hint">KEEP SCROLLING →</p>
@@ -330,104 +780,7 @@
           </svg>
         </div>
       </section>
-      <section class="business-model section" id="business" aria-labelledby="business-title">
-        <div class="business-aurora" aria-hidden="true"><i></i><i></i><i></i></div>
-        <div class="business-ambient" aria-hidden="true"></div>
-        <div class="business-head-backdrop" aria-hidden="true">
-          <div class="business-head-ambient-sparks">
-            <i style="--x: 6%; --y: 14%; --delay: 0s; --duration: 7s"></i>
-            <i style="--x: 18%; --y: 38%; --delay: -1.5s; --duration: 9s"></i>
-            <i style="--x: 32%; --y: 22%; --delay: -3s; --duration: 8s"></i>
-            <i style="--x: 48%; --y: 52%; --delay: -4.5s; --duration: 10s"></i>
-            <i style="--x: 62%; --y: 18%; --delay: -6s; --duration: 7s"></i>
-            <i style="--x: 76%; --y: 44%; --delay: -7.5s; --duration: 11s"></i>
-            <i style="--x: 90%; --y: 28%; --delay: -9s; --duration: 8s"></i>
-            <i style="--x: 12%; --y: 68%; --delay: -10.5s; --duration: 9s"></i>
-            <i style="--x: 38%; --y: 78%; --delay: -12s; --duration: 10s"></i>
-            <i style="--x: 55%; --y: 8%; --delay: -13.5s; --duration: 7s"></i>
-            <i style="--x: 68%; --y: 62%; --delay: -15s; --duration: 9s"></i>
-            <i style="--x: 84%; --y: 72%; --delay: -16.5s; --duration: 8s"></i>
-            <i style="--x: 96%; --y: 48%; --delay: -18s; --duration: 11s"></i>
-            <i style="--x: 42%; --y: 32%; --delay: -19.5s; --duration: 8s"></i>
-          </div>
-          <div class="business-head-wire-stage">
-            <svg class="business-head-wireframe" viewBox="0 0 480 360" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-              <g class="business-head-wire-globe" stroke="currentColor">
-                <ellipse cx="240" cy="180" rx="168" ry="168" />
-                <ellipse cx="240" cy="180" rx="168" ry="62" />
-                <ellipse cx="240" cy="180" rx="62" ry="168" />
-                <path d="M240 24 L240 336 M72 180 L408 180" />
-              </g>
-            </svg>
-          </div>
-          <span class="business-head-shimmer"></span>
-        </div>
-        <div class="business-grid">
-          <div class="business-head">
-            <div class="business-head-main">
-              <div class="business-topline">
-                <p class="section-label intro-reveal" data-delay="0"><span aria-hidden="true"></span>00 / THE BUSINESS BEHIND THE DESIGN</p>
-                <span class="business-kicker intro-reveal" data-delay="1"><i aria-hidden="true"></i> THREE REVENUE LINES · ONE ENGINEERING TEAM</span>
-              </div>
-              <h2 id="business-title" class="intro-reveal" data-delay="1">Custom work. Ready platforms.<br /><em>Long-term care.</em></h2>
-            </div>
-            <div class="business-lead-wrap intro-reveal" data-delay="2">
-              <p class="business-lead">Three revenue lines at different stages of maturity — labelled so you can see what is earning now versus what we are still building.</p>
-              <ol class="business-maturity" aria-label="Revenue line maturity">
-                <li class="is-live"><span class="business-maturity-dot" aria-hidden="true"></span><strong>Live</strong><span>Services</span></li>
-                <li><span class="business-maturity-dot" aria-hidden="true"></span><strong>Building</strong><span>vel.ai</span></li>
-                <li><span class="business-maturity-dot" aria-hidden="true"></span><strong>Early</strong><span>Ledgro</span></li>
-              </ol>
-            </div>
-          </div>
-          <div class="business-flow intro-reveal" data-delay="3" aria-hidden="true">
-            <span class="business-flow-caption">THE ENGINE</span>
-            <div class="business-flow-track">
-              <span class="business-flow-node is-active"><b>01</b> Client engagements</span>
-              <span class="business-flow-line"><i></i></span>
-              <span class="business-flow-node"><b>02</b> Engineering &amp; AI R&amp;D</span>
-              <span class="business-flow-line"><i></i></span>
-              <span class="business-flow-node"><b>03</b> Product modules</span>
-            </div>
-          </div>
-          <div class="business-cards">
-            <article class="business-card business-card--featured intro-reveal" data-delay="3">
-              <span class="business-card-index" aria-hidden="true">01</span>
-              <div class="business-card-top"><span class="business-card-tag">SERVICES</span><span class="business-stage business-stage--live"><i aria-hidden="true"></i> Earning revenue</span></div>
-              <h3>Product engineering &amp; consulting</h3>
-              <p>Custom application delivery, digital marketing, and IT and non-IT consulting — the practice our client portfolio was built on.</p>
-              <dl class="business-facts">
-                <div><dt>Who pays</dt><dd>Client organizations commissioning a build or an advisory engagement</dd></div>
-                <div><dt>How it is billed</dt><dd>Fixed-scope project fees, plus monthly consulting and staffing retainers</dd></div>
-              </dl>
-              <a class="business-link" href="/contact.html?intent=idea#contact-brief">Discuss an engagement <span aria-hidden="true">↗</span></a>
-            </article>
-            <article class="business-card intro-reveal" data-delay="4">
-              <span class="business-card-index" aria-hidden="true">02</span>
-              <div class="business-card-top"><span class="business-card-tag">VEL.AI</span><span class="business-stage business-stage--build">In development</span></div>
-              <h3>Agent platform for software delivery</h3>
-              <p>Planning, engineering, and validation agents that build an application and keep evolving it under human direction. Proven inside our own delivery work first.</p>
-              <dl class="business-facts">
-                <div><dt>Who pays</dt><dd>Teams with written requirements who want to run the build themselves</dd></div>
-                <div><dt>Intended model</dt><dd>Per-workspace subscription. Public pricing is not set yet, so early builds are quoted per project.</dd></div>
-              </dl>
-              <a class="business-link" href="/contact.html?intent=vel#contact-brief">Build with vel.ai <span aria-hidden="true">↗</span></a>
-            </article>
-            <article class="business-card intro-reveal" data-delay="5">
-              <span class="business-card-index" aria-hidden="true">03</span>
-              <div class="business-card-top"><span class="business-card-tag">LEDGRO</span><span class="business-stage business-stage--build">Early modules</span></div>
-              <h3>Modular business operations SaaS</h3>
-              <p>Customers, orders, invoicing, and inventory as subscribable modules, with industry modules for rice milling, dairy, and ecommerce.</p>
-              <dl class="business-facts">
-                <div><dt>Who pays</dt><dd>Operating businesses replacing spreadsheets and disconnected tools</dd></div>
-                <div><dt>Intended model</dt><dd>Monthly subscription per active module, with implementation billed separately</dd></div>
-              </dl>
-              <a class="business-link" href="/contact.html?demo=ledgro#contact-brief">Book a Ledgro demo <span aria-hidden="true">↗</span></a>
-            </article>
-          </div>
-        </div>
-      </section>
-      <section class="approach section connected" id="approach" aria-labelledby="connected-title">
+      <section class="approach section connected" id="approach" aria-labelledby="connected-title" hidden aria-hidden="true">
         <div class="connected-top"><div class="section-label">03 / AI-DRIVEN SOFTWARE</div><span class="connected-kicker"><i></i> OUR FOUR-LAYER APPROACH</span></div>
         <div class="connected-heading">
           <h2 id="connected-title">Experience. Agents.<br /><em>Integration. Trust.</em></h2>
@@ -497,7 +850,7 @@
           <article><span class="partner-pillar-mark" aria-hidden="true">◇</span><span class="partner-pillar-label">CONNECT</span><h3>Connected products.</h3><p>Explore Ledgro’s modular business apps and VEL.ai’s vision for the full software lifecycle.</p></article>
           <article><span class="partner-pillar-mark" aria-hidden="true">✳</span><span class="partner-pillar-label">UNDERSTAND</span><h3>Practical knowledge.</h3><p>Discuss product decisions, AI use cases, and how the technology fits your work.</p></article>
         </div>
-        <div class="partner-invitation"><div><span class="partner-invitation-label">YOUR NEXT IDEA STARTS HERE</span><p>What would you like to build?</p></div><div class="partner-actions"><a class="button" href="/contact.html">Talk to Dataserv <span aria-hidden="true">↗</span></a><a class="partner-secondary" href="#expertise">Explore our expertise <span aria-hidden="true">↓</span></a></div></div>
+        <div class="partner-invitation"><div><span class="partner-invitation-label">YOUR NEXT IDEA STARTS HERE</span><p>What would you like to build?</p></div><div class="partner-actions"><a class="button" href="/contact.html">Talk to Dataserv <span aria-hidden="true">↗</span></a><a class="partner-secondary" href="#capabilities">Explore our expertise <span aria-hidden="true">↓</span></a></div></div>
       </section>
       <section
         class="intro section intro-animated intro--company-spotlight"
@@ -587,12 +940,12 @@
         </div>
       </section>
     </main>
-    <nav class="section-pagination" aria-label="Homepage sections"><span class="pagination-position" aria-hidden="true">01 / 05</span><div class="pagination-links"><a class="pagination-link" href="#home" aria-label="01. Welcome" aria-describedby="page-detail-home" aria-current="location"><span class="pagination-tick" aria-hidden="true"></span><span class="pagination-detail" id="page-detail-home" role="tooltip"><span class="pagination-number">01 / EXPLORE</span><strong>Welcome</strong><span>Next-gen AI automations and Ledgro enterprise SaaS.</span></span></a><a class="pagination-link" href="#vision" aria-label="02. Your vision" aria-describedby="page-detail-vision"><span class="pagination-tick" aria-hidden="true"></span><span class="pagination-detail" id="page-detail-vision" role="tooltip"><span class="pagination-number">02 / EXPLORE</span><strong>Your vision</strong><span>From possibility to product, with design, AI, and engineering.</span></span></a><a class="pagination-link" href="#expertise" aria-label="03. Engineering expertise" aria-describedby="page-detail-expertise"><span class="pagination-tick" aria-hidden="true"></span><span class="pagination-detail" id="page-detail-expertise" role="tooltip"><span class="pagination-number">03 / EXPLORE</span><strong>Engineering expertise</strong><span>Four AI concepts and four service practices — app delivery, marketing, and consulting.</span></span></a><a class="pagination-link" href="#business" aria-label="04. What we sell today" aria-describedby="page-detail-business"><span class="pagination-tick" aria-hidden="true"></span><span class="pagination-detail" id="page-detail-business" role="tooltip"><span class="pagination-number">04 / EXPLORE</span><strong>What we sell today</strong><span>Services, vel.ai and Ledgro — who pays and how.</span></span></a><a class="pagination-link" href="#approach" aria-label="05. Our approach" aria-describedby="page-detail-approach"><span class="pagination-tick" aria-hidden="true"></span><span class="pagination-detail" id="page-detail-approach" role="tooltip"><span class="pagination-number">05 / EXPLORE</span><strong>Our approach</strong><span>Four connected layers for AI-driven software.</span></span></a></div><span class="pagination-end" aria-hidden="true">EXPLORE</span></nav>
+    <nav class="section-pagination" aria-label="Homepage sections"><span class="pagination-position" aria-hidden="true">01 / 06</span><div class="pagination-links"><a class="pagination-link" href="#home" aria-label="01. Welcome" aria-describedby="page-detail-home" aria-current="location"><span class="pagination-tick" aria-hidden="true"></span><span class="pagination-detail" id="page-detail-home" role="tooltip"><span class="pagination-number">01 / EXPLORE</span><strong>Welcome</strong><span>Next-gen AI automations and Ledgro enterprise SaaS.</span></span></a><a class="pagination-link" href="#vision" aria-label="02. About DataServ" aria-describedby="page-detail-vision"><span class="pagination-tick" aria-hidden="true"></span><span class="pagination-detail" id="page-detail-vision" role="tooltip"><span class="pagination-number">02 / EXPLORE</span><strong>About DataServ</strong><span>People, enterprise experience, and intelligent engineering.</span></span></a><a class="pagination-link" href="#capabilities" aria-label="03. Services and solutions" aria-describedby="page-detail-capabilities"><span class="pagination-tick" aria-hidden="true"></span><span class="pagination-detail" id="page-detail-capabilities" role="tooltip"><span class="pagination-number">03 / EXPLORE</span><strong>Services &amp; solutions</strong><span>Explore nine possibilities for your business.</span></span></a><a class="pagination-link" href="#delivery-journey" aria-label="04. How we build" aria-describedby="page-detail-delivery"><span class="pagination-tick" aria-hidden="true"></span><span class="pagination-detail" id="page-detail-delivery" role="tooltip"><span class="pagination-number">04 / EXPLORE</span><strong>How we build</strong><span>Six steps from discovery to launch.</span></span></a><a class="pagination-link" href="#enterprise-proof" aria-label="05. Why enterprises choose us" aria-describedby="page-detail-enterprise"><span class="pagination-tick" aria-hidden="true"></span><span class="pagination-detail" id="page-detail-enterprise" role="tooltip"><span class="pagination-number">05 / EXPLORE</span><strong>Enterprise trust</strong><span>Why enterprises choose DataServ.</span></span></a><a class="pagination-link" href="#insights" aria-label="06. The journal" aria-describedby="page-detail-insights"><span class="pagination-tick" aria-hidden="true"></span><span class="pagination-detail" id="page-detail-insights" role="tooltip"><span class="pagination-number">06 / EXPLORE</span><strong>The journal</strong><span>Perspectives from the people behind our work.</span></span></a></div><span class="pagination-end" aria-hidden="true">EXPLORE</span></nav>
     <footer>
       <a class="brand" href="/"><img src="/assets/logo.png" alt="DataServ Inc." /></a>
       <p>Vela AI services &amp; Ledgro enterprise SaaS · US-based engineering.</p>
       <div>
-        <a href="#expertise">Services &amp; expertise</a>
+        <a href="#capabilities">Services &amp; expertise</a>
         <a href="/about.html">About</a>
         <a href="/contact.html">Contact</a>
         <a href="/blogs.html">Insights</a>
@@ -608,8 +961,12 @@
         <source src="/assets/brand-film.mp4" type="video/mp4" />
       </video>
     </dialog>
-    <script type="module" src="/src/signal-hero.js"></script>
-    <script type="module" src="/src/business-model.js"></script>
+    <script type="module" src="/src/planet-carousel.js"></script>
+    <script type="module" src="/src/company-motion.js"></script>
+    <script type="module" src="/src/company-process.js"></script>
+    <script type="module" src="/src/capability-gallery.js"></script>
+    <script type="module" src="/src/delivery-showcase.js"></script>
+    <script type="module" src="/src/home-journal-carousel.js"></script>
     <script src="/app.js"></script>
     <script type="module" src="/src/scene-loader.js"></script>
     <script type="module" src="/src/section-pagination.js"></script>
